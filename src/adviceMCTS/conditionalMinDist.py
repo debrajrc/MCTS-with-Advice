@@ -1,3 +1,5 @@
+"""! @brief Distance-optimal strategy for reachability."""
+
 import stormpy, math
 import gc
 
@@ -5,11 +7,8 @@ def investigateModel(model):
 	for state in model.states:
 		actionOffset = 0
 		for action in state.actions:
-			# print("action",action.id,action.transitions)
 			for transition in action.transitions:
 				actionIndex = model.get_choice_index(state,actionOffset)
-				# print(actionIndex)
-				# actionLabel = model.choice_labeling.get_labels_of_choice(1)
 				print("From state {}, with action {}, with probability {}, go to state {}".format(state,actionIndex, transition.value(),transition.column))
 			actionOffset += 1
 
@@ -105,7 +104,6 @@ class ConditionalMinDistEngine():
 	def getBestDistActionIds(self,state): # returns list of integers for best actions minimizing expected distance from a state
 		bestActionIds = []
 		bestValue = math.inf  # assuming we are minimizing the distance
-		# print("best actions: ",self.getBestActionIds(state))
 		for action in state.actions:
 			if action.id in self.getBestActionIds(state):
 				value = 0
@@ -122,7 +120,6 @@ class ConditionalMinDistEngine():
 					bestActionIds += [action.id]
 				else:
 					pass
-				# print(state,action.id,value)
 			else:
 				pass
 		return bestActionIds
@@ -140,6 +137,20 @@ class ConditionalMinDistEngine():
 		return value, distance
 
 def getDistValue(prismFile,formula1,formula2):
+	"""! Given a prism file and two formula, gives the conditional distance
+
+	@param prismFile Location of the Prism file
+	@param formula1 formula with Pmax
+	@param formula2 formula with Pmin
+
+	@code
+	prismFile = "../examples/prism20081_3.nm"
+	formula1 = "Pmax=? [F win]"
+	formula2 = "Tmin=? [F win]"
+	v = getDistValue(prismFile,formula1,formula2)
+	print(v)
+	@endcode
+	"""
 	c = ConditionalMinDistEngine(prismFile)
 	c.process(formula1, formula2)
 	v = c.getFinalValues()
@@ -147,31 +158,5 @@ def getDistValue(prismFile,formula1,formula2):
 	gc.collect()
 	return v
 
-	# investigateModel(c.model)
-	# print("")
-	# investigateModel(c.newModel)
-	#
-	# for state in c.newModel.states:
-	# 	actionIds = [action.id for action in state.actions]
-	# 	BestActionIds = c.getBestActionIds(state)
-	# 	actionBestDistIds = c.getBestDistActionIds(state)
-	# 	print(state,actionIds,BestActionIds,actionBestDistIds)
-
 if __name__ == "__main__":
-	prismFile = "../examples/prism20081_3.nm"#prism20081_3#reach
-	c = ConditionalMinDistEngine(prismFile)
-	formula1 = "Pmax=? [F win]"
-	formula2 = "Tmin=? [F win]"
-	c.process(formula1, formula2)
-	v = c.getFinalValues()
-	print(v)
-
-	# investigateModel(c.model)
-	# print("")
-	# investigateModel(c.newModel)
-	#
-	# for state in c.newModel.states:
-	# 	actionIds = [action.id for action in state.actions]
-	# 	BestActionIds = c.getBestActionIds(state)
-	# 	actionBestDistIds = c.getBestDistActionIds(state)
-	# 	print(state,actionIds,BestActionIds,actionBestDistIds)
+	pass

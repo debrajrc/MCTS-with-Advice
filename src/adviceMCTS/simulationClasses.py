@@ -9,7 +9,8 @@ import adviceMCTS.util as util
 from adviceMCTS.util import raiseNotDefined, NoMoveException
 from adviceMCTS.mdpClasses import *
 
-
+##
+# Class used to run an execution on a given MDP
 class MDPExecutionEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
 	# Class used to run an execution on a given MDP
@@ -28,7 +29,7 @@ class MDPExecutionEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStoch
 	def consoleStr(self) -> str:
 		return self.mdpOperations.consoleStr()+"\n"+self.mdpExecution.consoleStr()
 	def executionCopy(self) -> "MDPExecutionEngine[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]":
-		"""
+		"""!
 		half-shallow copy of an MDPExecutionEngine instance. Can be used to run independent executions on the same MDP.
 		"""
 		return MDPExecutionEngine(self.mdpOperations,self.mdpExecution.executionCopy(),self.nonDecisionLength)
@@ -113,11 +114,9 @@ class OptionsReplayEngine():
 				raise Exception("should be quiet when using prettyConsole")
 	def deepCopy(self) -> "OptionsSimulationEngine[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]":
 		return OptionsReplayEngine(quiet = self.quiet, printEachStep=self.printEachStep, printCompact=self.printCompact, cursesScr=self.cursesScr, cursesDelay=self.cursesDelay)
-
+##
+# MDPReplayEngine is used to replay an execution following a fixed path.
 class MDPReplayEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	"""
-	MDPReplayEngine is used to replay an execution following a fixed path.
-	"""
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
 	def __init__(self, mdpOperations: TMDPOperations, mdpReplayPath: MDPPath[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction], options: OptionsReplayEngine) -> None:
 		isTerminal = (mdpReplayPath.length()==0)
@@ -149,13 +148,13 @@ class MDPReplayEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochast
 		return self.mdpPath.mdpTransitionsSequence[index]
 
 	def _extend(self, mdpTransition: MDPTransition[TMDPAction, TMDPStochasticAction]) -> None:
-		"""
+		"""!
 		Simulates one time step.
 		"""
 		self.mdpExecutionEngine.append(mdpTransition,nonDecisionAction=True)
 
 	def _runReplay(self, timeI: int) -> None:
-		"""
+		"""!
 		Simulates one full run until a given depth.
 		"""
 		# if not self.quiet: print("--------------------------------------------------------------")
@@ -172,7 +171,6 @@ class MDPReplayEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochast
 				self.cursesScr.addstr(0,0,self.mdpExecutionEngine.mdpOperations.replayConsoleStr(self.mdpEndState())+"\n"+mdpTransition.consoleStr()+"\n"+self.mdpExecutionEngine.stateConsoleStr())
 				self.cursesScr.refresh()
 				time.sleep(self.cursesDelay)
-		# if not self.quiet: print("--------------------------------------------------------------")
 
 	def advanceReplay(self) -> None:
 		timeI=self.mdpExecutionEngine.length(ignoreNonDecisionStates = False)
@@ -216,7 +214,7 @@ class MDPReplayEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochast
 
 
 class MDPActionStrategyInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	"""
+	"""!
 	A memoryless strategy for choosing actions
 	"""
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
@@ -227,14 +225,14 @@ class MDPActionStrategyInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, T
 	def deepCopy(self: TMDPActionStrategy) -> TMDPActionStrategy:
 		return self
 	def getMDPAction(self, mdpState: TMDPState, mdpOperations: TMDPOperations, quietInfoStr: bool) -> Optional[TMDPAction]:
-		"""
+		"""!
 		The strategy will receive an MDPOperations instance and
 		must return a legal MDPAction
 		"""
 		mdpActions=mdpOperations.getLegalActions(mdpState)
 		return self._getMDPActionInSubset(mdpActions, mdpState, mdpOperations, quietInfoStr)
 	def getMDPActionInSubset(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations, quietInfoStr: bool) -> Optional[TMDPAction]:
-		"""
+		"""!
 		The strategy will receive a set of actions and an MDPOperations instance and
 		must return a legal MDPAction from the set
 		"""
@@ -245,7 +243,7 @@ class MDPActionStrategyInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, T
 				mdpLegalActions.append(a)
 		return self._getMDPActionInSubset(mdpLegalActions, mdpState, mdpOperations, quietInfoStr)
 	def _getMDPActionInSubset(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations, quietInfoStr: bool) -> Optional[TMDPAction]:
-		"""
+		"""!
 		The Agent will receive an MDPOperations and
 		must return an action taken from a set of legal mdpActions
 		"""
@@ -254,7 +252,7 @@ class MDPActionStrategyInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, T
 
 
 class MDPProbabilisticActionStrategyInterface( MDPActionStrategyInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-	"""
+	"""!
 	A probabilistic strategy that draws from a distribution over legal actions
 	"""
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
@@ -287,7 +285,7 @@ class MDPProbabilisticActionStrategyInterface( MDPActionStrategyInterface[TMDPPr
 
 
 class MDPUniformActionStrategy( MDPProbabilisticActionStrategyInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-	"""
+	"""!
 	A strategy that chooses a legal action uniformly at random.
 	"""
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
@@ -298,7 +296,7 @@ class MDPUniformActionStrategy( MDPProbabilisticActionStrategyInterface[TMDPPred
 		return dist
 
 class MDPActionAdviceInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	"""
+	"""!
 	An advice (nondeterministic strategy) for choosing actions
 	"""
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
@@ -308,7 +306,7 @@ class MDPActionAdviceInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, TMD
 	def deepCopy(self: TMDPActionAdvice) -> TMDPActionAdvice:
 		return self
 	def getMDPActionAdvice(self, mdpState: TMDPState, mdpOperations: TMDPOperations, quietInfoStr: bool) -> Tuple[List[TMDPAction],List[TMDPAction]]:
-		"""
+		"""!
 		The strategy will receive an MDPOperations instance and
 		must return a set of legal MDPActions
 		"""
@@ -327,7 +325,7 @@ class MDPActionAdviceInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, TMD
 					mdpAction.infoStr += 'Advice['+','.join([mdpAction.consoleStr() for mdpAction in choices])+']'
 		return choices, mdpActions
 	def getMDPActionAdviceInSubset(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations, quietInfoStr: bool) -> Tuple[List[TMDPAction],List[TMDPAction]]:
-		"""
+		"""!
 		The strategy will receive an MDPOperations instance and
 		must return a set of legal MDPActions from a subset
 		"""
@@ -345,7 +343,7 @@ class MDPActionAdviceInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, TMD
 					mdpAction.infoStr += 'Advice['+','.join([mdpAction.consoleStr() for mdpAction in choices])+']'
 		return choices, mdpActions
 	def _getMDPActionAdviceInSubset(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations) -> List[TMDPAction]:
-		"""
+		"""!
 		The Agent will receive an MDPOperations and
 		must return a subset of a set of legal mdpActions
 		"""
@@ -360,7 +358,7 @@ class MDPActionAdviceInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, TMD
 
 
 class MDPFullActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-	"""
+	"""!
 	A trivial advice that allow everything
 	"""
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
@@ -379,7 +377,7 @@ class MDPFullActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, TM
 
 
 class MDPPathAdviceInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	"""
+	"""!
 	An advice that allows or rejects paths
 	"""
 	TMDPPathAdvice = TypeVar("TMDPPathAdvice",bound="MDPPathAdviceInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]")
@@ -418,7 +416,7 @@ class MDPAboveThresPathAdvice(MDPPathAdviceInterface[TMDPPredicate, TMDPState, T
 
 
 class MDPStateScoreInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	"""
+	"""!
 	A state score for a given agent
 	"""
 	TMDPStateScore = TypeVar("TMDPStateScore",bound="MDPStateScoreInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]")
@@ -464,7 +462,7 @@ class OptionsSimulationEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDP
 		return OptionsSimulationEngine(horizon = self.horizon, ignoreNonDecisionStates = self.ignoreNonDecisionStates, mdpActionStrategy = self.mdpActionStrategy.deepCopy(), mdpActionAdvice = self.mdpActionAdvice.deepCopy(), mdpPathAdvice = self.mdpPathAdvice.deepCopy(), rejectFactor = self.rejectFactor, mdpStateScore = self.mdpStateScore.deepCopy(), alpha = self.alpha, quiet = self.quiet, quietInfoStr = self.quietInfoStr, printEachStep=self.printEachStep, printCompact=self.printCompact)
 
 class MDPSimulationEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	"""
+	"""!
 	MDPSimulationEngine is used to draw simulations that extend an execution,
 	according to an action strategy.
 	The execution is sequentially extended and reset after each simulation,
@@ -500,7 +498,7 @@ class MDPSimulationEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStoc
 		return mdpAction, nonDecisionAction
 
 	def _extend(self,abort: bool) -> int:
-		"""
+		"""!
 		Simulates one time step: draw an action and play the new time step
 		in the execution engine.
 		"""
@@ -518,7 +516,7 @@ class MDPSimulationEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStoc
 			return 1
 
 	def _runSimulation(self, timeI: int, timeIReal: int) -> None:
-		"""
+		"""!
 		Simulates one full run until a given depth.
 		"""
 		# if not self.quiet: print("--------------------------------------------------------------")
@@ -540,7 +538,7 @@ class MDPSimulationEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStoc
 		# if not self.quiet: print("--------------------------------------------------------------")
 
 	def getSimulations(self, numSims: int) -> List[Tuple[MDPExecutionEngine[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction], float, int]]:
-		"""
+		"""!
 		Draws numSims simulations.
 		Returns a list of pairs (mdpExecutionEngineS,numS),
 		so that mdpExecutionEngineS contains a simulation until horizon depth,
@@ -590,7 +588,7 @@ class MDPSimulationEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStoc
 		if not self.quiet: print("]===========================================================]")
 		return results
 	def getSimulationReward(self, numSims: int) -> Optional[float]:
-		"""
+		"""!
 		Draws numSims simulations until horizon depth
 		and returns the average mdpReward obtained.
 		"""
@@ -615,8 +613,8 @@ class MDPSimulationEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStoc
 
 
 class MDPMCTSNode(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	"""
-	MDPMCTSNode
+	"""!
+	a node in the mcts tree
 	"""
 	def __init__(self, mdpState: TMDPState, mdpParentNode: "Optional[MDPMCTSNode[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]]", mdpParentTransition: Optional[MDPTransition[TMDPAction, TMDPStochasticAction]], depth: int, legalActions: List[TMDPAction], nonDecisionAction : bool) -> None:
 		self.mdpState = mdpState # a MDPState instance
@@ -941,7 +939,7 @@ class MCTSEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAct
 		return actionChosen
 
 class MDPMCTSActionStrategy( MDPActionStrategyInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-	"""
+	"""!
 	A probabilistic strategy that draws from a distribution over legal actions
 	"""
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
@@ -956,7 +954,7 @@ class MDPMCTSActionStrategy( MDPActionStrategyInterface[TMDPPredicate, TMDPState
 		return MDPMCTSActionStrategy(numMCTSIters=self.numMCTSIters, numSims=self.numSims, optionsMCTSEngine=self.optionsMCTSEngine)
 
 	def getMDPValues(self, mdpState, mdpOperations, quietInfoStr):
-		"""
+		"""!
 		The strategy will receive an MDPOperations instance and
 		must return dict of values
 		"""
@@ -980,7 +978,7 @@ class MDPMCTSActionStrategy( MDPActionStrategyInterface[TMDPPredicate, TMDPState
 		return mctsEngine.getMCTSRootRewardDict()
 
 	def getMDPAction(self, mdpState: TMDPState, mdpOperations: TMDPOperations, quietInfoStr: bool) -> TMDPAction:
-		"""
+		"""!
 		The strategy will receive an MDPOperations instance and
 		must return a legal MDPAction
 		"""

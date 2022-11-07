@@ -11,10 +11,12 @@ import adviceMCTS.util as util
 from adviceMCTS.util import raiseNotDefined
 
 TMDPPredicate = TypeVar("TMDPPredicate",bound="MDPPredicateInterface")
+
+##
+# Abstract class
+# Encodes predicates of the MDP
+# Pacman: Win, Loss
 class MDPPredicateInterface:
-	# Abstract class
-	# Encodes predicates of the MDP
-	# Pacman: Win, Loss
 
 	# abstract methods that must be redefined
 	def __init__(self) -> None:
@@ -51,10 +53,12 @@ class MDPPredicateInterface:
 
 
 TMDPState = TypeVar("TMDPState",bound="MDPStateInterface")
+##
+# Abstract class
+# Encodes a state of an MDP
+# Pacman: position of every agent, etc
+
 class MDPStateInterface:
-	# Abstract class
-	# Encodes a state of an MDP
-	# Pacman: position of every agent, etc
 
 	# abstract methods that must be redefined
 	def __init__(self) -> None:
@@ -95,10 +99,13 @@ class MDPStateInterface:
 
 
 TMDPAction = TypeVar("TMDPAction",bound="MDPActionInterface")
+
+##
+# Abstract class, Immutable class
+# action for controller in an MDP
+# Pacman: pacman moves north, east, etc
+
 class MDPActionInterface(util.MiniConsoleInterface):
-	# Abstract class, Immutable class
-	# action for controller in an MDP
-	# Pacman: pacman moves north, east, etc
 
 	# abstract methods that must be redefined
 	def __init__(self, infoStr: str) -> None:
@@ -138,10 +145,11 @@ class MDPActionInterface(util.MiniConsoleInterface):
 
 
 TMDPStochasticAction = TypeVar("TMDPStochasticAction",bound="MDPStochasticActionInterface")
+##
+# Abstract class, Immutable class
+# action for the environment in an MDP
+# pacman: ghost1 moves east and ghost 2 moves north, etc
 class MDPStochasticActionInterface(util.MiniConsoleInterface):
-	# Abstract class, Immutable class
-	# action for the environment in an MDP
-	# pacman: ghost1 moves east and ghost 2 moves north, etc
 
 	# abstract methods that must be redefined
 	def __init__(self, infoStr: str) -> None:
@@ -179,9 +187,10 @@ class MDPStochasticActionInterface(util.MiniConsoleInterface):
 			raise Exception("parsing error")
 		return cls("")
 
+##
+# Immutable class
+# encodes a pair (action,stochastic action)
 class MDPTransition(Generic[TMDPAction, TMDPStochasticAction]):
-	# Immutable class
-	# encodes a pair (action,stochastic action)
 
 	STR_SEPARATOR: str = " "
 	FILE_SEPARATOR: str = "\n~\n"
@@ -209,10 +218,10 @@ class MDPTransition(Generic[TMDPAction, TMDPStochasticAction]):
 	def fileStr(self) -> str:
 		return self.mdpAction.fileStr()+MDPTransition.FILE_SEPARATOR+self.mdpStochasticAction.fileStr()
 
-
+##
+# Abstract class
+# Encodes a path in the MDP, as an initial state and a sequence of transitions. Also contains a sequence of lists of predicates, one for each state visited along the path
 class MDPPath(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	# Abstract class
-	# Encodes a path in the MDP, as an initial state and a sequence of transitions. Also contains a sequence of lists of predicates, one for each state visited along the path
 
 	FILE_PREFIX: str = "Initial state:\n"
 	FILE_SEPARATOR: str = "\nTransitions:\n"
@@ -307,10 +316,11 @@ def discountFactorStr(discountFactor: float) -> str:
 	else:
 		return ""
 
+##
+# Abstract class
+# Contains a path in the MDP, its last state, total reward, if the path is terminal, the current discount factor at the last state
+# All of these things can be derived from the path by executing the sequence of actions on the MDP
 class MDPExecution(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	# Abstract class
-	# Contains a path in the MDP, its last state, total reward, if the path is terminal, the current discount factor at the last state
-	# All of these things can be derived from the path by executing the sequence of actions on the MDP
 
 	FILE_SEPARATOR1: str = "\nEnd state:\n"
 	FILE_SEPARATOR2: str = "\nPath reward:\n"
@@ -365,11 +375,12 @@ class MDPExecution(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticA
 
 TMDPOperations = TypeVar("TMDPOperations",bound="MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]")
 
+##
+# Abstract class
+# atomic operations of the MDP: draw next state at random, available actions, etc
+# Pacman: contains information about the layout, movement rules, etc
+# abstract methods that must be redefined
 class MDPOperationsInterface(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]):
-	# Abstract class
-	# atomic operations of the MDP: draw next state at random, available actions, etc
-	# Pacman: contains information about the layout, movement rules, etc
-	# abstract methods that must be redefined
 	def __init__(self, discountFactor: float) -> None:
 		raiseNotDefined()
 		self.discountFactor = discountFactor

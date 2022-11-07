@@ -1,3 +1,5 @@
+"""! @brief Classes to create MDP for pacman."""
+
 import sys, json, os
 import numpy as np
 import tensorflow as tf
@@ -22,6 +24,20 @@ TEMP_DIR = WORK_DIR+'tempFiles'+os.sep+'prism'
 util.mkdir(TEMP_DIR)
 
 def readFromFile(fileName):
+	"""! Given a prism file, runs MCTS with it
+
+	@param fileName location to a text file describing the layout
+
+	@return X,Y dimension of the grid
+	@return numGhosts number of ghosts
+	@return layoutText "%" for walls, "." for food
+	@return agentInfo (((x,y),d) for each agents)
+	d = 0 --> no direction
+	d = 1 --> East
+	d = 2 --> West
+	d = 3 --> North
+	d = 4 --> South
+	"""
 	f = open(fileName)
 	sizeStr = f.readline().split()
 	if len(sizeStr) > 3:
@@ -40,23 +56,23 @@ def readFromFile(fileName):
 			raise Exception("Size mismatch : "+str(agentStr))
 		else:
 			agentInfo.append(((int(agentStr[0]),int(agentStr[1])),int(agentStr[2])))
-	# print(X,Y,numGhosts,layoutText,agentInfo)
 	f.close()
 	return (X,Y,numGhosts,layoutText,agentInfo)
 
 class Layout:
-	"""
-	A Layout manages the static information about the game board.
-	"""
-	# X Y numGhosts
-	# Foods and walls in a layout file with height X and width Y :
-	# (0,0)     (0,1)   .  .  .  (0,Y-1)
-	# (1,0)     (1,1)               .
-	#  .                .           .
-	#  .                  .         .
-	#  .                    .       .
-	# (X-1,0)   (X-1,1)  . . . (X-1,Y-1)
+	##
+	# A Layout manages the static information about the game board.
+	#
+	# X Y numGhosts\n
+	# Foods and walls in a layout file with height X and width Y :\n
+	# (0,0)     (0,1)   .  .  .  (0,Y-1)\n
+	# (1,0)     (1,1)               .\n
+	#  .                .           .\n
+	#  .                  .         .\n
+	#  .                    .       .\n
+	# (X-1,0)   (X-1,1)  . . . (X-1,Y-1)\n
 	#  x y direction for each agents (agent 0 is pacman)
+
 
 	def __init__(self,X,Y,numGhosts,layoutText,agentInfo):
 		self.width = Y
@@ -116,7 +132,7 @@ class Layout:
 		# 	self.numGhosts += 1
 		# 	self.ghostDirection.append(int(layoutChar))
 
-	def getArray(self):
+	def getArray(self): # returns tensor with 6 channels
 		X = len(self.walls)
 		Y=len(self.walls[0])
 		array = np.zeros((6,X,Y)) # layers: walls, pacman, east ghosts, west ghosts, north ghosts, south ghosts
@@ -133,7 +149,7 @@ class Layout:
 			array[self.ghostDirection[g]+1][self.ghostPositions[g][0]][self.ghostPositions[g][1]] = 1
 		return(array)
 
-	def getArrayWithFood(self):
+	def getArrayWithFood(self): # returns tensor with 7 channels
 		X = len(self.walls)
 		Y=len(self.walls[0])
 		array = np.zeros((7,X,Y)) # layers: walls, pacman, east ghosts, west ghosts, north ghosts, south ghosts, foods
@@ -152,7 +168,8 @@ class Layout:
 			array[self.ghostDirection[g]+1][self.ghostPositions[g][0]][self.ghostPositions[g][1]] = 1
 		return(array)
 
-
+##
+# class to create a prism file for pacman and do operations
 class pacmanEngine:
 
 	def __init__(self,X,Y,numGhosts,layoutText,agentInfo, fname=None):  #drawDepth, timermax, scaredFactor,
@@ -613,6 +630,8 @@ class pacmanEngine:
 		Y=len(self.walls[0])
 		return (X,Y,self.numGhosts,self.walls)
 
+##
+# prints layout from a numpy array
 def getLayoutFromArray(a):
 	with np.printoptions(threshold=np.inf):
 		print(a)
@@ -637,25 +656,29 @@ def getLayoutFromArray(a):
 	s+="\n"
 	return s
 
+
 def createEngine(fname):
+	"""! create a pacmanEngine from a text file
+	"""
 	X,Y,numGhosts,layoutText,agentInfo = readFromFile(fname)
 	prismFile = TEMP_DIR+os.sep+fname.split(os.sep)[-1][:-4]+'_'+str(os.getpid())+'.nm'
 	p = pacmanEngine(X,Y,numGhosts,layoutText,agentInfo,prismFile)
 	return(p)
 
 
-class MDPStateScoreDistance(MDPStateScoreInterface):
-
-	def __init__(self,scoreFunction):
-		self.scoreFunction = scoreFunction
-
-	def getScore(self, executionEngine):
-		endState = executionEngine.mdpEndState()
-		stateDescription = executionEngine.mdpOperations.stateDescription(endState)
-		return (self.scoreFunction(stateDescription))
+# class MDPStateScoreDistance(MDPStateScoreInterface):
+# 	def __init__(self,scoreFunction):
+# 		self.scoreFunction = scoreFunction
+#
+# 	def getScore(self, executionEngine):
+# 		endState = executionEngine.mdpEndState()
+# 		stateDescription = executionEngine.mdpOperations.stateDescription(endState)
+# 		return (self.scoreFunction(stateDescription))
 
 
 class MDPStateScoreDistanceOld(MDPStateScoreInterface):
+	"""! Distance function that uses a linear combination of distance (exact distance in the graph) from ghosts and remaining foods
+	"""
 	def __init__(self,X,Y,numGhosts,walls):
 		self.X=X
 		self.Y=Y
@@ -738,6 +761,13 @@ class MDPStateScoreDistanceOld(MDPStateScoreInterface):
 		return coef*ghostValuation-(1-coef)*(foodValuation)
 
 class MDPStateScoreMctsNN(MDPStateScoreInterface):
+	"""! State score using neural network
+	@params pacmanEngine needed to create array from an executionEngine
+	@params model neural network model
+	@params minY
+	@params maxY
+	@return (value given by NN)*(maxY-minY)+minY
+	"""
 	def __init__(self,pacmanEngine,model,minY,maxY):
 		self.pacmanEngine = pacmanEngine
 		self.model=model
@@ -775,11 +805,19 @@ class MDPStateScoreSafetyNN(MDPStateScoreInterface):
 		endState = executionEngine.mdpEndState()
 		stateDescription = executionEngine.mdpOperations.stateDescription(endState)
 		x = np.expand_dims(self.pacmanEngine.getArray(stateDescription),axis=0)
-		x = tf.transpose(x, [0, 2, 3, 1])
+		x = tf.transpose(x, [0, 2, 3, 1]) # assuming neural network takes input of the form NHWC
 		value = keras.backend.get_value(self.model(x))[0][0]
 		return 500*(value-1)
 
 class MDPNNActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
+	"""! action advice that returns action over a given threshold
+	@params model NN model
+	@params transformer a sklearn.preprocessing.QuantileTransformer object
+	@params pacmanEngine
+	@params threshold
+
+	@returns choices set of actions
+	"""
 
 	def __init__(self,model,transformer,pacmanEngine,threshold):
 		self.model = model
@@ -791,7 +829,7 @@ class MDPNNActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, TMDP
 		return MDPNNActionAdvice(model=self.model, transformer = self.transformer, pacmanEngine=self.pacmanEngine, threshold=self.threshold)
 
 	def _getMDPActionAdviceInSubset(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations) -> List[TMDPAction]:
-		"""
+		"""!
 		The Agent will receive an MDPOperations and
 		must return a subset of a set of legal mdpActions
 		"""
@@ -923,6 +961,13 @@ class MDPNNActionAdviceProgress( MDPActionAdviceInterface[TMDPPredicate, TMDPSta
 		return choices
 
 class MDPStormActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ): ## TODO:
+	"""! action advice that returns action over a given threshold according to Storm
+	@params depth Unfording of the MDP with  horizon depth is created and Storm is used to find the probability of staying safe
+	@params pacmanEngine
+	@params threshold
+
+	@returns choices set of actions
+	"""
 
 	def __init__(self,depth,pacmanEngine,threshold):
 		self.depth = depth
@@ -966,32 +1011,32 @@ class MDPStormActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, T
 			return mdpActions
 		return choices
 
-class MDPDebugActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ): ## TODO:
-
-	def __init__(self,advice1,advice2):
-		self.advice1 = advice1
-		self.advice2 = advice2
-
-	def _getMDPActionAdviceInSubset(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations) -> List[TMDPAction]:
-		stateDescription = mdpOperations.stateDescription(mdpState)
-		# print(self.pacmanEngine.printLayout(stateDescription)) # # debuging
-		mdpActions1 = self.advice1._getMDPActionAdviceInSubset(mdpActions, mdpState, mdpOperations)
-		mdpActions2 = self.advice2._getMDPActionAdviceInSubset(mdpActions, mdpState, mdpOperations)
-		s1 = set([action.action for action in mdpActions1])
-		s2 = set([action.action for action in mdpActions2])
-		for act in s1:
-			if act not in s2:
-				raise Exception("Actions "+act+" from "+str(s1)+" not in "+str(s2))
-		for act in s2:
-			if act not in s1:
-				raise Exception("Actions "+act+" from "+str(s2)+" not in "+str(s1))
-		# if s1 == s2:
-		# 	raise Exception("Actions not equal "+str(s1)+" "+str(s2))
-		return mdpActions1
-
+# class MDPDebugActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ): ## TODO:
+#
+# 	def __init__(self,advice1,advice2):
+# 		self.advice1 = advice1
+# 		self.advice2 = advice2
+#
+# 	def _getMDPActionAdviceInSubset(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations) -> List[TMDPAction]:
+# 		stateDescription = mdpOperations.stateDescription(mdpState)
+# 		# print(self.pacmanEngine.printLayout(stateDescription)) # # debuging
+# 		mdpActions1 = self.advice1._getMDPActionAdviceInSubset(mdpActions, mdpState, mdpOperations)
+# 		mdpActions2 = self.advice2._getMDPActionAdviceInSubset(mdpActions, mdpState, mdpOperations)
+# 		s1 = set([action.action for action in mdpActions1])
+# 		s2 = set([action.action for action in mdpActions2])
+# 		for act in s1:
+# 			if act not in s2:
+# 				raise Exception("Actions "+act+" from "+str(s1)+" not in "+str(s2))
+# 		for act in s2:
+# 			if act not in s1:
+# 				raise Exception("Actions "+act+" from "+str(s2)+" not in "+str(s1))
+# 		# if s1 == s2:
+# 		# 	raise Exception("Actions not equal "+str(s1)+" "+str(s2))
+# 		return mdpActions1
+#
 
 class MDPNNActionStrategy( MDPProbabilisticActionStrategyInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-	"""
+	"""!
 	A strategy that chooses a legal action uniformly at random from actions from Neural network.
 	"""
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
@@ -1015,8 +1060,8 @@ class MDPNNActionStrategy( MDPProbabilisticActionStrategyInterface[TMDPPredicate
 		return dist
 
 class MDPUniformAdviceActionStrategy( MDPProbabilisticActionStrategyInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-	"""
-	A strategy that chooses a legal action uniformly at random from actions from Neural network.
+	"""!
+	A strategy that chooses a legal action uniformly at random from legal actions.
 	"""
 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
 

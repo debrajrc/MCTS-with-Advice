@@ -1,3 +1,5 @@
+"""! @brief Classes to create MDP for pacman, but ignoring the food. Useful when we are using Storm for safety."""
+
 import sys, json, os
 import numpy as np
 from tensorflow import keras
@@ -6,7 +8,7 @@ from tensorflow import keras
 # SRC_DIR = os.path.join(CURRENTPWD, '../src')
 # sys.path.append(SRC_DIR)
 #
-from adviceMCTS.Examples.simulationClasses import *
+from adviceMCTS.simulationClasses import *
 import adviceMCTS.util as util
 
 WORK_DIR = os.environ.get('GLOBALSCRATCH')
@@ -42,7 +44,7 @@ def readFromFile(fileName):
 	return (X,Y,numGhosts,layoutText,agentInfo)
 
 class Layout:
-	"""
+	"""!
 	A Layout manages the static information about the game board.
 	"""
 	# X Y numGhosts

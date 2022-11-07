@@ -1,13 +1,20 @@
+"""! @brief A class using stormpy and mdpClasses"""
+
 from typing import TypeVar, Type, Any, Optional, Sequence, List, Tuple, Dict, Union, Generic, NoReturn
 
 from adviceMCTS.mdpClasses import *
 import stormpy
 import stormpy.simulator
 from stormpy.storage import BitVector
-from simulationClasses import *
+from adviceMCTS.simulationClasses import *
 import json
 
 def prismToSimulator(prismFile):
+	"""! Given a prism file, creates a stormpy simulator
+
+	@param prismFile Location of the Prism file
+	@return  a stormpy.simulator.PrismSimulator object
+	"""
 	prism_program = stormpy.parse_prism_program(prismFile)
 	option = stormpy.core.BuilderOptions()
 	option.set_build_state_valuations()
@@ -314,6 +321,13 @@ def zeroScoreFunction(**kwargs):
 	return 0
 
 def runResults(engineList: List[MDPExecutionEngine[MDPPredicate, MDPState, MDPAction, MDPStochasticAction]], cursesDelay:float = 0.0, quiet: bool = True, prettyConsole: bool = False) -> Any:
+	"""! Given a prism file and two formula, gives the conditional distance
+
+	@param engineList list of saved executions
+	@param cursesDelay a float that adds delay between printing states (looks cool if prettyConsole is True)
+	@param quiet if True, does not print debugging info
+	@param prettyConsole if True, print state using predefined function instead of str (using MDPOperations.stateStrFunction)
+	"""
 	print("[== running replay engines")
 	n = 0
 	for mdpExecutionEngine in engineList:
@@ -354,24 +368,12 @@ def runResults(engineList: List[MDPExecutionEngine[MDPPredicate, MDPState, MDPAc
 
 
 def runGamesWithMCTS(stateStrFunction,prismFile,**kwargs):
+	"""! Given a prism file, runs MCTS with it
 
-	# if prismFile is None:
-	# 	if 'prismFile' not in kwargs:
-	# 		if 'layout' in kwargs:
-	# 			raise Exception("no prismFile arg provided")
-	# 	else:
-	# 		prismFile = kwargs['prismFile']
-	# else:
-	# 	if 'prismFile' not in kwargs:
-	# 		pass
-	# 	elif kwargs['prismFile'] == None:
-	# 		kwargs.pop('prismFile')
-	# 	else:
-	# 		raise Exception("more than one prismFile arg provided")
-
-	# layoutFile = kwargs['layout']
-	# kwargs.pop('layout')
-	# kwargs.pop('replay')
+	@param stateStrFunction custom defined function to print states (using MDPOperations.stateStrFunction)
+	@param prismFile location to a prism file
+	@param **kwargs arguments for MCTS (See simulationClasses.MDPMCTSTraceEngine.runMCTSTrace())
+	"""
 	discount = kwargs['discount']
 	kwargs.pop('discount')
 	prismSimulator = prismToSimulator(prismFile)
@@ -385,36 +387,37 @@ def runGamesWithMCTS(stateStrFunction,prismFile,**kwargs):
 
 	return(results)
 
-def getFirstMCTSValues(stateStrFunction,prismFile=None,**kwargs):
+# def getFirstMCTSValues(stateStrFunction,prismFile=None,**kwargs):
+#
+# 	if prismFile is None:
+# 		if 'prismFile' not in kwargs:
+# 			if 'layout' in kwargs:
+# 				raise Exception("no prismFile arg provided")
+# 		else:
+# 			prismFile = kwargs['prismFile']
+# 	else:
+# 		if 'prismFile' not in kwargs:
+# 			pass
+# 		elif kwargs['prismFile'] == None:
+# 			kwargs.pop('prismFile')
+# 		else:
+# 			raise Exception("more than one prismFile arg provided")
+# 	layoutFile = kwargs['layout']
+# 	kwargs.pop('layout')
+# 	kwargs.pop('replay')
+# 	discount = kwargs['discount']
+# 	kwargs.pop('discount')
+# 	prismSimulator = prismToSimulator(prismFile)
+# 	mdp = MDPOperations(prismSimulator,prismFile,stateStrFunction,discount)
+# 	bitVector = prismSimulator._get_current_state()
+# 	initState = MDPState(bitVector)
+# 	labels = prismSimulator._report_labels()
+# 	initPredicates = [MDPPredicate(label) for label in labels]
+# 	traceEngine: MDPMCTSTraceEngine[MDPPredicate, MDPState, MDPAction, MDPStochasticAction] = MDPMCTSTraceEngine()
+# 	results = traceEngine.runMCTSTrace(mdpState=initState, mdpPredicates=initPredicates, mdpOperations=mdp,**kwargs)
+# 	return(results)
 
-	if prismFile is None:
-		if 'prismFile' not in kwargs:
-			if 'layout' in kwargs:
-				raise Exception("no prismFile arg provided")
-		else:
-			prismFile = kwargs['prismFile']
-	else:
-		if 'prismFile' not in kwargs:
-			pass
-		elif kwargs['prismFile'] == None:
-			kwargs.pop('prismFile')
-		else:
-			raise Exception("more than one prismFile arg provided")
-	layoutFile = kwargs['layout']
-	kwargs.pop('layout')
-	kwargs.pop('replay')
-	discount = kwargs['discount']
-	kwargs.pop('discount')
-	prismSimulator = prismToSimulator(prismFile)
-	mdp = MDPOperations(prismSimulator,prismFile,stateStrFunction,discount)
-	bitVector = prismSimulator._get_current_state()
-	initState = MDPState(bitVector)
-	labels = prismSimulator._report_labels()
-	initPredicates = [MDPPredicate(label) for label in labels]
-	traceEngine: MDPMCTSTraceEngine[MDPPredicate, MDPState, MDPAction, MDPStochasticAction] = MDPMCTSTraceEngine()
-	results = traceEngine.runMCTSTrace(mdpState=initState, mdpPredicates=initPredicates, mdpOperations=mdp,**kwargs)
-	return(results)
-
+##
 # Parsers for simulation classes
 
 def MDPTransitionfromFileStr(s:str) -> MDPTransition[MDPAction,MDPStochasticAction]:
@@ -495,6 +498,7 @@ def readResults(file: Any, mdpOperations = None) -> List[MDPExecutionEngine[MDPP
 		engineList.append(engine)
 	return engineList
 
+##
 # Save to file
 
 def printResults(traces: List[Tuple[MDPExecutionEngine[MDPPredicate, MDPState, MDPAction, MDPStochasticAction],float,int]], file: Any = sys.stdout) -> None:

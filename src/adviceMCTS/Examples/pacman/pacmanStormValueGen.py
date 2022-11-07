@@ -3,6 +3,9 @@ import numpy as np
 from adviceMCTS.Examples.pacman.pacmanPrismNoFood import *
 
 def getValue(prismFile,quiet=False):
+	"""!
+	From a prismFile describing finite horizon unfolding of PacMan (ignoring food), find the probability to stay safe
+	"""
 	prism_program = stormpy.parse_prism_program(prismFile)
 	option = stormpy.core.BuilderOptions()
 	option.set_build_state_valuations()
@@ -29,7 +32,14 @@ def getValue(prismFile,quiet=False):
 	return(value)
 
 def getAllActionValues(layoutFile,depth,quiet):
-	# print(layoutFile)
+	"""!
+	This function returns a list of 4 values.
+	@params layoutFile text file descibing Pac-Man layout
+	@params depth horizon to unfold for model checking
+
+	@returns
+	A list l containing 4 floats. Let D = [East,West,North,South]. l[i] denotes the probability of staying safe for given depth by taking action D[i] and then playing optimally.
+	"""
 	prismFile = TEMP_DIR+os.sep+layoutFile.split(os.sep)[-1][:-4]+'_'+str(os.getpid())+'.nm'
 	height,width,numGhosts,layoutText,agentInfo = readFromFile(layoutFile)
 	valueList = []
@@ -46,6 +56,14 @@ def getAllActionValues(layoutFile,depth,quiet):
 	return(valueList)
 
 def getAllActionValuesArray(layoutFile,depth,quiet):
+	"""!
+	This function returns a list of 4 values.
+	@params layoutFile text file descibing Pac-Man layout
+	@params depth horizon to unfold for model checking
+
+	@returns X A tensor of 6 channels (without food) to represent initial state
+	@returns Y An array l of length 4. Let D = [East,West,North,South]. l[i] denotes the probability of staying safe for given depth by taking action D[i] and then playing optimally.
+	"""
 	# print(layoutFile)
 	prismFile = TEMP_DIR+os.sep+layoutFile.split(os.sep)[-1][:-4]+'_'+str(os.getpid())+'.nm'
 	height,width,numGhosts,layoutText,agentInfo = readFromFile(layoutFile)
