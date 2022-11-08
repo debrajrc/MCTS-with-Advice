@@ -10,6 +10,109 @@ from adviceMCTS.Examples.pacman.pacmanPrism import *
 from tensorflow.keras import models
 import json, joblib
 
+##
+# usage: \n
+# 		USAGE:      python3 playPacmanStorm.py <options>\n
+# \n
+# 		EXAMPLE #1:	python3 pacman/playPacmanStorm.py --mcts --ActionScoreThreshold 0.9 --ActionScoreThresholdRoot 0.9 --MCTSActionAdvice Progress --MCTSActionAdviceRoot Progress --MCTSConstant 1000 --MCTSPathAdviceSim NonLoss --MCTSStateScore DistanceOld --ModelActionScore pacman/models/safetyScore/actiondata_all_5_8.h5 --TransformerActionScore None --ModelProgress pacman/models/iterMCTSData10/actiondata_I3_CTrue_10.h5 --TransformerProgress None --ModelActionScoreRoot pacman/models/safetyScore/actiondata_all_5_8.h5 --TransformerActionScoreRoot None --ModelProgressRoot pacman/models/iterMCTSData10/actiondata_I3_CTrue_10.h5 --TransformerProgressRoot None --horizon 10 --layout pacman/layouts/halfClassic.lay --numMCTSIters 4 --numMCTSSims 2 --numTraces 1 --stateScoreWeight 0.5 --steps 701 --ignoreNonDecisionStates -vvvvv --replay --replayDelay 0.05\n
+# \n
+# 		EXAMPLE #2:	python3 pacman/playPacmanStorm.py --nn --nnModel pacman/models/newMCTSData10/actiondata_all_5_10.h5 --nnTransformer None -l pacman/layouts/halfClassic.lay --replay -s 2100 --replayDelay 0.05\n
+# 		\n
+#        [-h] [--mcts | --nn | --storm | --nnProgress | --debug] [-v]\n
+#        [-l LAYOUT] [-n TRACES] [-s STEPS] [--discount CONSTANT]\n
+#        [-iter ITERATIONS] [-sim SIMULATIONS] [-H HORIZON]\n
+#        [--ignoreNonDecisionStates] [-C CONSTANT] [--MCTSActionAdvice ADVICE]\n
+#        [--ModelActionScore MODEL] [--TransformerActionScore TRANSFORMER]\n
+#        [--ModelProgress MODEL] [--TransformerProgress TRANSFORMER]\n
+#        [--ActionScoreThreshold THRESHOLD] [--DepthActionScoreStorm DEPTH]\n
+#        [--MCTSActionAdviceRoot ADVICE] [--ModelActionScoreRoot MODEL]\n
+#        [--TransformerActionScoreRoot TRANSFORMER] [--ModelProgressRoot MODEL]\n
+#        [--TransformerProgressRoot TRANSFORMER]\n
+#        [--ActionScoreThresholdRoot THRESHOLD]\n
+#        [--DepthActionScoreStormRoot DEPTH] [--MCTSActionAdviceSim ADVICE]\n
+#        [--MCTSPathAdviceSim ADVICE] [--ModelActionScoreSim MODEL]\n
+#        [--TransformerActionScoreSim TRANSFORMER]\n
+#        [--ActionScoreThresSim THRESHOLD] [--MCTSStateScore SCORE]\n
+#        [--StateScoreModel MODEL] [--StateScoreModelExtra MODEL] [-a CONSTANT]\n
+#        [--nnModel MODEL] [--nnTransformer TRANSFORMER]\n
+#        [--nnThreshold THRESHOLD] [--nnModelSafety MODEL]\n
+#        [--nnTransformerSafety TRANSFORMER] [--nnModelProgress MODEL]\n
+#        [--nnTransformerProgress TRANSFORMER] [--nnThresholdProgress THRESHOLD]\n
+#        [--stormDepth DEPTH] [--stormThreshold THRESHOLD] [-qm] [-qt] [-qs]\n
+#        [-ps] [-psT] [-qi] [-r] [--replayDelay DELAY] [--configFile FILE]\n
+# \n
+# optional arguments:\n
+#   -h, --help            show this help message and exit\n
+#   --mcts                Uses mcts\n
+#   --nn                  Uses a neural network\n
+#   --storm               Uses storm\n
+#   --nnProgress          Uses two NN\n
+#   --debug               Uses two NN to debug\n
+#   -v, --verbose\n
+#   -l LAYOUT, -lay LAYOUT, --layout LAYOUT the LAYOUT\n
+#   -n TRACES, -nTr TRACES, --numTraces TRACES the number of TRACES to play (Default: 1)\n
+#   -s STEPS, -step STEPS, --steps STEPS\n
+#                         the number of STEPS to play in each trace(Default: 50)\n
+#   --discount CONSTANT   Discount in MDP (Default: 1.0)\n
+#   --configFile FILE     Config FILE\n
+# \n
+# MCTS specific arguments:\n
+#   -iter ITERATIONS, --numMCTSIters ITERATIONS the number of ITERATIONS in MCTS(Default: 50)\n
+#   -sim SIMULATIONS, --numMCTSSims SIMULATIONS the number of SIMULATIONS in each MCTS iterations(Default: 10)\n
+#   -H HORIZON, --horizon HORIZON HORIZON for MCTS (Default: 20)\n
+#   --ignoreNonDecisionStates If set, states with a single action are ignored for horizon purposes\n
+#   -C CONSTANT, --MCTSConstant CONSTANT MCTS CONSTANT (write in float; Default: math.sqrt(2)/2)\n
+#   --MCTSActionAdvice ADVICE MCTS Action ADVICE for selection(Default: Full)\n
+#   --ModelActionScore MODEL MODEL file for Action Score during selection\n
+#   --TransformerActionScore TRANSFORMER TRANSFORMER file for Action Score during selection\n
+#   --ModelProgress MODEL Neural network MODEL file for progress\n
+#   --TransformerProgress TRANSFORMER Neural network TRANSFORMER file for progress\n
+#   --ActionScoreThreshold THRESHOLD THRESHOLD for actions while using NN or Storm as advice during selection (Default: 0.9)\n
+#   --DepthActionScoreStorm DEPTH DEPTH for Action Score during selection using Storm\n
+#   --MCTSActionAdviceRoot ADVICE MCTS Action ADVICE for selection in the root node (Default: Full)\n
+#   --ModelActionScoreRoot MODEL MODEL file for Action Score during selection in the root node\n
+#   --TransformerActionScoreRoot TRANSFORMER MODEL file for Action Score during selection in the root node\n
+#   --ModelProgressRoot MODEL Neural network MODEL file for progress\n
+#   --TransformerProgressRoot TRANSFORMER Neural network TRANSFORMER file for progress\n
+#   --ActionScoreThresholdRoot THRESHOLD THRESHOLD for actions while using NN as advice during selection in the root node (Default: 0.9)\n
+#   --DepthActionScoreStormRoot DEPTH DEPTH for Action Score during selection using Storm in the root node\n
+#   --MCTSActionAdviceSim ADVICE MCTS Action ADVICE for simulation(Default: Full)\n
+#   --MCTSPathAdviceSim ADVICE MCTS Path ADVICE for simulation(Default: Full)\n
+#   --ModelActionScoreSim MODEL MODEL file for Action Score during simulation\n
+#   --TransformerActionScoreSim TRANSFORMER TRANSFORMER file for Action Score during simulation\n
+#   --ActionScoreThresSim THRESHOLD THRESHOLD for actions while using NN or Storm as advice during simulation (Default: 0.9)\n
+#   --MCTSStateScore SCORE MCTS State SCORE for simulation (Default: Zero)\n
+#   --StateScoreModel MODEL MODEL file for State Score\n
+#   --StateScoreModelExtra MODEL Extra information about MODEL file for State Score\n
+#   -a CONSTANT, --stateScoreWeight CONSTANT MCTS State Score weight (write in float; Default: 0.5\n
+# \n
+# NN specific arguments:\n
+#   --nnModel MODEL       Neural network MODEL file\n
+#   --nnTransformer TRANSFORMER Neural network TRANSFORMER file\n
+#   --nnThreshold THRESHOLD THRESHOLD for actions while using NN (Default: 0.9)\n
+# \n
+# NN progress specific arguments:\n
+#   --nnModelSafety MODEL Neural network MODEL file for safety\n
+#   --nnTransformerSafety TRANSFORMER Neural network TRANSFORMER file for safety\n
+#   --nnModelProgress MODEL Neural network MODEL file for progress\n
+#   --nnTransformerProgress TRANSFORMER Neural network TRANSFORMER file for progress\n
+#   --nnThresholdProgress THRESHOLD THRESHOLD for actions while using NN (Default: 0.9)\n
+# \n
+# Storm specific arguments:\n
+#   --stormDepth DEPTH    DEPTH for storm (Default: 3)\n
+#   --stormThreshold THRESHOLD THRESHOLD for actions while using Storm (Default: 0.9)\n
+# \n
+# Verbosity during MCTS:\n
+#   -qm, --quietMCTS      Does not print console outputs with doing MCTS\n
+#   -qt, --quietTrace     Does not print the trace\n
+#   -qs, --quietSim       Does not print the sims\n
+#   -ps, --printEachStep  Print each step of the sims\n
+#   -psT, --printEachStepTrace Print each step of the trace\n
+#   -qi, --quietInfostr   Does not print additional information related to actions\n
+# \n
+# Other options:\n
+#   -r, --replay          Replays the game\n
+#   --replayDelay DELAY   replay DELAY in seconds (Default: 0)\n
 def readCommand(argv):
 	usageStr =  """
 		USAGE:      python3 playPacmanStorm.py <options>
