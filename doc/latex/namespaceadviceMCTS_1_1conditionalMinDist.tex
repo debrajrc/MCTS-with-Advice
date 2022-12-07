@@ -1,0 +1,58 @@
+\hypertarget{namespaceadviceMCTS_1_1conditionalMinDist}{}\doxysection{advice\+M\+C\+T\+S.\+conditional\+Min\+Dist Namespace Reference}
+\label{namespaceadviceMCTS_1_1conditionalMinDist}\index{adviceMCTS.conditionalMinDist@{adviceMCTS.conditionalMinDist}}
+
+
+Distance-\/optimal strategy for reachability.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1conditionalMinDist_1_1ConditionalMinDistEngine}{Conditional\+Min\+Dist\+Engine}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1conditionalMinDist_a930977610ea3bee26edb3111a589b0cb}{investigate\+Model}} (model)
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1conditionalMinDist_aab7549e38080f85a323da67c4396736d}{get\+Dist\+Value}} (prism\+File, formula1, formula2)
+\begin{DoxyCompactList}\small\item\em Given a prism file and two formula, gives the conditional distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Distance-\/optimal strategy for reachability. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1conditionalMinDist_aab7549e38080f85a323da67c4396736d}\label{namespaceadviceMCTS_1_1conditionalMinDist_aab7549e38080f85a323da67c4396736d}} 
+\index{adviceMCTS.conditionalMinDist@{adviceMCTS.conditionalMinDist}!getDistValue@{getDistValue}}
+\index{getDistValue@{getDistValue}!adviceMCTS.conditionalMinDist@{adviceMCTS.conditionalMinDist}}
+\doxysubsubsection{\texorpdfstring{getDistValue()}{getDistValue()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+conditional\+Min\+Dist.\+get\+Dist\+Value (\begin{DoxyParamCaption}\item[{}]{prism\+File,  }\item[{}]{formula1,  }\item[{}]{formula2 }\end{DoxyParamCaption})}
+
+
+
+Given a prism file and two formula, gives the conditional distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prism\+File} & Location of the Prism file \\
+\hline
+{\em formula1} & formula with Pmax \\
+\hline
+{\em formula2} & formula with Pmin\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{prismFile = \textcolor{stringliteral}{"../examples/prism20081\_3.nm"}}
+\DoxyCodeLine{formula1 = \textcolor{stringliteral}{"Pmax=? [F win]"}}
+\DoxyCodeLine{formula2 = \textcolor{stringliteral}{"Tmin=? [F win]"}}
+\DoxyCodeLine{v = \mbox{\hyperlink{namespaceadviceMCTS_1_1conditionalMinDist_aab7549e38080f85a323da67c4396736d}{getDistValue}}(prismFile,formula1,formula2)}
+\DoxyCodeLine{print(v)}
+\end{DoxyCode}
+ \mbox{\Hypertarget{namespaceadviceMCTS_1_1conditionalMinDist_a930977610ea3bee26edb3111a589b0cb}\label{namespaceadviceMCTS_1_1conditionalMinDist_a930977610ea3bee26edb3111a589b0cb}} 
+\index{adviceMCTS.conditionalMinDist@{adviceMCTS.conditionalMinDist}!investigateModel@{investigateModel}}
+\index{investigateModel@{investigateModel}!adviceMCTS.conditionalMinDist@{adviceMCTS.conditionalMinDist}}
+\doxysubsubsection{\texorpdfstring{investigateModel()}{investigateModel()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+conditional\+Min\+Dist.\+investigate\+Model (\begin{DoxyParamCaption}\item[{}]{model }\end{DoxyParamCaption})}
+

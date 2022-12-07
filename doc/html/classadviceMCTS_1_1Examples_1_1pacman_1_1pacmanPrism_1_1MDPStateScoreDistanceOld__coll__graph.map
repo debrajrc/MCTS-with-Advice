@@ -1,0 +1,9 @@
+<map id="adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld" name="adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld">
+<area shape="rect" id="node1" title="Distance function that uses a linear combination of distance (exact distance in the graph) from ghost..." alt="" coords="150,169,410,211"/>
+<area shape="rect" id="node2" href="$classadviceMCTS_1_1simulationClasses_1_1MDPStateScoreInterface.html" title="A state score for a given agent." alt="" coords="173,80,387,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="96,5,211,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="235,5,325,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="350,5,445,32"/>
+<area shape="rect" id="node7" title=" " alt="" coords="469,5,627,32"/>
+</map>

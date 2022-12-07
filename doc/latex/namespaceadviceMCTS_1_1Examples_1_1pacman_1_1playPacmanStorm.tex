@@ -1,0 +1,272 @@
+\hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm}{}\doxysection{advice\+M\+C\+T\+S.\+Examples.\+pacman.\+play\+Pacman\+Storm Namespace Reference}
+\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm}\index{adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_adead6a2408d5969f1521929bac80deae}{read\+Command}} (argv)
+\begin{DoxyCompactList}\small\item\em usage\+: ~\newline
+ U\+S\+A\+GE\+: python3 \mbox{\hyperlink{playPacmanStorm_8py}{play\+Pacman\+Storm.\+py}} $<$options$>$~\newline
+ ~\newline
+ E\+X\+A\+M\+P\+LE \#1\+: python3 \mbox{\hyperlink{playPacmanStorm_8py}{pacman/play\+Pacman\+Storm.\+py}} --mcts --Action\+Score\+Threshold 0.\+9 --Action\+Score\+Threshold\+Root 0.\+9 --M\+C\+T\+S\+Action\+Advice Progress --M\+C\+T\+S\+Action\+Advice\+Root Progress --M\+C\+T\+S\+Constant 1000 --M\+C\+T\+S\+Path\+Advice\+Sim Non\+Loss --M\+C\+T\+S\+State\+Score Distance\+Old --Model\+Action\+Score pacman/models/safety\+Score/actiondata\+\_\+all\+\_\+5\+\_\+8.\+h5 --Transformer\+Action\+Score None --Model\+Progress pacman/models/iter\+M\+C\+T\+S\+Data10/actiondata\+\_\+\+I3\+\_\+\+C\+True\+\_\+10.\+h5 --Transformer\+Progress None --Model\+Action\+Score\+Root pacman/models/safety\+Score/actiondata\+\_\+all\+\_\+5\+\_\+8.\+h5 --Transformer\+Action\+Score\+Root None --Model\+Progress\+Root pacman/models/iter\+M\+C\+T\+S\+Data10/actiondata\+\_\+\+I3\+\_\+\+C\+True\+\_\+10.\+h5 --Transformer\+Progress\+Root None --horizon 10 --layout pacman/layouts/half\+Classic.\+lay --num\+M\+C\+T\+S\+Iters 4 --num\+M\+C\+T\+S\+Sims 2 --num\+Traces 1 --state\+Score\+Weight 0.\+5 --steps 701 --ignore\+Non\+Decision\+States -\/vvvvv --replay --replay\+Delay 0.\+05~\newline
+ ~\newline
+ E\+X\+A\+M\+P\+LE \#2\+: python3 \mbox{\hyperlink{playPacmanStorm_8py}{pacman/play\+Pacman\+Storm.\+py}} --nn --nn\+Model pacman/models/new\+M\+C\+T\+S\+Data10/actiondata\+\_\+all\+\_\+5\+\_\+10.\+h5 --nn\+Transformer None -\/l pacman/layouts/half\+Classic.\+lay --replay -\/s 2100 --replay\+Delay 0.\+05~\newline
+ ~\newline
+ \mbox{[}-\/h\mbox{]} \mbox{[}--mcts $\vert$ --nn $\vert$ --storm $\vert$ --nn\+Progress $\vert$ --debug\mbox{]} \mbox{[}-\/v\mbox{]}~\newline
+ \mbox{[}-\/l L\+A\+Y\+O\+UT\mbox{]} \mbox{[}-\/n T\+R\+A\+C\+ES\mbox{]} \mbox{[}-\/s S\+T\+E\+PS\mbox{]} \mbox{[}--discount C\+O\+N\+S\+T\+A\+NT\mbox{]}~\newline
+ \mbox{[}-\/iter I\+T\+E\+R\+A\+T\+I\+O\+NS\mbox{]} \mbox{[}-\/sim S\+I\+M\+U\+L\+A\+T\+I\+O\+NS\mbox{]} \mbox{[}-\/H H\+O\+R\+I\+Z\+ON\mbox{]}~\newline
+ \mbox{[}--ignore\+Non\+Decision\+States\mbox{]} \mbox{[}-\/C C\+O\+N\+S\+T\+A\+NT\mbox{]} \mbox{[}--M\+C\+T\+S\+Action\+Advice A\+D\+V\+I\+CE\mbox{]}~\newline
+ \mbox{[}--Model\+Action\+Score M\+O\+D\+EL\mbox{]} \mbox{[}--Transformer\+Action\+Score T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--Model\+Progress M\+O\+D\+EL\mbox{]} \mbox{[}--Transformer\+Progress T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--Action\+Score\+Threshold T\+H\+R\+E\+S\+H\+O\+LD\mbox{]} \mbox{[}--Depth\+Action\+Score\+Storm D\+E\+P\+TH\mbox{]}~\newline
+ \mbox{[}--M\+C\+T\+S\+Action\+Advice\+Root A\+D\+V\+I\+CE\mbox{]} \mbox{[}--Model\+Action\+Score\+Root M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--Transformer\+Action\+Score\+Root T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]} \mbox{[}--Model\+Progress\+Root M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--Transformer\+Progress\+Root T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--Action\+Score\+Threshold\+Root T\+H\+R\+E\+S\+H\+O\+LD\mbox{]}~\newline
+ \mbox{[}--Depth\+Action\+Score\+Storm\+Root D\+E\+P\+TH\mbox{]} \mbox{[}--M\+C\+T\+S\+Action\+Advice\+Sim A\+D\+V\+I\+CE\mbox{]}~\newline
+ \mbox{[}--M\+C\+T\+S\+Path\+Advice\+Sim A\+D\+V\+I\+CE\mbox{]} \mbox{[}--Model\+Action\+Score\+Sim M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--Transformer\+Action\+Score\+Sim T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--Action\+Score\+Thres\+Sim T\+H\+R\+E\+S\+H\+O\+LD\mbox{]} \mbox{[}--M\+C\+T\+S\+State\+Score S\+C\+O\+RE\mbox{]}~\newline
+ \mbox{[}--State\+Score\+Model M\+O\+D\+EL\mbox{]} \mbox{[}--State\+Score\+Model\+Extra M\+O\+D\+EL\mbox{]} \mbox{[}-\/a C\+O\+N\+S\+T\+A\+NT\mbox{]}~\newline
+ \mbox{[}--nn\+Model M\+O\+D\+EL\mbox{]} \mbox{[}--nn\+Transformer T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--nn\+Threshold T\+H\+R\+E\+S\+H\+O\+LD\mbox{]} \mbox{[}--nn\+Model\+Safety M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--nn\+Transformer\+Safety T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]} \mbox{[}--nn\+Model\+Progress M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--nn\+Transformer\+Progress T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]} \mbox{[}--nn\+Threshold\+Progress T\+H\+R\+E\+S\+H\+O\+LD\mbox{]}~\newline
+ \mbox{[}--storm\+Depth D\+E\+P\+TH\mbox{]} \mbox{[}--storm\+Threshold T\+H\+R\+E\+S\+H\+O\+LD\mbox{]} \mbox{[}-\/qm\mbox{]} \mbox{[}-\/qt\mbox{]} \mbox{[}-\/qs\mbox{]}~\newline
+ \mbox{[}-\/ps\mbox{]} \mbox{[}-\/psT\mbox{]} \mbox{[}-\/qi\mbox{]} \mbox{[}-\/r\mbox{]} \mbox{[}--replay\+Delay D\+E\+L\+AY\mbox{]} \mbox{[}--config\+File F\+I\+LE\mbox{]}~\newline
+ ~\newline
+ optional arguments\+:~\newline
+ -\/h, --help show this help message and exit~\newline
+ --mcts Uses mcts~\newline
+ --nn Uses a neural network~\newline
+ --storm Uses storm~\newline
+ --nn\+Progress Uses two NN~\newline
+ --debug Uses two NN to debug~\newline
+ -\/v, --verbose~\newline
+ -\/l L\+A\+Y\+O\+UT, -\/lay L\+A\+Y\+O\+UT, --layout L\+A\+Y\+O\+UT the L\+A\+Y\+O\+UT~\newline
+ -\/n T\+R\+A\+C\+ES, -\/n\+Tr T\+R\+A\+C\+ES, --num\+Traces T\+R\+A\+C\+ES the number of T\+R\+A\+C\+ES to play (Default\+: 1)~\newline
+ -\/s S\+T\+E\+PS, -\/step S\+T\+E\+PS, --steps S\+T\+E\+PS~\newline
+ the number of S\+T\+E\+PS to play in each trace(\+Default\+: 50)~\newline
+ --discount C\+O\+N\+S\+T\+A\+NT Discount in M\+DP (Default\+: 1.\+0)~\newline
+ --config\+File F\+I\+LE Config F\+I\+LE~\newline
+ ~\newline
+ M\+C\+TS specific arguments\+:~\newline
+ -\/iter I\+T\+E\+R\+A\+T\+I\+O\+NS, --num\+M\+C\+T\+S\+Iters I\+T\+E\+R\+A\+T\+I\+O\+NS the number of I\+T\+E\+R\+A\+T\+I\+O\+NS in M\+C\+T\+S(\+Default\+: 50)~\newline
+ -\/sim S\+I\+M\+U\+L\+A\+T\+I\+O\+NS, --num\+M\+C\+T\+S\+Sims S\+I\+M\+U\+L\+A\+T\+I\+O\+NS the number of S\+I\+M\+U\+L\+A\+T\+I\+O\+NS in each M\+C\+TS iterations(\+Default\+: 10)~\newline
+ -\/H H\+O\+R\+I\+Z\+ON, --horizon H\+O\+R\+I\+Z\+ON H\+O\+R\+I\+Z\+ON for M\+C\+TS (Default\+: 20)~\newline
+ --ignore\+Non\+Decision\+States If set, states with a single action are ignored for horizon purposes~\newline
+ -\/C C\+O\+N\+S\+T\+A\+NT, --M\+C\+T\+S\+Constant C\+O\+N\+S\+T\+A\+NT M\+C\+TS C\+O\+N\+S\+T\+A\+NT (write in float; Default\+: math.\+sqrt(2)/2)~\newline
+ --M\+C\+T\+S\+Action\+Advice A\+D\+V\+I\+CE M\+C\+TS Action A\+D\+V\+I\+CE for selection(\+Default\+: Full)~\newline
+ --Model\+Action\+Score M\+O\+D\+EL M\+O\+D\+EL file for Action Score during selection~\newline
+ --Transformer\+Action\+Score T\+R\+A\+N\+S\+F\+O\+R\+M\+ER T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for Action Score during selection~\newline
+ --Model\+Progress M\+O\+D\+EL Neural network M\+O\+D\+EL file for progress~\newline
+ --Transformer\+Progress T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for progress~\newline
+ --Action\+Score\+Threshold T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN or Storm as advice during selection (Default\+: 0.\+9)~\newline
+ --Depth\+Action\+Score\+Storm D\+E\+P\+TH D\+E\+P\+TH for Action Score during selection using Storm~\newline
+ --M\+C\+T\+S\+Action\+Advice\+Root A\+D\+V\+I\+CE M\+C\+TS Action A\+D\+V\+I\+CE for selection in the root node (Default\+: Full)~\newline
+ --Model\+Action\+Score\+Root M\+O\+D\+EL M\+O\+D\+EL file for Action Score during selection in the root node~\newline
+ --Transformer\+Action\+Score\+Root T\+R\+A\+N\+S\+F\+O\+R\+M\+ER M\+O\+D\+EL file for Action Score during selection in the root node~\newline
+ --Model\+Progress\+Root M\+O\+D\+EL Neural network M\+O\+D\+EL file for progress~\newline
+ --Transformer\+Progress\+Root T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for progress~\newline
+ --Action\+Score\+Threshold\+Root T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN as advice during selection in the root node (Default\+: 0.\+9)~\newline
+ --Depth\+Action\+Score\+Storm\+Root D\+E\+P\+TH D\+E\+P\+TH for Action Score during selection using Storm in the root node~\newline
+ --M\+C\+T\+S\+Action\+Advice\+Sim A\+D\+V\+I\+CE M\+C\+TS Action A\+D\+V\+I\+CE for simulation(\+Default\+: Full)~\newline
+ --M\+C\+T\+S\+Path\+Advice\+Sim A\+D\+V\+I\+CE M\+C\+TS Path A\+D\+V\+I\+CE for simulation(\+Default\+: Full)~\newline
+ --Model\+Action\+Score\+Sim M\+O\+D\+EL M\+O\+D\+EL file for Action Score during simulation~\newline
+ --Transformer\+Action\+Score\+Sim T\+R\+A\+N\+S\+F\+O\+R\+M\+ER T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for Action Score during simulation~\newline
+ --Action\+Score\+Thres\+Sim T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN or Storm as advice during simulation (Default\+: 0.\+9)~\newline
+ --M\+C\+T\+S\+State\+Score S\+C\+O\+RE M\+C\+TS State S\+C\+O\+RE for simulation (Default\+: Zero)~\newline
+ --State\+Score\+Model M\+O\+D\+EL M\+O\+D\+EL file for State Score~\newline
+ --State\+Score\+Model\+Extra M\+O\+D\+EL Extra information about M\+O\+D\+EL file for State Score~\newline
+ -\/a C\+O\+N\+S\+T\+A\+NT, --state\+Score\+Weight C\+O\+N\+S\+T\+A\+NT M\+C\+TS State Score weight (write in float; Default\+: 0.\+5~\newline
+ ~\newline
+ NN specific arguments\+:~\newline
+ --nn\+Model M\+O\+D\+EL Neural network M\+O\+D\+EL file~\newline
+ --nn\+Transformer T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file~\newline
+ --nn\+Threshold T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN (Default\+: 0.\+9)~\newline
+ ~\newline
+ NN progress specific arguments\+:~\newline
+ --nn\+Model\+Safety M\+O\+D\+EL Neural network M\+O\+D\+EL file for safety~\newline
+ --nn\+Transformer\+Safety T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for safety~\newline
+ --nn\+Model\+Progress M\+O\+D\+EL Neural network M\+O\+D\+EL file for progress~\newline
+ --nn\+Transformer\+Progress T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for progress~\newline
+ --nn\+Threshold\+Progress T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN (Default\+: 0.\+9)~\newline
+ ~\newline
+ Storm specific arguments\+:~\newline
+ --storm\+Depth D\+E\+P\+TH D\+E\+P\+TH for storm (Default\+: 3)~\newline
+ --storm\+Threshold T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using Storm (Default\+: 0.\+9)~\newline
+ ~\newline
+ Verbosity during M\+C\+TS\+:~\newline
+ -\/qm, --quiet\+M\+C\+TS Does not print console outputs with doing M\+C\+TS~\newline
+ -\/qt, --quiet\+Trace Does not print the trace~\newline
+ -\/qs, --quiet\+Sim Does not print the sims~\newline
+ -\/ps, --print\+Each\+Step Print each step of the sims~\newline
+ -\/psT, --print\+Each\+Step\+Trace Print each step of the trace~\newline
+ -\/qi, --quiet\+Infostr Does not print additional information related to actions~\newline
+ ~\newline
+ Other options\+:~\newline
+ -\/r, --replay Replays the game~\newline
+ --replay\+Delay D\+E\+L\+AY replay D\+E\+L\+AY in seconds (Default\+: 0)~\newline
+\end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_a599fc9dde4cf9deb2a62dd8d7c606244}{replay\+Results}} (engine\+List, layout\+File, delay)
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_aa85e92a7eaa3c15aaeff515c9a3d8940}{run\+Games\+With\+NN}} (state\+Str\+Function, prism\+File, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_aee0c725bcd417366f7d74afe92a11920}{run\+Games\+With\+N\+N\+Progress}} (state\+Str\+Function, prism\+File, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_aa079e4d7cbb277ce0481847372159553}{run\+Games\+With\+Storm}} (state\+Str\+Function, prism\+File, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_a2236c1807ee35c19e4f85aa2e6ef30b6}{run\+Games\+With\+Uniform\+Advice}} (state\+Str\+Function, prism\+File, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_afc51e3d1b07f77fc6225a260f0f2d103}{run\+Games\+From\+Command}} (command)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_adead6a2408d5969f1521929bac80deae}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_adead6a2408d5969f1521929bac80deae}} 
+\index{adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}!readCommand@{readCommand}}
+\index{readCommand@{readCommand}!adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}}
+\doxysubsubsection{\texorpdfstring{readCommand()}{readCommand()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+play\+Pacman\+Storm.\+read\+Command (\begin{DoxyParamCaption}\item[{}]{argv }\end{DoxyParamCaption})}
+
+
+
+usage\+: ~\newline
+ U\+S\+A\+GE\+: python3 \mbox{\hyperlink{playPacmanStorm_8py}{play\+Pacman\+Storm.\+py}} $<$options$>$~\newline
+ ~\newline
+ E\+X\+A\+M\+P\+LE \#1\+: python3 \mbox{\hyperlink{playPacmanStorm_8py}{pacman/play\+Pacman\+Storm.\+py}} --mcts --Action\+Score\+Threshold 0.\+9 --Action\+Score\+Threshold\+Root 0.\+9 --M\+C\+T\+S\+Action\+Advice Progress --M\+C\+T\+S\+Action\+Advice\+Root Progress --M\+C\+T\+S\+Constant 1000 --M\+C\+T\+S\+Path\+Advice\+Sim Non\+Loss --M\+C\+T\+S\+State\+Score Distance\+Old --Model\+Action\+Score pacman/models/safety\+Score/actiondata\+\_\+all\+\_\+5\+\_\+8.\+h5 --Transformer\+Action\+Score None --Model\+Progress pacman/models/iter\+M\+C\+T\+S\+Data10/actiondata\+\_\+\+I3\+\_\+\+C\+True\+\_\+10.\+h5 --Transformer\+Progress None --Model\+Action\+Score\+Root pacman/models/safety\+Score/actiondata\+\_\+all\+\_\+5\+\_\+8.\+h5 --Transformer\+Action\+Score\+Root None --Model\+Progress\+Root pacman/models/iter\+M\+C\+T\+S\+Data10/actiondata\+\_\+\+I3\+\_\+\+C\+True\+\_\+10.\+h5 --Transformer\+Progress\+Root None --horizon 10 --layout pacman/layouts/half\+Classic.\+lay --num\+M\+C\+T\+S\+Iters 4 --num\+M\+C\+T\+S\+Sims 2 --num\+Traces 1 --state\+Score\+Weight 0.\+5 --steps 701 --ignore\+Non\+Decision\+States -\/vvvvv --replay --replay\+Delay 0.\+05~\newline
+ ~\newline
+ E\+X\+A\+M\+P\+LE \#2\+: python3 \mbox{\hyperlink{playPacmanStorm_8py}{pacman/play\+Pacman\+Storm.\+py}} --nn --nn\+Model pacman/models/new\+M\+C\+T\+S\+Data10/actiondata\+\_\+all\+\_\+5\+\_\+10.\+h5 --nn\+Transformer None -\/l pacman/layouts/half\+Classic.\+lay --replay -\/s 2100 --replay\+Delay 0.\+05~\newline
+ ~\newline
+ \mbox{[}-\/h\mbox{]} \mbox{[}--mcts $\vert$ --nn $\vert$ --storm $\vert$ --nn\+Progress $\vert$ --debug\mbox{]} \mbox{[}-\/v\mbox{]}~\newline
+ \mbox{[}-\/l L\+A\+Y\+O\+UT\mbox{]} \mbox{[}-\/n T\+R\+A\+C\+ES\mbox{]} \mbox{[}-\/s S\+T\+E\+PS\mbox{]} \mbox{[}--discount C\+O\+N\+S\+T\+A\+NT\mbox{]}~\newline
+ \mbox{[}-\/iter I\+T\+E\+R\+A\+T\+I\+O\+NS\mbox{]} \mbox{[}-\/sim S\+I\+M\+U\+L\+A\+T\+I\+O\+NS\mbox{]} \mbox{[}-\/H H\+O\+R\+I\+Z\+ON\mbox{]}~\newline
+ \mbox{[}--ignore\+Non\+Decision\+States\mbox{]} \mbox{[}-\/C C\+O\+N\+S\+T\+A\+NT\mbox{]} \mbox{[}--M\+C\+T\+S\+Action\+Advice A\+D\+V\+I\+CE\mbox{]}~\newline
+ \mbox{[}--Model\+Action\+Score M\+O\+D\+EL\mbox{]} \mbox{[}--Transformer\+Action\+Score T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--Model\+Progress M\+O\+D\+EL\mbox{]} \mbox{[}--Transformer\+Progress T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--Action\+Score\+Threshold T\+H\+R\+E\+S\+H\+O\+LD\mbox{]} \mbox{[}--Depth\+Action\+Score\+Storm D\+E\+P\+TH\mbox{]}~\newline
+ \mbox{[}--M\+C\+T\+S\+Action\+Advice\+Root A\+D\+V\+I\+CE\mbox{]} \mbox{[}--Model\+Action\+Score\+Root M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--Transformer\+Action\+Score\+Root T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]} \mbox{[}--Model\+Progress\+Root M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--Transformer\+Progress\+Root T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--Action\+Score\+Threshold\+Root T\+H\+R\+E\+S\+H\+O\+LD\mbox{]}~\newline
+ \mbox{[}--Depth\+Action\+Score\+Storm\+Root D\+E\+P\+TH\mbox{]} \mbox{[}--M\+C\+T\+S\+Action\+Advice\+Sim A\+D\+V\+I\+CE\mbox{]}~\newline
+ \mbox{[}--M\+C\+T\+S\+Path\+Advice\+Sim A\+D\+V\+I\+CE\mbox{]} \mbox{[}--Model\+Action\+Score\+Sim M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--Transformer\+Action\+Score\+Sim T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--Action\+Score\+Thres\+Sim T\+H\+R\+E\+S\+H\+O\+LD\mbox{]} \mbox{[}--M\+C\+T\+S\+State\+Score S\+C\+O\+RE\mbox{]}~\newline
+ \mbox{[}--State\+Score\+Model M\+O\+D\+EL\mbox{]} \mbox{[}--State\+Score\+Model\+Extra M\+O\+D\+EL\mbox{]} \mbox{[}-\/a C\+O\+N\+S\+T\+A\+NT\mbox{]}~\newline
+ \mbox{[}--nn\+Model M\+O\+D\+EL\mbox{]} \mbox{[}--nn\+Transformer T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]}~\newline
+ \mbox{[}--nn\+Threshold T\+H\+R\+E\+S\+H\+O\+LD\mbox{]} \mbox{[}--nn\+Model\+Safety M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--nn\+Transformer\+Safety T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]} \mbox{[}--nn\+Model\+Progress M\+O\+D\+EL\mbox{]}~\newline
+ \mbox{[}--nn\+Transformer\+Progress T\+R\+A\+N\+S\+F\+O\+R\+M\+ER\mbox{]} \mbox{[}--nn\+Threshold\+Progress T\+H\+R\+E\+S\+H\+O\+LD\mbox{]}~\newline
+ \mbox{[}--storm\+Depth D\+E\+P\+TH\mbox{]} \mbox{[}--storm\+Threshold T\+H\+R\+E\+S\+H\+O\+LD\mbox{]} \mbox{[}-\/qm\mbox{]} \mbox{[}-\/qt\mbox{]} \mbox{[}-\/qs\mbox{]}~\newline
+ \mbox{[}-\/ps\mbox{]} \mbox{[}-\/psT\mbox{]} \mbox{[}-\/qi\mbox{]} \mbox{[}-\/r\mbox{]} \mbox{[}--replay\+Delay D\+E\+L\+AY\mbox{]} \mbox{[}--config\+File F\+I\+LE\mbox{]}~\newline
+ ~\newline
+ optional arguments\+:~\newline
+ -\/h, --help show this help message and exit~\newline
+ --mcts Uses mcts~\newline
+ --nn Uses a neural network~\newline
+ --storm Uses storm~\newline
+ --nn\+Progress Uses two NN~\newline
+ --debug Uses two NN to debug~\newline
+ -\/v, --verbose~\newline
+ -\/l L\+A\+Y\+O\+UT, -\/lay L\+A\+Y\+O\+UT, --layout L\+A\+Y\+O\+UT the L\+A\+Y\+O\+UT~\newline
+ -\/n T\+R\+A\+C\+ES, -\/n\+Tr T\+R\+A\+C\+ES, --num\+Traces T\+R\+A\+C\+ES the number of T\+R\+A\+C\+ES to play (Default\+: 1)~\newline
+ -\/s S\+T\+E\+PS, -\/step S\+T\+E\+PS, --steps S\+T\+E\+PS~\newline
+ the number of S\+T\+E\+PS to play in each trace(\+Default\+: 50)~\newline
+ --discount C\+O\+N\+S\+T\+A\+NT Discount in M\+DP (Default\+: 1.\+0)~\newline
+ --config\+File F\+I\+LE Config F\+I\+LE~\newline
+ ~\newline
+ M\+C\+TS specific arguments\+:~\newline
+ -\/iter I\+T\+E\+R\+A\+T\+I\+O\+NS, --num\+M\+C\+T\+S\+Iters I\+T\+E\+R\+A\+T\+I\+O\+NS the number of I\+T\+E\+R\+A\+T\+I\+O\+NS in M\+C\+T\+S(\+Default\+: 50)~\newline
+ -\/sim S\+I\+M\+U\+L\+A\+T\+I\+O\+NS, --num\+M\+C\+T\+S\+Sims S\+I\+M\+U\+L\+A\+T\+I\+O\+NS the number of S\+I\+M\+U\+L\+A\+T\+I\+O\+NS in each M\+C\+TS iterations(\+Default\+: 10)~\newline
+ -\/H H\+O\+R\+I\+Z\+ON, --horizon H\+O\+R\+I\+Z\+ON H\+O\+R\+I\+Z\+ON for M\+C\+TS (Default\+: 20)~\newline
+ --ignore\+Non\+Decision\+States If set, states with a single action are ignored for horizon purposes~\newline
+ -\/C C\+O\+N\+S\+T\+A\+NT, --M\+C\+T\+S\+Constant C\+O\+N\+S\+T\+A\+NT M\+C\+TS C\+O\+N\+S\+T\+A\+NT (write in float; Default\+: math.\+sqrt(2)/2)~\newline
+ --M\+C\+T\+S\+Action\+Advice A\+D\+V\+I\+CE M\+C\+TS Action A\+D\+V\+I\+CE for selection(\+Default\+: Full)~\newline
+ --Model\+Action\+Score M\+O\+D\+EL M\+O\+D\+EL file for Action Score during selection~\newline
+ --Transformer\+Action\+Score T\+R\+A\+N\+S\+F\+O\+R\+M\+ER T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for Action Score during selection~\newline
+ --Model\+Progress M\+O\+D\+EL Neural network M\+O\+D\+EL file for progress~\newline
+ --Transformer\+Progress T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for progress~\newline
+ --Action\+Score\+Threshold T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN or Storm as advice during selection (Default\+: 0.\+9)~\newline
+ --Depth\+Action\+Score\+Storm D\+E\+P\+TH D\+E\+P\+TH for Action Score during selection using Storm~\newline
+ --M\+C\+T\+S\+Action\+Advice\+Root A\+D\+V\+I\+CE M\+C\+TS Action A\+D\+V\+I\+CE for selection in the root node (Default\+: Full)~\newline
+ --Model\+Action\+Score\+Root M\+O\+D\+EL M\+O\+D\+EL file for Action Score during selection in the root node~\newline
+ --Transformer\+Action\+Score\+Root T\+R\+A\+N\+S\+F\+O\+R\+M\+ER M\+O\+D\+EL file for Action Score during selection in the root node~\newline
+ --Model\+Progress\+Root M\+O\+D\+EL Neural network M\+O\+D\+EL file for progress~\newline
+ --Transformer\+Progress\+Root T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for progress~\newline
+ --Action\+Score\+Threshold\+Root T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN as advice during selection in the root node (Default\+: 0.\+9)~\newline
+ --Depth\+Action\+Score\+Storm\+Root D\+E\+P\+TH D\+E\+P\+TH for Action Score during selection using Storm in the root node~\newline
+ --M\+C\+T\+S\+Action\+Advice\+Sim A\+D\+V\+I\+CE M\+C\+TS Action A\+D\+V\+I\+CE for simulation(\+Default\+: Full)~\newline
+ --M\+C\+T\+S\+Path\+Advice\+Sim A\+D\+V\+I\+CE M\+C\+TS Path A\+D\+V\+I\+CE for simulation(\+Default\+: Full)~\newline
+ --Model\+Action\+Score\+Sim M\+O\+D\+EL M\+O\+D\+EL file for Action Score during simulation~\newline
+ --Transformer\+Action\+Score\+Sim T\+R\+A\+N\+S\+F\+O\+R\+M\+ER T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for Action Score during simulation~\newline
+ --Action\+Score\+Thres\+Sim T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN or Storm as advice during simulation (Default\+: 0.\+9)~\newline
+ --M\+C\+T\+S\+State\+Score S\+C\+O\+RE M\+C\+TS State S\+C\+O\+RE for simulation (Default\+: Zero)~\newline
+ --State\+Score\+Model M\+O\+D\+EL M\+O\+D\+EL file for State Score~\newline
+ --State\+Score\+Model\+Extra M\+O\+D\+EL Extra information about M\+O\+D\+EL file for State Score~\newline
+ -\/a C\+O\+N\+S\+T\+A\+NT, --state\+Score\+Weight C\+O\+N\+S\+T\+A\+NT M\+C\+TS State Score weight (write in float; Default\+: 0.\+5~\newline
+ ~\newline
+ NN specific arguments\+:~\newline
+ --nn\+Model M\+O\+D\+EL Neural network M\+O\+D\+EL file~\newline
+ --nn\+Transformer T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file~\newline
+ --nn\+Threshold T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN (Default\+: 0.\+9)~\newline
+ ~\newline
+ NN progress specific arguments\+:~\newline
+ --nn\+Model\+Safety M\+O\+D\+EL Neural network M\+O\+D\+EL file for safety~\newline
+ --nn\+Transformer\+Safety T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for safety~\newline
+ --nn\+Model\+Progress M\+O\+D\+EL Neural network M\+O\+D\+EL file for progress~\newline
+ --nn\+Transformer\+Progress T\+R\+A\+N\+S\+F\+O\+R\+M\+ER Neural network T\+R\+A\+N\+S\+F\+O\+R\+M\+ER file for progress~\newline
+ --nn\+Threshold\+Progress T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using NN (Default\+: 0.\+9)~\newline
+ ~\newline
+ Storm specific arguments\+:~\newline
+ --storm\+Depth D\+E\+P\+TH D\+E\+P\+TH for storm (Default\+: 3)~\newline
+ --storm\+Threshold T\+H\+R\+E\+S\+H\+O\+LD T\+H\+R\+E\+S\+H\+O\+LD for actions while using Storm (Default\+: 0.\+9)~\newline
+ ~\newline
+ Verbosity during M\+C\+TS\+:~\newline
+ -\/qm, --quiet\+M\+C\+TS Does not print console outputs with doing M\+C\+TS~\newline
+ -\/qt, --quiet\+Trace Does not print the trace~\newline
+ -\/qs, --quiet\+Sim Does not print the sims~\newline
+ -\/ps, --print\+Each\+Step Print each step of the sims~\newline
+ -\/psT, --print\+Each\+Step\+Trace Print each step of the trace~\newline
+ -\/qi, --quiet\+Infostr Does not print additional information related to actions~\newline
+ ~\newline
+ Other options\+:~\newline
+ -\/r, --replay Replays the game~\newline
+ --replay\+Delay D\+E\+L\+AY replay D\+E\+L\+AY in seconds (Default\+: 0)~\newline
+
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_a599fc9dde4cf9deb2a62dd8d7c606244}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_a599fc9dde4cf9deb2a62dd8d7c606244}} 
+\index{adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}!replayResults@{replayResults}}
+\index{replayResults@{replayResults}!adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}}
+\doxysubsubsection{\texorpdfstring{replayResults()}{replayResults()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+play\+Pacman\+Storm.\+replay\+Results (\begin{DoxyParamCaption}\item[{}]{engine\+List,  }\item[{}]{layout\+File,  }\item[{}]{delay }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_afc51e3d1b07f77fc6225a260f0f2d103}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_afc51e3d1b07f77fc6225a260f0f2d103}} 
+\index{adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}!runGamesFromCommand@{runGamesFromCommand}}
+\index{runGamesFromCommand@{runGamesFromCommand}!adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}}
+\doxysubsubsection{\texorpdfstring{runGamesFromCommand()}{runGamesFromCommand()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+play\+Pacman\+Storm.\+run\+Games\+From\+Command (\begin{DoxyParamCaption}\item[{}]{command }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_aa85e92a7eaa3c15aaeff515c9a3d8940}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_aa85e92a7eaa3c15aaeff515c9a3d8940}} 
+\index{adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}!runGamesWithNN@{runGamesWithNN}}
+\index{runGamesWithNN@{runGamesWithNN}!adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}}
+\doxysubsubsection{\texorpdfstring{runGamesWithNN()}{runGamesWithNN()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+play\+Pacman\+Storm.\+run\+Games\+With\+NN (\begin{DoxyParamCaption}\item[{}]{state\+Str\+Function,  }\item[{}]{prism\+File,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_aee0c725bcd417366f7d74afe92a11920}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_aee0c725bcd417366f7d74afe92a11920}} 
+\index{adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}!runGamesWithNNProgress@{runGamesWithNNProgress}}
+\index{runGamesWithNNProgress@{runGamesWithNNProgress}!adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}}
+\doxysubsubsection{\texorpdfstring{runGamesWithNNProgress()}{runGamesWithNNProgress()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+play\+Pacman\+Storm.\+run\+Games\+With\+N\+N\+Progress (\begin{DoxyParamCaption}\item[{}]{state\+Str\+Function,  }\item[{}]{prism\+File,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_aa079e4d7cbb277ce0481847372159553}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_aa079e4d7cbb277ce0481847372159553}} 
+\index{adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}!runGamesWithStorm@{runGamesWithStorm}}
+\index{runGamesWithStorm@{runGamesWithStorm}!adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}}
+\doxysubsubsection{\texorpdfstring{runGamesWithStorm()}{runGamesWithStorm()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+play\+Pacman\+Storm.\+run\+Games\+With\+Storm (\begin{DoxyParamCaption}\item[{}]{state\+Str\+Function,  }\item[{}]{prism\+File,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_a2236c1807ee35c19e4f85aa2e6ef30b6}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1playPacmanStorm_a2236c1807ee35c19e4f85aa2e6ef30b6}} 
+\index{adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}!runGamesWithUniformAdvice@{runGamesWithUniformAdvice}}
+\index{runGamesWithUniformAdvice@{runGamesWithUniformAdvice}!adviceMCTS.Examples.pacman.playPacmanStorm@{adviceMCTS.Examples.pacman.playPacmanStorm}}
+\doxysubsubsection{\texorpdfstring{runGamesWithUniformAdvice()}{runGamesWithUniformAdvice()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+play\+Pacman\+Storm.\+run\+Games\+With\+Uniform\+Advice (\begin{DoxyParamCaption}\item[{}]{state\+Str\+Function,  }\item[{}]{prism\+File,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+

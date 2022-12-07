@@ -1,0 +1,10 @@
+<map id="adviceMCTS.Examples.pacman.pacmanPrism.MDPNNActionStrategy" name="adviceMCTS.Examples.pacman.pacmanPrism.MDPNNActionStrategy">
+<area shape="rect" id="node1" title="A strategy that chooses a legal action uniformly at random from actions from Neural network." alt="" coords="781,158,1041,199"/>
+<area shape="rect" id="node2" href="$classadviceMCTS_1_1simulationClasses_1_1MDPProbabilisticActionStrategyInterface.html" title="A probabilistic strategy that draws from a distribution over legal actions." alt="" coords="473,158,733,199"/>
+<area shape="rect" id="node3" href="$classadviceMCTS_1_1simulationClasses_1_1MDPActionStrategyInterface.html" title="A memoryless strategy for choosing actions." alt="" coords="212,158,425,199"/>
+<area shape="rect" id="node4" title=" " alt="" coords="51,165,118,192"/>
+<area shape="rect" id="node5" title=" " alt="" coords="27,107,142,133"/>
+<area shape="rect" id="node6" title=" " alt="" coords="39,5,130,32"/>
+<area shape="rect" id="node7" title=" " alt="" coords="37,224,132,251"/>
+<area shape="rect" id="node8" title=" " alt="" coords="5,325,164,352"/>
+</map>

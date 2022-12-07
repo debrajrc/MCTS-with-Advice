@@ -1,0 +1,13 @@
+<map id="adviceMCTS.simulationClasses.MDPPathAdviceInterface" name="adviceMCTS.simulationClasses.MDPPathAdviceInterface">
+<area shape="rect" id="node1" title="An advice that allows or rejects paths." alt="" coords="212,136,425,177"/>
+<area shape="rect" id="node7" href="$classadviceMCTS_1_1simulationClasses_1_1MDPAboveThresPathAdvice.html" title=" " alt="" coords="473,5,687,47"/>
+<area shape="rect" id="node8" href="$classadviceMCTS_1_1simulationClasses_1_1MDPEmptyPathAdvice.html" title=" " alt="" coords="473,71,687,112"/>
+<area shape="rect" id="node9" href="$classadviceMCTS_1_1simulationClasses_1_1MDPFullPathAdvice.html" title=" " alt="" coords="473,136,687,177"/>
+<area shape="rect" id="node10" href="$classadviceMCTS_1_1simulationClasses_1_1MDPNonTerminalPathAdvice.html" title=" " alt="" coords="473,201,687,243"/>
+<area shape="rect" id="node11" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPNonLossPathAdvice.html" title=" " alt="" coords="474,267,686,308"/>
+<area shape="rect" id="node2" title=" " alt="" coords="51,42,118,69"/>
+<area shape="rect" id="node3" title=" " alt="" coords="27,93,142,119"/>
+<area shape="rect" id="node4" title=" " alt="" coords="39,143,130,170"/>
+<area shape="rect" id="node5" title=" " alt="" coords="37,194,132,221"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,245,164,271"/>
+</map>

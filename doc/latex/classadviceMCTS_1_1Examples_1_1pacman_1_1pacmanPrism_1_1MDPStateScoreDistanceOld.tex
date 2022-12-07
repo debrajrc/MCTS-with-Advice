@@ -1,0 +1,105 @@
+\hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld}{}\doxysection{advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old Class Reference}
+\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld}\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}}
+
+
+Distance function that uses a linear combination of distance (exact distance in the graph) from ghosts and remaining foods.  
+
+
+
+
+Inheritance diagram for advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a9590a9551f923f7abdbbe485ed28a7be}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a47d973aa5cdb70f655d5c5fea3899f09}{X}}, \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a4fd35949035b29e07b41c634f478f3fd}{Y}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_a32c95821c90848ab51420b31ea96326b}{num\+Ghosts}}, \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a4a54d52bce79ca3be44da994676ea4e8}{walls}})
+\item 
+def \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_af72bbaf66be63f6d965533b7b3809ce9}{grid\+Distance}} (self, pos\+List)
+\item 
+def \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_aeafe8d98f40e08204aedec4ac8b17782}{get\+Score}} (self, execution\+Engine)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a47d973aa5cdb70f655d5c5fea3899f09}{X}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a4fd35949035b29e07b41c634f478f3fd}{Y}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_ab20cc5f2479db0e99a5bd80abb62c3b2}{numghosts}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a4a54d52bce79ca3be44da994676ea4e8}{walls}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Distance function that uses a linear combination of distance (exact distance in the graph) from ghosts and remaining foods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a9590a9551f923f7abdbbe485ed28a7be}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a9590a9551f923f7abdbbe485ed28a7be}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{num\+Ghosts,  }\item[{}]{walls }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_aeafe8d98f40e08204aedec4ac8b17782}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_aeafe8d98f40e08204aedec4ac8b17782}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}!getScore@{getScore}}
+\index{getScore@{getScore}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}}
+\doxysubsubsection{\texorpdfstring{getScore()}{getScore()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old.\+get\+Score (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{execution\+Engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_af72bbaf66be63f6d965533b7b3809ce9}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_af72bbaf66be63f6d965533b7b3809ce9}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}!gridDistance@{gridDistance}}
+\index{gridDistance@{gridDistance}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}}
+\doxysubsubsection{\texorpdfstring{gridDistance()}{gridDistance()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old.\+grid\+Distance (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pos\+List }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_ab20cc5f2479db0e99a5bd80abb62c3b2}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_ab20cc5f2479db0e99a5bd80abb62c3b2}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}!numghosts@{numghosts}}
+\index{numghosts@{numghosts}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}}
+\doxysubsubsection{\texorpdfstring{numghosts}{numghosts}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old.\+numghosts}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a4a54d52bce79ca3be44da994676ea4e8}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a4a54d52bce79ca3be44da994676ea4e8}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}!walls@{walls}}
+\index{walls@{walls}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}}
+\doxysubsubsection{\texorpdfstring{walls}{walls}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old.\+walls}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a47d973aa5cdb70f655d5c5fea3899f09}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a47d973aa5cdb70f655d5c5fea3899f09}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}!X@{X}}
+\index{X@{X}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old.\+X}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a4fd35949035b29e07b41c634f478f3fd}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreDistanceOld_a4fd35949035b29e07b41c634f478f3fd}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}!Y@{Y}}
+\index{Y@{Y}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreDistanceOld}}
+\doxysubsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Distance\+Old.\+Y}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/debraj/\+Tools/studious-\/potato/src/advice\+M\+C\+T\+S/\+Examples/pacman/\mbox{\hyperlink{pacmanPrism_8py}{pacman\+Prism.\+py}}\end{DoxyCompactItemize}

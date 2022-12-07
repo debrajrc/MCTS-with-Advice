@@ -1,0 +1,78 @@
+\hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman}{}\doxysection{advice\+M\+C\+T\+S.\+Examples.\+pacman.\+replay\+Pacman Namespace Reference}
+\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman}\index{adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aa4963b98874069f43d3886717da984fe}{replay}} (file\+Name, layout\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a274120efe9b8973f7b388974fcdaa89d}{C\+U\+R\+R\+E\+N\+T\+P\+WD}} = os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+string \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_af492820036d235c0a2cc089773d51280}{L\+A\+Y\+O\+U\+T\+S\+\_\+\+D\+IR}} = \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a274120efe9b8973f7b388974fcdaa89d}{C\+U\+R\+R\+E\+N\+T\+P\+WD}}+os.\+sep+\textquotesingle{}layouts\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a0f50a5720097598edcd0993f5d30b8a4}{layout\+File}} = \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_af492820036d235c0a2cc089773d51280}{L\+A\+Y\+O\+U\+T\+S\+\_\+\+D\+IR}}+os.\+sep+\char`\"{}half\+Classic.\+lay\char`\"{}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a13533c4b64164f0a69c5cb39b2b0e608}{engine}} = create\+Engine(\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a0f50a5720097598edcd0993f5d30b8a4}{layout\+File}})
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aeb36673d4ba5eee0863fb400389ed010}{prism\+File}} = engine.\+create\+Prism\+File()
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_ae6d110b41212f14637e18be00e561fad}{prism\+Simulator}} = prism\+To\+Simulator(\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aeb36673d4ba5eee0863fb400389ed010}{prism\+File}})
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a7ff0878f58016b0216c832db3b0588dc}{mdp\+Operations}} = \mbox{\hyperlink{classadviceMCTS_1_1stormMdpClasses_1_1MDPOperations}{M\+D\+P\+Operations}}(\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_ae6d110b41212f14637e18be00e561fad}{prism\+Simulator}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aeb36673d4ba5eee0863fb400389ed010}{prism\+File}}, str, 1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aa4963b98874069f43d3886717da984fe}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aa4963b98874069f43d3886717da984fe}} 
+\index{adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}!replay@{replay}}
+\index{replay@{replay}!adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}}
+\doxysubsubsection{\texorpdfstring{replay()}{replay()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+replay\+Pacman.\+replay (\begin{DoxyParamCaption}\item[{}]{file\+Name,  }\item[{}]{layout\+Name }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a274120efe9b8973f7b388974fcdaa89d}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a274120efe9b8973f7b388974fcdaa89d}} 
+\index{adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}!CURRENTPWD@{CURRENTPWD}}
+\index{CURRENTPWD@{CURRENTPWD}!adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}}
+\doxysubsubsection{\texorpdfstring{CURRENTPWD}{CURRENTPWD}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+replay\+Pacman.\+C\+U\+R\+R\+E\+N\+T\+P\+WD = os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a13533c4b64164f0a69c5cb39b2b0e608}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a13533c4b64164f0a69c5cb39b2b0e608}} 
+\index{adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}!engine@{engine}}
+\index{engine@{engine}!adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}}
+\doxysubsubsection{\texorpdfstring{engine}{engine}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+replay\+Pacman.\+engine = create\+Engine(\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a0f50a5720097598edcd0993f5d30b8a4}{layout\+File}})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a0f50a5720097598edcd0993f5d30b8a4}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a0f50a5720097598edcd0993f5d30b8a4}} 
+\index{adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}!layoutFile@{layoutFile}}
+\index{layoutFile@{layoutFile}!adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}}
+\doxysubsubsection{\texorpdfstring{layoutFile}{layoutFile}}
+{\footnotesize\ttfamily string advice\+M\+C\+T\+S.\+Examples.\+pacman.\+replay\+Pacman.\+layout\+File = \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_af492820036d235c0a2cc089773d51280}{L\+A\+Y\+O\+U\+T\+S\+\_\+\+D\+IR}}+os.\+sep+\char`\"{}half\+Classic.\+lay\char`\"{}}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_af492820036d235c0a2cc089773d51280}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_af492820036d235c0a2cc089773d51280}} 
+\index{adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}!LAYOUTS\_DIR@{LAYOUTS\_DIR}}
+\index{LAYOUTS\_DIR@{LAYOUTS\_DIR}!adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}}
+\doxysubsubsection{\texorpdfstring{LAYOUTS\_DIR}{LAYOUTS\_DIR}}
+{\footnotesize\ttfamily string advice\+M\+C\+T\+S.\+Examples.\+pacman.\+replay\+Pacman.\+L\+A\+Y\+O\+U\+T\+S\+\_\+\+D\+IR = \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a274120efe9b8973f7b388974fcdaa89d}{C\+U\+R\+R\+E\+N\+T\+P\+WD}}+os.\+sep+\textquotesingle{}layouts\textquotesingle{}}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a7ff0878f58016b0216c832db3b0588dc}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_a7ff0878f58016b0216c832db3b0588dc}} 
+\index{adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}!mdpOperations@{mdpOperations}}
+\index{mdpOperations@{mdpOperations}!adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}}
+\doxysubsubsection{\texorpdfstring{mdpOperations}{mdpOperations}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+replay\+Pacman.\+mdp\+Operations = \mbox{\hyperlink{classadviceMCTS_1_1stormMdpClasses_1_1MDPOperations}{M\+D\+P\+Operations}}(\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_ae6d110b41212f14637e18be00e561fad}{prism\+Simulator}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aeb36673d4ba5eee0863fb400389ed010}{prism\+File}}, str, 1)}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aeb36673d4ba5eee0863fb400389ed010}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aeb36673d4ba5eee0863fb400389ed010}} 
+\index{adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}!prismFile@{prismFile}}
+\index{prismFile@{prismFile}!adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}}
+\doxysubsubsection{\texorpdfstring{prismFile}{prismFile}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+replay\+Pacman.\+prism\+File = engine.\+create\+Prism\+File()}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_ae6d110b41212f14637e18be00e561fad}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_ae6d110b41212f14637e18be00e561fad}} 
+\index{adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}!prismSimulator@{prismSimulator}}
+\index{prismSimulator@{prismSimulator}!adviceMCTS.Examples.pacman.replayPacman@{adviceMCTS.Examples.pacman.replayPacman}}
+\doxysubsubsection{\texorpdfstring{prismSimulator}{prismSimulator}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+replay\+Pacman.\+prism\+Simulator = prism\+To\+Simulator(\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1replayPacman_aeb36673d4ba5eee0863fb400389ed010}{prism\+File}})}
+

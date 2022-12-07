@@ -1,0 +1,213 @@
+\hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution}{}\doxysection{advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution Class Reference}
+\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution}\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+
+
+Abstract class Contains a path in the M\+DP, its last state, total reward, if the path is terminal, the current discount factor at the last state All of these things can be derived from the path by executing the sequence of actions on the M\+DP.  
+
+
+
+
+Inheritance diagram for advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1mdpClasses_1_1MDPExecution__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1mdpClasses_1_1MDPExecution__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ab91a07c7855ea1c1417e9ab46d9e7a98}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPPath}{M\+D\+P\+Path}}\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_af500b4522a4d7d4b8c8ce46d5561bace}{T\+M\+D\+P\+Predicate}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a10c94fbbfc5d305b9eb5e63f16059264}{T\+M\+D\+P\+Action}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a086db9d1e60c2a7341edc48f75ff93b9}{T\+M\+D\+P\+Stochastic\+Action}}\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a3e1c515b0c8d39d26d0b39717eb0e130}{mdp\+Path}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a6036d37bf5073fe031e8c0a0c22a91dc}{mdp\+End\+State}}, float \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a001f8147d644ddeb97bcac71cee350b1}{mdp\+Path\+Reward}}, bool \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a1bff5f8a4f1191caf17b0908399e1764}{is\+Terminal}}, float \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a32885588cb99b292d12654984168c7ff}{discount\+Factor}})
+\item 
+\char`\"{}M\+D\+P\+Execution\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_af500b4522a4d7d4b8c8ce46d5561bace}{T\+M\+D\+P\+Predicate}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a10c94fbbfc5d305b9eb5e63f16059264}{T\+M\+D\+P\+Action}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a086db9d1e60c2a7341edc48f75ff93b9}{T\+M\+D\+P\+Stochastic\+Action}}\mbox{]}\char`\"{} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a4ff94718baf5ef70fd2a1dce3cac2114}{deep\+Copy}} (self)
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_afeabf42f59115095c9d98259f71b9a3c}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a411eafb6c064c85c7add2aa1c171834a}{\+\_\+\+\_\+getitem\+\_\+\+\_\+}} (self, item)
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a4877d841001ca78b463013e594d15a5c}{console\+Str}} (self)
+\item 
+\char`\"{}M\+D\+P\+Execution\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_af500b4522a4d7d4b8c8ce46d5561bace}{T\+M\+D\+P\+Predicate}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a10c94fbbfc5d305b9eb5e63f16059264}{T\+M\+D\+P\+Action}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a086db9d1e60c2a7341edc48f75ff93b9}{T\+M\+D\+P\+Stochastic\+Action}}\mbox{]}\char`\"{} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a3e0d8551886c0d3fd00cf59e0530ba84}{execution\+Copy}} (self)
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ae0b74cdbae01267b230f851d285faf4e}{last\+Console\+Str}} (self)
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ad130db9699b43a18041db1dbaf0b9cde}{suffix\+Console\+Str}} (self, int depth)
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a7940e62e8d8198191f6eb8f777e0177c}{state\+Console\+Str}} (self)
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ae7e134b1d8e75985ca2f28f75a86c591}{file\+Str}} (self)
+\item 
+int \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ad38bd5602c0370bad71755a0b9fd0c1f}{length}} (self)
+\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ad05842865efa33721243d489fcd39e0c}{append}} (self, \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPTransition}{M\+D\+P\+Transition}}\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a10c94fbbfc5d305b9eb5e63f16059264}{T\+M\+D\+P\+Action}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a086db9d1e60c2a7341edc48f75ff93b9}{T\+M\+D\+P\+Stochastic\+Action}}\mbox{]} mdp\+Transition, List\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_af500b4522a4d7d4b8c8ce46d5561bace}{T\+M\+D\+P\+Predicate}}\mbox{]} mdp\+Predicates)
+\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a0535cb741896a5c719616e8cec877cb5}{fast\+Reset}} (self, Tuple\mbox{[}int, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, float, bool, float\mbox{]} fast\+Reset\+Data)
+\item 
+Tuple\mbox{[}int, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, float, bool, float\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a6eabf82ed7b55d5ad0d45cc5d7b746ca}{get\+Fast\+Reset\+Data}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a3e1c515b0c8d39d26d0b39717eb0e130}{mdp\+Path}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a6036d37bf5073fe031e8c0a0c22a91dc}{mdp\+End\+State}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a001f8147d644ddeb97bcac71cee350b1}{mdp\+Path\+Reward}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a1bff5f8a4f1191caf17b0908399e1764}{is\+Terminal}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a32885588cb99b292d12654984168c7ff}{discount\+Factor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class Contains a path in the M\+DP, its last state, total reward, if the path is terminal, the current discount factor at the last state All of these things can be derived from the path by executing the sequence of actions on the M\+DP. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ab91a07c7855ea1c1417e9ab46d9e7a98}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ab91a07c7855ea1c1417e9ab46d9e7a98}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPPath}{M\+D\+P\+Path}}\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_af500b4522a4d7d4b8c8ce46d5561bace}{T\+M\+D\+P\+Predicate}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a10c94fbbfc5d305b9eb5e63f16059264}{T\+M\+D\+P\+Action}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a086db9d1e60c2a7341edc48f75ff93b9}{T\+M\+D\+P\+Stochastic\+Action}}\mbox{]}}]{mdp\+Path,  }\item[{\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}}]{mdp\+End\+State,  }\item[{float}]{mdp\+Path\+Reward,  }\item[{bool}]{is\+Terminal,  }\item[{float}]{discount\+Factor }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a411eafb6c064c85c7add2aa1c171834a}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a411eafb6c064c85c7add2aa1c171834a}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!\_\_getitem\_\_@{\_\_getitem\_\_}}
+\index{\_\_getitem\_\_@{\_\_getitem\_\_}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{\_\_getitem\_\_()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{item }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_afeabf42f59115095c9d98259f71b9a3c}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_afeabf42f59115095c9d98259f71b9a3c}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ad05842865efa33721243d489fcd39e0c}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ad05842865efa33721243d489fcd39e0c}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!append@{append}}
+\index{append@{append}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+append (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPTransition}{M\+D\+P\+Transition}}\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a10c94fbbfc5d305b9eb5e63f16059264}{T\+M\+D\+P\+Action}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a086db9d1e60c2a7341edc48f75ff93b9}{T\+M\+D\+P\+Stochastic\+Action}}\mbox{]}}]{mdp\+Transition,  }\item[{List\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_af500b4522a4d7d4b8c8ce46d5561bace}{T\+M\+D\+P\+Predicate}}\mbox{]}}]{mdp\+Predicates }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a4877d841001ca78b463013e594d15a5c}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a4877d841001ca78b463013e594d15a5c}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!consoleStr@{consoleStr}}
+\index{consoleStr@{consoleStr}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{consoleStr()}{consoleStr()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+console\+Str (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a4ff94718baf5ef70fd2a1dce3cac2114}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a4ff94718baf5ef70fd2a1dce3cac2114}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!deepCopy@{deepCopy}}
+\index{deepCopy@{deepCopy}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{deepCopy()}{deepCopy()}}
+{\footnotesize\ttfamily  \char`\"{}M\+D\+P\+Execution\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_af500b4522a4d7d4b8c8ce46d5561bace}{T\+M\+D\+P\+Predicate}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a10c94fbbfc5d305b9eb5e63f16059264}{T\+M\+D\+P\+Action}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a086db9d1e60c2a7341edc48f75ff93b9}{T\+M\+D\+P\+Stochastic\+Action}}\mbox{]}\char`\"{} advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+deep\+Copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a3e0d8551886c0d3fd00cf59e0530ba84}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a3e0d8551886c0d3fd00cf59e0530ba84}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!executionCopy@{executionCopy}}
+\index{executionCopy@{executionCopy}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{executionCopy()}{executionCopy()}}
+{\footnotesize\ttfamily  \char`\"{}M\+D\+P\+Execution\mbox{[}\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_af500b4522a4d7d4b8c8ce46d5561bace}{T\+M\+D\+P\+Predicate}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a10c94fbbfc5d305b9eb5e63f16059264}{T\+M\+D\+P\+Action}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a086db9d1e60c2a7341edc48f75ff93b9}{T\+M\+D\+P\+Stochastic\+Action}}\mbox{]}\char`\"{} advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+execution\+Copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}half-shallow copy of an MDPExecution instance. Can be used to run independent executions on the same MDP.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a0535cb741896a5c719616e8cec877cb5}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a0535cb741896a5c719616e8cec877cb5}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!fastReset@{fastReset}}
+\index{fastReset@{fastReset}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{fastReset()}{fastReset()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+fast\+Reset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Tuple\mbox{[}int, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, float, bool, float\mbox{]}}]{fast\+Reset\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ae7e134b1d8e75985ca2f28f75a86c591}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ae7e134b1d8e75985ca2f28f75a86c591}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!fileStr@{fileStr}}
+\index{fileStr@{fileStr}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{fileStr()}{fileStr()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+file\+Str (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a6eabf82ed7b55d5ad0d45cc5d7b746ca}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a6eabf82ed7b55d5ad0d45cc5d7b746ca}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!getFastResetData@{getFastResetData}}
+\index{getFastResetData@{getFastResetData}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{getFastResetData()}{getFastResetData()}}
+{\footnotesize\ttfamily  Tuple\mbox{[}int, \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{T\+M\+D\+P\+State}}, float, bool, float\mbox{]} advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+get\+Fast\+Reset\+Data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ae0b74cdbae01267b230f851d285faf4e}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ae0b74cdbae01267b230f851d285faf4e}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!lastConsoleStr@{lastConsoleStr}}
+\index{lastConsoleStr@{lastConsoleStr}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{lastConsoleStr()}{lastConsoleStr()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+last\+Console\+Str (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ad38bd5602c0370bad71755a0b9fd0c1f}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ad38bd5602c0370bad71755a0b9fd0c1f}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!length@{length}}
+\index{length@{length}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily  int advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+length (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a7940e62e8d8198191f6eb8f777e0177c}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a7940e62e8d8198191f6eb8f777e0177c}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!stateConsoleStr@{stateConsoleStr}}
+\index{stateConsoleStr@{stateConsoleStr}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{stateConsoleStr()}{stateConsoleStr()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+state\+Console\+Str (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ad130db9699b43a18041db1dbaf0b9cde}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_ad130db9699b43a18041db1dbaf0b9cde}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!suffixConsoleStr@{suffixConsoleStr}}
+\index{suffixConsoleStr@{suffixConsoleStr}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{suffixConsoleStr()}{suffixConsoleStr()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}{str}} advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+suffix\+Console\+Str (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a32885588cb99b292d12654984168c7ff}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a32885588cb99b292d12654984168c7ff}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!discountFactor@{discountFactor}}
+\index{discountFactor@{discountFactor}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{discountFactor}{discountFactor}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+discount\+Factor}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a1bff5f8a4f1191caf17b0908399e1764}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a1bff5f8a4f1191caf17b0908399e1764}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!isTerminal@{isTerminal}}
+\index{isTerminal@{isTerminal}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{isTerminal}{isTerminal}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+is\+Terminal}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a6036d37bf5073fe031e8c0a0c22a91dc}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a6036d37bf5073fe031e8c0a0c22a91dc}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!mdpEndState@{mdpEndState}}
+\index{mdpEndState@{mdpEndState}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{mdpEndState}{mdpEndState}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+mdp\+End\+State}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a3e1c515b0c8d39d26d0b39717eb0e130}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a3e1c515b0c8d39d26d0b39717eb0e130}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!mdpPath@{mdpPath}}
+\index{mdpPath@{mdpPath}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{mdpPath}{mdpPath}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+mdp\+Path}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a001f8147d644ddeb97bcac71cee350b1}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a001f8147d644ddeb97bcac71cee350b1}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!mdpPathReward@{mdpPathReward}}
+\index{mdpPathReward@{mdpPathReward}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{mdpPathReward}{mdpPathReward}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+mdp\+Path\+Reward}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}\label{classadviceMCTS_1_1mdpClasses_1_1MDPExecution_a2a20a3fc843cd4d7c46bc8fcc7b8aaf9}} 
+\index{adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}!str@{str}}
+\index{str@{str}!adviceMCTS.mdpClasses.MDPExecution@{adviceMCTS.mdpClasses.MDPExecution}}
+\doxysubsubsection{\texorpdfstring{str}{str}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution.\+str\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/debraj/\+Tools/studious-\/potato/src/advice\+M\+C\+T\+S/\mbox{\hyperlink{mdpClasses_8py}{mdp\+Classes.\+py}}\end{DoxyCompactItemize}

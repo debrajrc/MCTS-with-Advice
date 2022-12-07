@@ -1,0 +1,86 @@
+\hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen}{}\doxysection{advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Storm\+Value\+Gen Namespace Reference}
+\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen}\index{adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a1c7574990dbba261e45eb87aca78cfca}{get\+Value}} (prism\+File, \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_ada439814415fba084837e39264390c4f}{quiet}}=False)
+\begin{DoxyCompactList}\small\item\em From a prism\+File describing finite horizon unfolding of Pac\+Man (ignoring food), find the probability to stay safe. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a9fac610a7995e2d1264648b2d7c40f26}{get\+All\+Action\+Values}} (\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a0be573d40fdda760bd99f0d4b366f313}{layout\+File}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a33b83451feb1301956856d5f8b6b9bd8}{depth}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_ada439814415fba084837e39264390c4f}{quiet}})
+\begin{DoxyCompactList}\small\item\em This function returns a list of 4 values. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_abbedb92d834a92674755086dec129eb1}{get\+All\+Action\+Values\+Array}} (\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a0be573d40fdda760bd99f0d4b366f313}{layout\+File}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a33b83451feb1301956856d5f8b6b9bd8}{depth}}, \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_ada439814415fba084837e39264390c4f}{quiet}})
+\begin{DoxyCompactList}\small\item\em This function returns a list of 4 values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a0be573d40fdda760bd99f0d4b366f313}{layout\+File}} = sys.\+argv\mbox{[}1\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a33b83451feb1301956856d5f8b6b9bd8}{depth}} = int(sys.\+argv\mbox{[}2\mbox{]})
+\item 
+list \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_ada439814415fba084837e39264390c4f}{quiet}} = \mbox{[}False,True\mbox{]}\mbox{[}int(sys.\+argv\mbox{[}3\mbox{]})\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a9fac610a7995e2d1264648b2d7c40f26}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a9fac610a7995e2d1264648b2d7c40f26}} 
+\index{adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}!getAllActionValues@{getAllActionValues}}
+\index{getAllActionValues@{getAllActionValues}!adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}}
+\doxysubsubsection{\texorpdfstring{getAllActionValues()}{getAllActionValues()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Storm\+Value\+Gen.\+get\+All\+Action\+Values (\begin{DoxyParamCaption}\item[{}]{layout\+File,  }\item[{}]{depth,  }\item[{}]{quiet }\end{DoxyParamCaption})}
+
+
+
+This function returns a list of 4 values. 
+
+@params layout\+File text file descibing Pac-\/\+Man layout @params depth horizon to unfold for model checking
+
+\begin{DoxyReturn}{Returns}
+A list l containing 4 floats. Let D = \mbox{[}East,West,North,South\mbox{]}. l\mbox{[}i\mbox{]} denotes the probability of staying safe for given depth by taking action D\mbox{[}i\mbox{]} and then playing optimally. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_abbedb92d834a92674755086dec129eb1}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_abbedb92d834a92674755086dec129eb1}} 
+\index{adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}!getAllActionValuesArray@{getAllActionValuesArray}}
+\index{getAllActionValuesArray@{getAllActionValuesArray}!adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}}
+\doxysubsubsection{\texorpdfstring{getAllActionValuesArray()}{getAllActionValuesArray()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Storm\+Value\+Gen.\+get\+All\+Action\+Values\+Array (\begin{DoxyParamCaption}\item[{}]{layout\+File,  }\item[{}]{depth,  }\item[{}]{quiet }\end{DoxyParamCaption})}
+
+
+
+This function returns a list of 4 values. 
+
+@params layout\+File text file descibing Pac-\/\+Man layout @params depth horizon to unfold for model checking
+
+\begin{DoxyReturn}{Returns}
+X A tensor of 6 channels (without food) to represent initial state 
+
+Y An array l of length 4. Let D = \mbox{[}East,West,North,South\mbox{]}. l\mbox{[}i\mbox{]} denotes the probability of staying safe for given depth by taking action D\mbox{[}i\mbox{]} and then playing optimally. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a1c7574990dbba261e45eb87aca78cfca}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a1c7574990dbba261e45eb87aca78cfca}} 
+\index{adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}!getValue@{getValue}}
+\index{getValue@{getValue}!adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Storm\+Value\+Gen.\+get\+Value (\begin{DoxyParamCaption}\item[{}]{prism\+File,  }\item[{}]{quiet = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+From a prism\+File describing finite horizon unfolding of Pac\+Man (ignoring food), find the probability to stay safe. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a33b83451feb1301956856d5f8b6b9bd8}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a33b83451feb1301956856d5f8b6b9bd8}} 
+\index{adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}!depth@{depth}}
+\index{depth@{depth}!adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}}
+\doxysubsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Storm\+Value\+Gen.\+depth = int(sys.\+argv\mbox{[}2\mbox{]})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a0be573d40fdda760bd99f0d4b366f313}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_a0be573d40fdda760bd99f0d4b366f313}} 
+\index{adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}!layoutFile@{layoutFile}}
+\index{layoutFile@{layoutFile}!adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}}
+\doxysubsubsection{\texorpdfstring{layoutFile}{layoutFile}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Storm\+Value\+Gen.\+layout\+File = sys.\+argv\mbox{[}1\mbox{]}}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_ada439814415fba084837e39264390c4f}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanStormValueGen_ada439814415fba084837e39264390c4f}} 
+\index{adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}!quiet@{quiet}}
+\index{quiet@{quiet}!adviceMCTS.Examples.pacman.pacmanStormValueGen@{adviceMCTS.Examples.pacman.pacmanStormValueGen}}
+\doxysubsubsection{\texorpdfstring{quiet}{quiet}}
+{\footnotesize\ttfamily list advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Storm\+Value\+Gen.\+quiet = \mbox{[}False,True\mbox{]}\mbox{[}int(sys.\+argv\mbox{[}3\mbox{]})\mbox{]}}
+

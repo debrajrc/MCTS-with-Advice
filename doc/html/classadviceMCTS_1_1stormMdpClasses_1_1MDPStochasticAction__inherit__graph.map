@@ -1,0 +1,6 @@
+<map id="adviceMCTS.stormMdpClasses.MDPStochasticAction" name="adviceMCTS.stormMdpClasses.MDPStochasticAction">
+<area shape="rect" id="node1" title=" " alt="" coords="35,184,247,225"/>
+<area shape="rect" id="node4" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPOperations.html" title=" " alt="" coords="35,273,247,315"/>
+<area shape="rect" id="node2" href="$classadviceMCTS_1_1mdpClasses_1_1MDPStochasticActionInterface.html" title="Abstract class, Immutable class action for the environment in an MDP pacman: ghost1 moves east and gh..." alt="" coords="5,95,276,136"/>
+<area shape="rect" id="node3" href="$classadviceMCTS_1_1util_1_1MiniConsoleInterface.html" title=" " alt="" coords="43,5,238,47"/>
+</map>

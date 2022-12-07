@@ -1,0 +1,18 @@
+<map id="adviceMCTS.stormMdpClasses.MDPOperations" name="adviceMCTS.stormMdpClasses.MDPOperations">
+<area shape="rect" id="node1" title=" " alt="" coords="887,325,1099,366"/>
+<area shape="rect" id="node2" href="$classadviceMCTS_1_1mdpClasses_1_1MDPOperationsInterface.html" title="Abstract class atomic operations of the MDP: draw next state at random, available actions,..." alt="" coords="567,125,839,166"/>
+<area shape="rect" id="node3" title=" " alt="" coords="350,5,417,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="326,56,441,83"/>
+<area shape="rect" id="node5" title=" " alt="" coords="338,107,429,133"/>
+<area shape="rect" id="node6" title=" " alt="" coords="336,157,431,184"/>
+<area shape="rect" id="node7" title=" " alt="" coords="304,208,463,235"/>
+<area shape="rect" id="node8" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPPredicate.html" title=" " alt="" coords="597,259,809,301"/>
+<area shape="rect" id="node9" href="$classadviceMCTS_1_1mdpClasses_1_1MDPPredicateInterface.html" title="Abstract class Encodes predicates of the MDP Pacman: Win, Loss." alt="" coords="251,259,515,301"/>
+<area shape="rect" id="node10" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPState.html" title=" " alt="" coords="597,325,809,366"/>
+<area shape="rect" id="node11" href="$classadviceMCTS_1_1mdpClasses_1_1MDPStateInterface.html" title="Abstract class Encodes a state of an MDP Pacman: position of every agent, etc." alt="" coords="263,325,503,366"/>
+<area shape="rect" id="node12" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPAction.html" title=" " alt="" coords="597,390,809,431"/>
+<area shape="rect" id="node13" href="$classadviceMCTS_1_1mdpClasses_1_1MDPActionInterface.html" title="Abstract class, Immutable class action for controller in an MDP Pacman: pacman moves north,..." alt="" coords="261,390,505,431"/>
+<area shape="rect" id="node14" href="$classadviceMCTS_1_1util_1_1MiniConsoleInterface.html" title=" " alt="" coords="5,423,200,465"/>
+<area shape="rect" id="node16" href="$classadviceMCTS_1_1mdpClasses_1_1MDPStochasticActionInterface.html" title="Abstract class, Immutable class action for the environment in an MDP pacman: ghost1 moves east and gh..." alt="" coords="248,455,519,497"/>
+<area shape="rect" id="node15" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPStochasticAction.html" title=" " alt="" coords="597,455,809,497"/>
+</map>

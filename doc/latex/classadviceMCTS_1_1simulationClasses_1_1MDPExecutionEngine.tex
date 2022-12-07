@@ -1,0 +1,263 @@
+\hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine}{}\doxysection{advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine Class Reference}
+\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine}\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+
+
+Class used to run an execution on a given M\+DP.  
+
+
+
+
+Inheritance diagram for advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ae627dcd518f3584467794003d1fd9abe}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a3556deb57670bb337dff6a5ef88121f8}{T\+M\+D\+P\+Operations}} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a5460138ad6b1f64cc50a31ffe2d38a72}{mdp\+Operations}}, \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution}{M\+D\+P\+Execution}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ae3afbb7700f3013723c0f15dc651495e}{mdp\+Execution}}, int \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a593451f0f20200c47c88d04d67107060}{non\+Decision\+Length}})
+\item 
+\char`\"{}M\+D\+P\+Execution\+Engine\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}\char`\"{} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_abaed7a853e7062a297974997dec56df9}{deep\+Copy}} (self)
+\item 
+str \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a7e9ffb5c322caba652756849a604f2d5}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a397e1328da8bb2c1fd5aadcea38a400f}{\+\_\+\+\_\+getitem\+\_\+\+\_\+}} (self, item)
+\item 
+str \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_af1b8f2fd594728a0f1fec2906f4c2402}{console\+Str}} (self)
+\item 
+\char`\"{}M\+D\+P\+Execution\+Engine\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}\char`\"{} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_af3939430f937d254bad4880dbab1ca50}{execution\+Copy}} (self)
+\begin{DoxyCompactList}\small\item\em half-\/shallow copy of an \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine}{M\+D\+P\+Execution\+Engine}} instance. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a4e8f1564de49415d8e1fe30005aa3104}{append}} (self, \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPTransition}{M\+D\+P\+Transition}}\mbox{[}T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} mdp\+Transition, bool non\+Decision\+Action)
+\item 
+List\mbox{[}T\+M\+D\+P\+Predicate\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a4cc7effda5fb431d13f1a827d16a3cb5}{get\+All\+Predicates}} (self)
+\item 
+List\mbox{[}List\mbox{[}T\+M\+D\+P\+Predicate\mbox{]}\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a8792f75e6cb1551e500135e7cfc211da}{get\+Predicates\+Sequence}} (self)
+\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ac3a58e169527b86becb64facb4f16df5}{append\+Path}} (self, \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPPath}{M\+D\+P\+Path}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a345d7495eaef6b103c406ff4c21773ee}{mdp\+Path}})
+\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_afd60d602523e8913061c5d03e2820d2e}{fast\+Reset}} (self, Tuple\mbox{[}int, T\+M\+D\+P\+State, float, bool, float\mbox{]} fast\+Reset\+Data)
+\item 
+Tuple\mbox{[}int, T\+M\+D\+P\+State, float, bool, float\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a7ccfe241b613c4f5a7abdf5c337f929c}{get\+Fast\+Reset\+Data}} (self)
+\item 
+str \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_add8a70c3c95a11b5f90b2880a1ea1dd2}{last\+Console\+Str}} (self)
+\item 
+str \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a21a18c99c2335d1eb31f8608f7cabdc3}{suffix\+Console\+Str}} (self, int depth)
+\item 
+str \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a087974274a52652c666de0a52ff49688}{state\+Console\+Str}} (self)
+\item 
+int \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a87fd6487507a4d1b1f3f6df898198deb}{length}} (self, ignore\+Non\+Decision\+States)
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPPath}{M\+D\+P\+Path}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a345d7495eaef6b103c406ff4c21773ee}{mdp\+Path}} (self)
+\item 
+T\+M\+D\+P\+State \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a7af2d908f9685cdad6be93c984886280}{mdp\+End\+State}} (self)
+\item 
+float \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a88db324982dcb95fae7459aa5d82137d}{mdp\+Path\+Reward}} (self)
+\item 
+List\mbox{[}T\+M\+D\+P\+Predicate\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a60ac7963a732a0c2f0505b394ae7fb00}{result}} (self)
+\item 
+bool \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a88530644ff1be075e1f8758bd9d8a7a6}{is\+Terminal}} (self)
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPTransition}{M\+D\+P\+Transition}}\mbox{[}T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a54a0b3e91ee39775cd16f7318bdf814e}{draw\+Transition}} (self, T\+M\+D\+P\+Action mdp\+Action, bool quiet\+Info\+Str)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a5460138ad6b1f64cc50a31ffe2d38a72}{mdp\+Operations}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ae3afbb7700f3013723c0f15dc651495e}{mdp\+Execution}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a593451f0f20200c47c88d04d67107060}{non\+Decision\+Length}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a3556deb57670bb337dff6a5ef88121f8}{T\+M\+D\+P\+Operations}} = Type\+Var(\char`\"{}T\+M\+D\+P\+Operations\char`\"{},bound=\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPOperationsInterface}{M\+D\+P\+Operations\+Interface}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class used to run an execution on a given M\+DP. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ae627dcd518f3584467794003d1fd9abe}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ae627dcd518f3584467794003d1fd9abe}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a3556deb57670bb337dff6a5ef88121f8}{T\+M\+D\+P\+Operations}}}]{mdp\+Operations,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution}{M\+D\+P\+Execution}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}}]{mdp\+Execution,  }\item[{int}]{non\+Decision\+Length }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a397e1328da8bb2c1fd5aadcea38a400f}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a397e1328da8bb2c1fd5aadcea38a400f}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!\_\_getitem\_\_@{\_\_getitem\_\_}}
+\index{\_\_getitem\_\_@{\_\_getitem\_\_}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{\_\_getitem\_\_()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{item }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a7e9ffb5c322caba652756849a604f2d5}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a7e9ffb5c322caba652756849a604f2d5}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily  str advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a4e8f1564de49415d8e1fe30005aa3104}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a4e8f1564de49415d8e1fe30005aa3104}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!append@{append}}
+\index{append@{append}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+append (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPTransition}{M\+D\+P\+Transition}}\mbox{[}T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}}]{mdp\+Transition,  }\item[{bool}]{non\+Decision\+Action }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ac3a58e169527b86becb64facb4f16df5}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ac3a58e169527b86becb64facb4f16df5}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!appendPath@{appendPath}}
+\index{appendPath@{appendPath}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{appendPath()}{appendPath()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+append\+Path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPPath}{M\+D\+P\+Path}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}}]{mdp\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_af1b8f2fd594728a0f1fec2906f4c2402}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_af1b8f2fd594728a0f1fec2906f4c2402}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!consoleStr@{consoleStr}}
+\index{consoleStr@{consoleStr}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{consoleStr()}{consoleStr()}}
+{\footnotesize\ttfamily  str advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+console\+Str (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_abaed7a853e7062a297974997dec56df9}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_abaed7a853e7062a297974997dec56df9}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!deepCopy@{deepCopy}}
+\index{deepCopy@{deepCopy}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{deepCopy()}{deepCopy()}}
+{\footnotesize\ttfamily  \char`\"{}M\+D\+P\+Execution\+Engine\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}\char`\"{} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+deep\+Copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a54a0b3e91ee39775cd16f7318bdf814e}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a54a0b3e91ee39775cd16f7318bdf814e}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!drawTransition@{drawTransition}}
+\index{drawTransition@{drawTransition}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{drawTransition()}{drawTransition()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPTransition}{M\+D\+P\+Transition}}\mbox{[}T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+draw\+Transition (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{T\+M\+D\+P\+Action}]{mdp\+Action,  }\item[{bool}]{quiet\+Info\+Str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_af3939430f937d254bad4880dbab1ca50}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_af3939430f937d254bad4880dbab1ca50}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!executionCopy@{executionCopy}}
+\index{executionCopy@{executionCopy}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{executionCopy()}{executionCopy()}}
+{\footnotesize\ttfamily  \char`\"{}M\+D\+P\+Execution\+Engine\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}\char`\"{} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+execution\+Copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+half-\/shallow copy of an \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine}{M\+D\+P\+Execution\+Engine}} instance. 
+
+Can be used to run independent executions on the same M\+DP. \mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_afd60d602523e8913061c5d03e2820d2e}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_afd60d602523e8913061c5d03e2820d2e}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!fastReset@{fastReset}}
+\index{fastReset@{fastReset}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{fastReset()}{fastReset()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+fast\+Reset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Tuple\mbox{[}int, T\+M\+D\+P\+State, float, bool, float\mbox{]}}]{fast\+Reset\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a4cc7effda5fb431d13f1a827d16a3cb5}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a4cc7effda5fb431d13f1a827d16a3cb5}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!getAllPredicates@{getAllPredicates}}
+\index{getAllPredicates@{getAllPredicates}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{getAllPredicates()}{getAllPredicates()}}
+{\footnotesize\ttfamily  List\mbox{[}T\+M\+D\+P\+Predicate\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+get\+All\+Predicates (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a7ccfe241b613c4f5a7abdf5c337f929c}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a7ccfe241b613c4f5a7abdf5c337f929c}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!getFastResetData@{getFastResetData}}
+\index{getFastResetData@{getFastResetData}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{getFastResetData()}{getFastResetData()}}
+{\footnotesize\ttfamily  Tuple\mbox{[}int, T\+M\+D\+P\+State, float, bool, float\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+get\+Fast\+Reset\+Data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a8792f75e6cb1551e500135e7cfc211da}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a8792f75e6cb1551e500135e7cfc211da}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!getPredicatesSequence@{getPredicatesSequence}}
+\index{getPredicatesSequence@{getPredicatesSequence}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{getPredicatesSequence()}{getPredicatesSequence()}}
+{\footnotesize\ttfamily  List\mbox{[}List\mbox{[}T\+M\+D\+P\+Predicate\mbox{]}\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+get\+Predicates\+Sequence (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a88530644ff1be075e1f8758bd9d8a7a6}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a88530644ff1be075e1f8758bd9d8a7a6}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!isTerminal@{isTerminal}}
+\index{isTerminal@{isTerminal}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{isTerminal()}{isTerminal()}}
+{\footnotesize\ttfamily  bool advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+is\+Terminal (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_add8a70c3c95a11b5f90b2880a1ea1dd2}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_add8a70c3c95a11b5f90b2880a1ea1dd2}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!lastConsoleStr@{lastConsoleStr}}
+\index{lastConsoleStr@{lastConsoleStr}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{lastConsoleStr()}{lastConsoleStr()}}
+{\footnotesize\ttfamily  str advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+last\+Console\+Str (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a87fd6487507a4d1b1f3f6df898198deb}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a87fd6487507a4d1b1f3f6df898198deb}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!length@{length}}
+\index{length@{length}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily  int advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+length (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ignore\+Non\+Decision\+States }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a7af2d908f9685cdad6be93c984886280}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a7af2d908f9685cdad6be93c984886280}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!mdpEndState@{mdpEndState}}
+\index{mdpEndState@{mdpEndState}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{mdpEndState()}{mdpEndState()}}
+{\footnotesize\ttfamily  T\+M\+D\+P\+State advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+mdp\+End\+State (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a345d7495eaef6b103c406ff4c21773ee}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a345d7495eaef6b103c406ff4c21773ee}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!mdpPath@{mdpPath}}
+\index{mdpPath@{mdpPath}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{mdpPath()}{mdpPath()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPPath}{M\+D\+P\+Path}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+mdp\+Path (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a88db324982dcb95fae7459aa5d82137d}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a88db324982dcb95fae7459aa5d82137d}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!mdpPathReward@{mdpPathReward}}
+\index{mdpPathReward@{mdpPathReward}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{mdpPathReward()}{mdpPathReward()}}
+{\footnotesize\ttfamily  float advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+mdp\+Path\+Reward (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a60ac7963a732a0c2f0505b394ae7fb00}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a60ac7963a732a0c2f0505b394ae7fb00}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!result@{result}}
+\index{result@{result}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{result()}{result()}}
+{\footnotesize\ttfamily  List\mbox{[}T\+M\+D\+P\+Predicate\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+result (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a087974274a52652c666de0a52ff49688}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a087974274a52652c666de0a52ff49688}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!stateConsoleStr@{stateConsoleStr}}
+\index{stateConsoleStr@{stateConsoleStr}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{stateConsoleStr()}{stateConsoleStr()}}
+{\footnotesize\ttfamily  str advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+state\+Console\+Str (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a21a18c99c2335d1eb31f8608f7cabdc3}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a21a18c99c2335d1eb31f8608f7cabdc3}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!suffixConsoleStr@{suffixConsoleStr}}
+\index{suffixConsoleStr@{suffixConsoleStr}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{suffixConsoleStr()}{suffixConsoleStr()}}
+{\footnotesize\ttfamily  str advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+suffix\+Console\+Str (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ae3afbb7700f3013723c0f15dc651495e}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_ae3afbb7700f3013723c0f15dc651495e}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!mdpExecution@{mdpExecution}}
+\index{mdpExecution@{mdpExecution}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{mdpExecution}{mdpExecution}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+mdp\+Execution}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a5460138ad6b1f64cc50a31ffe2d38a72}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a5460138ad6b1f64cc50a31ffe2d38a72}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!mdpOperations@{mdpOperations}}
+\index{mdpOperations@{mdpOperations}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{mdpOperations}{mdpOperations}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+mdp\+Operations}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a593451f0f20200c47c88d04d67107060}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a593451f0f20200c47c88d04d67107060}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!nonDecisionLength@{nonDecisionLength}}
+\index{nonDecisionLength@{nonDecisionLength}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{nonDecisionLength}{nonDecisionLength}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+non\+Decision\+Length}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a3556deb57670bb337dff6a5ef88121f8}\label{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine_a3556deb57670bb337dff6a5ef88121f8}} 
+\index{adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}!TMDPOperations@{TMDPOperations}}
+\index{TMDPOperations@{TMDPOperations}!adviceMCTS.simulationClasses.MDPExecutionEngine@{adviceMCTS.simulationClasses.MDPExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{TMDPOperations}{TMDPOperations}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Execution\+Engine.\+T\+M\+D\+P\+Operations = Type\+Var(\char`\"{}T\+M\+D\+P\+Operations\char`\"{},bound=\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPOperationsInterface}{M\+D\+P\+Operations\+Interface}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/debraj/\+Tools/studious-\/potato/src/advice\+M\+C\+T\+S/\mbox{\hyperlink{simulationClasses_8py}{simulation\+Classes.\+py}}\end{DoxyCompactItemize}

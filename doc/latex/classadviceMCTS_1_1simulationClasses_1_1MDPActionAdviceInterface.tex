@@ -1,0 +1,108 @@
+\hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface}{}\doxysection{advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Advice\+Interface Class Reference}
+\label{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface}\index{adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}}
+
+
+An advice (nondeterministic strategy) for choosing actions.  
+
+
+
+
+Inheritance diagram for advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Advice\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Advice\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_aea384f1d26c0c1aee7789c49f2bfa557}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_a6682f8daf5916247d9e096c5c892c22c}{T\+M\+D\+P\+Action\+Advice}} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_af7de18ef24ecb03ff13a2bd137117518}{deep\+Copy}} (\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_a6682f8daf5916247d9e096c5c892c22c}{T\+M\+D\+P\+Action\+Advice}} self)
+\item 
+Tuple\mbox{[}List\mbox{[}T\+M\+D\+P\+Action\mbox{]}, List\mbox{[}T\+M\+D\+P\+Action\mbox{]}\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_ad5a18be095593b80d6a2c8bf521a5bbe}{get\+M\+D\+P\+Action\+Advice}} (self, T\+M\+D\+P\+State mdp\+State, \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acbc7af5992633a795762324ccb653027}{T\+M\+D\+P\+Operations}} mdp\+Operations, bool quiet\+Info\+Str)
+\begin{DoxyCompactList}\small\item\em The strategy will receive an M\+D\+P\+Operations instance and must return a set of legal M\+D\+P\+Actions. \end{DoxyCompactList}\item 
+Tuple\mbox{[}List\mbox{[}T\+M\+D\+P\+Action\mbox{]}, List\mbox{[}T\+M\+D\+P\+Action\mbox{]}\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acb6253b64b071db7071f57955fc7bfcc}{get\+M\+D\+P\+Action\+Advice\+In\+Subset}} (self, List\mbox{[}T\+M\+D\+P\+Action\mbox{]} mdp\+Actions, T\+M\+D\+P\+State mdp\+State, \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acbc7af5992633a795762324ccb653027}{T\+M\+D\+P\+Operations}} mdp\+Operations, bool quiet\+Info\+Str)
+\begin{DoxyCompactList}\small\item\em The strategy will receive an M\+D\+P\+Operations instance and must return a set of legal M\+D\+P\+Actions from a subset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acbc7af5992633a795762324ccb653027}{T\+M\+D\+P\+Operations}} = Type\+Var(\char`\"{}T\+M\+D\+P\+Operations\char`\"{},bound=\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPOperationsInterface}{M\+D\+P\+Operations\+Interface}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]})
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_a6682f8daf5916247d9e096c5c892c22c}{T\+M\+D\+P\+Action\+Advice}} = Type\+Var(\char`\"{}T\+M\+D\+P\+Action\+Advice\char`\"{},bound=\char`\"{}M\+D\+P\+Action\+Advice\+Interface\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An advice (nondeterministic strategy) for choosing actions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_aea384f1d26c0c1aee7789c49f2bfa557}\label{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_aea384f1d26c0c1aee7789c49f2bfa557}} 
+\index{adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Advice\+Interface.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_af7de18ef24ecb03ff13a2bd137117518}\label{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_af7de18ef24ecb03ff13a2bd137117518}} 
+\index{adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}!deepCopy@{deepCopy}}
+\index{deepCopy@{deepCopy}!adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}}
+\doxysubsubsection{\texorpdfstring{deepCopy()}{deepCopy()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_a6682f8daf5916247d9e096c5c892c22c}{T\+M\+D\+P\+Action\+Advice}} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Advice\+Interface.\+deep\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_a6682f8daf5916247d9e096c5c892c22c}{T\+M\+D\+P\+Action\+Advice}}}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_ad5a18be095593b80d6a2c8bf521a5bbe}\label{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_ad5a18be095593b80d6a2c8bf521a5bbe}} 
+\index{adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}!getMDPActionAdvice@{getMDPActionAdvice}}
+\index{getMDPActionAdvice@{getMDPActionAdvice}!adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}}
+\doxysubsubsection{\texorpdfstring{getMDPActionAdvice()}{getMDPActionAdvice()}}
+{\footnotesize\ttfamily  Tuple\mbox{[}List\mbox{[}T\+M\+D\+P\+Action\mbox{]},List\mbox{[}T\+M\+D\+P\+Action\mbox{]}\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Advice\+Interface.\+get\+M\+D\+P\+Action\+Advice (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{T\+M\+D\+P\+State}]{mdp\+State,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acbc7af5992633a795762324ccb653027}{T\+M\+D\+P\+Operations}}}]{mdp\+Operations,  }\item[{bool}]{quiet\+Info\+Str }\end{DoxyParamCaption})}
+
+
+
+The strategy will receive an M\+D\+P\+Operations instance and must return a set of legal M\+D\+P\+Actions. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPFullActionAdvice_aff71d50b27d71b00c8848f2dca3b0146}{advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Full\+Action\+Advice}}.
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acb6253b64b071db7071f57955fc7bfcc}\label{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acb6253b64b071db7071f57955fc7bfcc}} 
+\index{adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}!getMDPActionAdviceInSubset@{getMDPActionAdviceInSubset}}
+\index{getMDPActionAdviceInSubset@{getMDPActionAdviceInSubset}!adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}}
+\doxysubsubsection{\texorpdfstring{getMDPActionAdviceInSubset()}{getMDPActionAdviceInSubset()}}
+{\footnotesize\ttfamily  Tuple\mbox{[}List\mbox{[}T\+M\+D\+P\+Action\mbox{]},List\mbox{[}T\+M\+D\+P\+Action\mbox{]}\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Advice\+Interface.\+get\+M\+D\+P\+Action\+Advice\+In\+Subset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{List\mbox{[}T\+M\+D\+P\+Action\mbox{]}}]{mdp\+Actions,  }\item[{T\+M\+D\+P\+State}]{mdp\+State,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acbc7af5992633a795762324ccb653027}{T\+M\+D\+P\+Operations}}}]{mdp\+Operations,  }\item[{bool}]{quiet\+Info\+Str }\end{DoxyParamCaption})}
+
+
+
+The strategy will receive an M\+D\+P\+Operations instance and must return a set of legal M\+D\+P\+Actions from a subset. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_a6682f8daf5916247d9e096c5c892c22c}\label{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_a6682f8daf5916247d9e096c5c892c22c}} 
+\index{adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}!TMDPActionAdvice@{TMDPActionAdvice}}
+\index{TMDPActionAdvice@{TMDPActionAdvice}!adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}}
+\doxysubsubsection{\texorpdfstring{TMDPActionAdvice}{TMDPActionAdvice}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Advice\+Interface.\+T\+M\+D\+P\+Action\+Advice = Type\+Var(\char`\"{}T\+M\+D\+P\+Action\+Advice\char`\"{},bound=\char`\"{}M\+D\+P\+Action\+Advice\+Interface\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acbc7af5992633a795762324ccb653027}\label{classadviceMCTS_1_1simulationClasses_1_1MDPActionAdviceInterface_acbc7af5992633a795762324ccb653027}} 
+\index{adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}!TMDPOperations@{TMDPOperations}}
+\index{TMDPOperations@{TMDPOperations}!adviceMCTS.simulationClasses.MDPActionAdviceInterface@{adviceMCTS.simulationClasses.MDPActionAdviceInterface}}
+\doxysubsubsection{\texorpdfstring{TMDPOperations}{TMDPOperations}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Advice\+Interface.\+T\+M\+D\+P\+Operations = Type\+Var(\char`\"{}T\+M\+D\+P\+Operations\char`\"{},bound=\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPOperationsInterface}{M\+D\+P\+Operations\+Interface}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/debraj/\+Tools/studious-\/potato/src/advice\+M\+C\+T\+S/\mbox{\hyperlink{simulationClasses_8py}{simulation\+Classes.\+py}}\end{DoxyCompactItemize}

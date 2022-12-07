@@ -1,0 +1,186 @@
+\hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine}{}\doxysection{advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine Class Reference}
+\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine}\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+
+
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine}{M\+D\+P\+Simulation\+Engine}} is used to draw simulations that extend an execution, according to an action strategy.  
+
+
+
+
+Inheritance diagram for advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_adf132d7d9a6e4f1bb0c1c82235707a37}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine}{M\+D\+P\+Execution\+Engine}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a72182ac54681ea4ff63a4a1a13729919}{mdp\+Execution\+Engine}}, \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1OptionsSimulationEngine}{Options\+Simulation\+Engine}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} options)
+\item 
+List\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine}{M\+D\+P\+Execution\+Engine}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}, float, int\mbox{]}\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_ab376bd488524230ba6657bb74d23897d}{get\+Simulations}} (self, int num\+Sims)
+\begin{DoxyCompactList}\small\item\em Draws num\+Sims simulations. \end{DoxyCompactList}\item 
+Optional\mbox{[}float\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a682a2438e327b6ccbfba5eda67d7d87f}{get\+Simulation\+Reward}} (self, int num\+Sims)
+\begin{DoxyCompactList}\small\item\em Draws num\+Sims simulations until horizon depth and returns the average mdp\+Reward obtained. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a72182ac54681ea4ff63a4a1a13729919}{mdp\+Execution\+Engine}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_aba775e20a9d91eb0c2421bf070f89277}{horizon}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_ae6e2b3273a3a3cb7a8ad916fb1109019}{ignore\+Non\+Decision\+States}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a94bc17579593eaf566725bde9bcbb811}{mdp\+Action\+Strategy}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_ab56764042458187a3984b3534d04715e}{mdp\+Action\+Advice}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a016306af6eb5df187069dac639e89b6d}{mdp\+Path\+Advice}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a396df336bc6b3f985d8feed56178bab0}{reject\+Factor}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a8073d17cecb2efe8c15289a94e350280}{mdp\+State\+Score}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_af42b62610c0a12be7a819b5128820ee7}{alpha}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_af493a47228406ff13c4d4b2ef388291e}{quiet}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a68afef6dc231d7f8013a631f45573cb6}{quiet\+Info\+Str}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a5fa6f04c2a26d7ff153737c5f0da6765}{print\+Each\+Step}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a4d122e50e5f6276c1636d081b3348fdc}{print\+Compact}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine}{M\+D\+P\+Simulation\+Engine}} is used to draw simulations that extend an execution, according to an action strategy. 
+
+The execution is sequentially extended and reset after each simulation, Use execution.\+execution\+Copy() if running several \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine}{M\+D\+P\+Simulation\+Engine}} instances in parallel to give independent instances to the constructors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_adf132d7d9a6e4f1bb0c1c82235707a37}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_adf132d7d9a6e4f1bb0c1c82235707a37}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine}{M\+D\+P\+Execution\+Engine}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}}]{mdp\+Execution\+Engine,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1OptionsSimulationEngine}{Options\+Simulation\+Engine}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}}]{options }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a682a2438e327b6ccbfba5eda67d7d87f}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a682a2438e327b6ccbfba5eda67d7d87f}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!getSimulationReward@{getSimulationReward}}
+\index{getSimulationReward@{getSimulationReward}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{getSimulationReward()}{getSimulationReward()}}
+{\footnotesize\ttfamily  Optional\mbox{[}float\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+get\+Simulation\+Reward (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{num\+Sims }\end{DoxyParamCaption})}
+
+
+
+Draws num\+Sims simulations until horizon depth and returns the average mdp\+Reward obtained. 
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_ab376bd488524230ba6657bb74d23897d}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_ab376bd488524230ba6657bb74d23897d}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!getSimulations@{getSimulations}}
+\index{getSimulations@{getSimulations}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{getSimulations()}{getSimulations()}}
+{\footnotesize\ttfamily  List\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPExecutionEngine}{M\+D\+P\+Execution\+Engine}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}, float, int\mbox{]}\mbox{]} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+get\+Simulations (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{num\+Sims }\end{DoxyParamCaption})}
+
+
+
+Draws num\+Sims simulations. 
+
+Returns a list of pairs (mdp\+Execution\+EngineS,numS), so that mdp\+Execution\+EngineS contains a simulation until horizon depth, and so that the sum of numS equals num\+Sims. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_af42b62610c0a12be7a819b5128820ee7}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_af42b62610c0a12be7a819b5128820ee7}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!alpha@{alpha}}
+\index{alpha@{alpha}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+alpha}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_aba775e20a9d91eb0c2421bf070f89277}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_aba775e20a9d91eb0c2421bf070f89277}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!horizon@{horizon}}
+\index{horizon@{horizon}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{horizon}{horizon}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+horizon}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_ae6e2b3273a3a3cb7a8ad916fb1109019}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_ae6e2b3273a3a3cb7a8ad916fb1109019}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!ignoreNonDecisionStates@{ignoreNonDecisionStates}}
+\index{ignoreNonDecisionStates@{ignoreNonDecisionStates}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{ignoreNonDecisionStates}{ignoreNonDecisionStates}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+ignore\+Non\+Decision\+States}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_ab56764042458187a3984b3534d04715e}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_ab56764042458187a3984b3534d04715e}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!mdpActionAdvice@{mdpActionAdvice}}
+\index{mdpActionAdvice@{mdpActionAdvice}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{mdpActionAdvice}{mdpActionAdvice}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+mdp\+Action\+Advice}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a94bc17579593eaf566725bde9bcbb811}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a94bc17579593eaf566725bde9bcbb811}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!mdpActionStrategy@{mdpActionStrategy}}
+\index{mdpActionStrategy@{mdpActionStrategy}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{mdpActionStrategy}{mdpActionStrategy}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+mdp\+Action\+Strategy}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a72182ac54681ea4ff63a4a1a13729919}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a72182ac54681ea4ff63a4a1a13729919}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!mdpExecutionEngine@{mdpExecutionEngine}}
+\index{mdpExecutionEngine@{mdpExecutionEngine}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{mdpExecutionEngine}{mdpExecutionEngine}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+mdp\+Execution\+Engine}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a016306af6eb5df187069dac639e89b6d}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a016306af6eb5df187069dac639e89b6d}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!mdpPathAdvice@{mdpPathAdvice}}
+\index{mdpPathAdvice@{mdpPathAdvice}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{mdpPathAdvice}{mdpPathAdvice}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+mdp\+Path\+Advice}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a8073d17cecb2efe8c15289a94e350280}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a8073d17cecb2efe8c15289a94e350280}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!mdpStateScore@{mdpStateScore}}
+\index{mdpStateScore@{mdpStateScore}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{mdpStateScore}{mdpStateScore}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+mdp\+State\+Score}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a4d122e50e5f6276c1636d081b3348fdc}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a4d122e50e5f6276c1636d081b3348fdc}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!printCompact@{printCompact}}
+\index{printCompact@{printCompact}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{printCompact}{printCompact}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+print\+Compact}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a5fa6f04c2a26d7ff153737c5f0da6765}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a5fa6f04c2a26d7ff153737c5f0da6765}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!printEachStep@{printEachStep}}
+\index{printEachStep@{printEachStep}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{printEachStep}{printEachStep}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+print\+Each\+Step}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_af493a47228406ff13c4d4b2ef388291e}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_af493a47228406ff13c4d4b2ef388291e}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!quiet@{quiet}}
+\index{quiet@{quiet}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{quiet}{quiet}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+quiet}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a68afef6dc231d7f8013a631f45573cb6}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a68afef6dc231d7f8013a631f45573cb6}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!quietInfoStr@{quietInfoStr}}
+\index{quietInfoStr@{quietInfoStr}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{quietInfoStr}{quietInfoStr}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+quiet\+Info\+Str}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a396df336bc6b3f985d8feed56178bab0}\label{classadviceMCTS_1_1simulationClasses_1_1MDPSimulationEngine_a396df336bc6b3f985d8feed56178bab0}} 
+\index{adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}!rejectFactor@{rejectFactor}}
+\index{rejectFactor@{rejectFactor}!adviceMCTS.simulationClasses.MDPSimulationEngine@{adviceMCTS.simulationClasses.MDPSimulationEngine}}
+\doxysubsubsection{\texorpdfstring{rejectFactor}{rejectFactor}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Simulation\+Engine.\+reject\+Factor}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/debraj/\+Tools/studious-\/potato/src/advice\+M\+C\+T\+S/\mbox{\hyperlink{simulationClasses_8py}{simulation\+Classes.\+py}}\end{DoxyCompactItemize}

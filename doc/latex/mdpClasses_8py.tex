@@ -1,0 +1,46 @@
+\hypertarget{mdpClasses_8py}{}\doxysection{/home/debraj/\+Tools/studious-\/potato/src/advice\+M\+C\+T\+S/mdp\+Classes.py File Reference}
+\label{mdpClasses_8py}\index{/home/debraj/Tools/studious-\/potato/src/adviceMCTS/mdpClasses.py@{/home/debraj/Tools/studious-\/potato/src/adviceMCTS/mdpClasses.py}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPPredicateInterface}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Predicate\+Interface}}
+\begin{DoxyCompactList}\small\item\em Abstract class Encodes predicates of the M\+DP Pacman\+: Win, Loss. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPStateInterface}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+State\+Interface}}
+\begin{DoxyCompactList}\small\item\em Abstract class Encodes a state of an M\+DP Pacman\+: position of every agent, etc. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPActionInterface}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Action\+Interface}}
+\begin{DoxyCompactList}\small\item\em Abstract class, Immutable class action for controller in an M\+DP Pacman\+: pacman moves north, east, etc. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPStochasticActionInterface}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Stochastic\+Action\+Interface}}
+\begin{DoxyCompactList}\small\item\em Abstract class, Immutable class action for the environment in an M\+DP pacman\+: ghost1 moves east and ghost 2 moves north, etc. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPTransition}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Transition}}
+\begin{DoxyCompactList}\small\item\em Immutable class encodes a pair (action,stochastic action) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPPath}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Path}}
+\begin{DoxyCompactList}\small\item\em Abstract class Encodes a path in the M\+DP, as an initial state and a sequence of transitions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPExecution}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Execution}}
+\begin{DoxyCompactList}\small\item\em Abstract class Contains a path in the M\+DP, its last state, total reward, if the path is terminal, the current discount factor at the last state All of these things can be derived from the path by executing the sequence of actions on the M\+DP. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPOperationsInterface}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+M\+D\+P\+Operations\+Interface}}
+\begin{DoxyCompactList}\small\item\em Abstract class atomic operations of the M\+DP\+: draw next state at random, available actions, etc Pacman\+: contains information about the layout, movement rules, etc abstract methods that must be redefined. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses}{advice\+M\+C\+T\+S.\+mdp\+Classes}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a9fe1ba928821f5e46d1232835707d17e}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+is\+Terminal\+Str}} (bool is\+Terminal)
+\item 
+str \mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a74e23bb68e6a0463db8deecb38583702}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+discount\+Factor\+Str}} (float discount\+Factor)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_af500b4522a4d7d4b8c8ce46d5561bace}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+T\+M\+D\+P\+Predicate}} = Type\+Var(\char`\"{}T\+M\+D\+P\+Predicate\char`\"{},bound=\char`\"{}M\+D\+P\+Predicate\+Interface\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_abbc952a1ef68117d7e2376861f4046b5}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+T\+M\+D\+P\+State}} = Type\+Var(\char`\"{}T\+M\+D\+P\+State\char`\"{},bound=\char`\"{}M\+D\+P\+State\+Interface\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a10c94fbbfc5d305b9eb5e63f16059264}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+T\+M\+D\+P\+Action}} = Type\+Var(\char`\"{}T\+M\+D\+P\+Action\char`\"{},bound=\char`\"{}M\+D\+P\+Action\+Interface\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a086db9d1e60c2a7341edc48f75ff93b9}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+T\+M\+D\+P\+Stochastic\+Action}} = Type\+Var(\char`\"{}T\+M\+D\+P\+Stochastic\+Action\char`\"{},bound=\char`\"{}M\+D\+P\+Stochastic\+Action\+Interface\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1mdpClasses_a882f3ad170a2b8b03ab02774149fa211}{advice\+M\+C\+T\+S.\+mdp\+Classes.\+T\+M\+D\+P\+Operations}} = Type\+Var(\char`\"{}T\+M\+D\+P\+Operations\char`\"{},bound=\char`\"{}M\+D\+P\+Operations\+Interface\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}\char`\"{})
+\end{DoxyCompactItemize}

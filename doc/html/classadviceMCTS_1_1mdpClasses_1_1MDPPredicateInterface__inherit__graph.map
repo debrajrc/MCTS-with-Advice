@@ -1,0 +1,5 @@
+<map id="adviceMCTS.mdpClasses.MDPPredicateInterface" name="adviceMCTS.mdpClasses.MDPPredicateInterface">
+<area shape="rect" id="node1" title="Abstract class Encodes predicates of the MDP Pacman: Win, Loss." alt="" coords="5,5,269,47"/>
+<area shape="rect" id="node2" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPPredicate.html" title=" " alt="" coords="31,95,243,136"/>
+<area shape="rect" id="node3" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPOperations.html" title=" " alt="" coords="31,184,243,225"/>
+</map>

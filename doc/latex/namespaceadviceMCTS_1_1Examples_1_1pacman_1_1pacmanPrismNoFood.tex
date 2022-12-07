@@ -1,0 +1,125 @@
+\hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood}{}\doxysection{advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food Namespace Reference}
+\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood}\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+
+
+Classes to create M\+DP for pacman, but ignoring the food. Useful when we are using Storm for safety.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_1_1Layout}{Layout}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_1_1Layout}{Layout}} manages the static information about the game board. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_1_1pacmanEngine}{pacman\+Engine}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a405c407b4594568ffd2e2c0e0def5f61}{read\+From\+File}} (file\+Name)
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a404d55091479f6fc9380421b2373919f}{get\+Layout\+From\+Array}} (a)
+\item 
+def \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_aa60fa95b8aa49db58eebc02771c9f521}{create\+Engine}} (fname, draw\+Depth)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_add8d109bfd7694d8837b27c2d09dde5b}{W\+O\+R\+K\+\_\+\+D\+IR}} = os.\+environ.\+get(\textquotesingle{}G\+L\+O\+B\+A\+L\+S\+C\+R\+A\+T\+CH\textquotesingle{})
+\item 
+string \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a51acbbd45f8fc7e5f5c0b7980a04d2b8}{T\+E\+M\+P\+\_\+\+D\+IR}} = \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_add8d109bfd7694d8837b27c2d09dde5b}{W\+O\+R\+K\+\_\+\+D\+IR}}+\textquotesingle{}temp\+Files\textquotesingle{}+os.\+sep+\textquotesingle{}prism\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a12b3466c737ff2f079e1e0a2ca27fd49}{X}}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ace1fb00351c54250591d99389176e1e2}{Y}}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ab07eeec1e876ac79c4e7e3f5ffacbfeb}{num\+Ghosts}}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a91e4c67179119a50994cc7223b963823}{layout\+Text}}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ad2dbaed227d32f924dd8f7a1be5aa766}{agent\+Info}}
+\item 
+string \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a34e16db9d266e57a560a751fc4e10103}{prism\+File}} = \textquotesingle{}prism\+Files/pacman\+Test.\+sm\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_af1f7764f6f2bb7eafab20e3f484c40d4}{p}} = \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_1_1pacmanEngine}{pacman\+Engine}}(\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a12b3466c737ff2f079e1e0a2ca27fd49}{X}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ace1fb00351c54250591d99389176e1e2}{Y}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ab07eeec1e876ac79c4e7e3f5ffacbfeb}{num\+Ghosts}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a91e4c67179119a50994cc7223b963823}{layout\+Text}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ad2dbaed227d32f924dd8f7a1be5aa766}{agent\+Info}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a34e16db9d266e57a560a751fc4e10103}{prism\+File}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes to create M\+DP for pacman, but ignoring the food. Useful when we are using Storm for safety. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_aa60fa95b8aa49db58eebc02771c9f521}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_aa60fa95b8aa49db58eebc02771c9f521}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!createEngine@{createEngine}}
+\index{createEngine@{createEngine}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{createEngine()}{createEngine()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+create\+Engine (\begin{DoxyParamCaption}\item[{}]{fname,  }\item[{}]{draw\+Depth }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a404d55091479f6fc9380421b2373919f}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a404d55091479f6fc9380421b2373919f}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!getLayoutFromArray@{getLayoutFromArray}}
+\index{getLayoutFromArray@{getLayoutFromArray}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{getLayoutFromArray()}{getLayoutFromArray()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+get\+Layout\+From\+Array (\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a405c407b4594568ffd2e2c0e0def5f61}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a405c407b4594568ffd2e2c0e0def5f61}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+read\+From\+File (\begin{DoxyParamCaption}\item[{}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ad2dbaed227d32f924dd8f7a1be5aa766}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ad2dbaed227d32f924dd8f7a1be5aa766}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!agentInfo@{agentInfo}}
+\index{agentInfo@{agentInfo}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{agentInfo}{agentInfo}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+agent\+Info}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a91e4c67179119a50994cc7223b963823}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a91e4c67179119a50994cc7223b963823}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!layoutText@{layoutText}}
+\index{layoutText@{layoutText}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{layoutText}{layoutText}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+layout\+Text}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ab07eeec1e876ac79c4e7e3f5ffacbfeb}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ab07eeec1e876ac79c4e7e3f5ffacbfeb}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!numGhosts@{numGhosts}}
+\index{numGhosts@{numGhosts}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{numGhosts}{numGhosts}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+num\+Ghosts}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_af1f7764f6f2bb7eafab20e3f484c40d4}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_af1f7764f6f2bb7eafab20e3f484c40d4}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!p@{p}}
+\index{p@{p}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+p = \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_1_1pacmanEngine}{pacman\+Engine}}(\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a12b3466c737ff2f079e1e0a2ca27fd49}{X}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ace1fb00351c54250591d99389176e1e2}{Y}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ab07eeec1e876ac79c4e7e3f5ffacbfeb}{num\+Ghosts}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a91e4c67179119a50994cc7223b963823}{layout\+Text}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ad2dbaed227d32f924dd8f7a1be5aa766}{agent\+Info}},\mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a34e16db9d266e57a560a751fc4e10103}{prism\+File}})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a34e16db9d266e57a560a751fc4e10103}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a34e16db9d266e57a560a751fc4e10103}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!prismFile@{prismFile}}
+\index{prismFile@{prismFile}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{prismFile}{prismFile}}
+{\footnotesize\ttfamily string advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+prism\+File = \textquotesingle{}prism\+Files/pacman\+Test.\+sm\textquotesingle{}}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a51acbbd45f8fc7e5f5c0b7980a04d2b8}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a51acbbd45f8fc7e5f5c0b7980a04d2b8}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!TEMP\_DIR@{TEMP\_DIR}}
+\index{TEMP\_DIR@{TEMP\_DIR}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{TEMP\_DIR}{TEMP\_DIR}}
+{\footnotesize\ttfamily string advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+T\+E\+M\+P\+\_\+\+D\+IR = \mbox{\hyperlink{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_add8d109bfd7694d8837b27c2d09dde5b}{W\+O\+R\+K\+\_\+\+D\+IR}}+\textquotesingle{}temp\+Files\textquotesingle{}+os.\+sep+\textquotesingle{}prism\textquotesingle{}}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_add8d109bfd7694d8837b27c2d09dde5b}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_add8d109bfd7694d8837b27c2d09dde5b}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!WORK\_DIR@{WORK\_DIR}}
+\index{WORK\_DIR@{WORK\_DIR}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{WORK\_DIR}{WORK\_DIR}}
+{\footnotesize\ttfamily string advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+W\+O\+R\+K\+\_\+\+D\+IR = os.\+environ.\+get(\textquotesingle{}G\+L\+O\+B\+A\+L\+S\+C\+R\+A\+T\+CH\textquotesingle{})}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a12b3466c737ff2f079e1e0a2ca27fd49}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_a12b3466c737ff2f079e1e0a2ca27fd49}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!X@{X}}
+\index{X@{X}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+X}
+
+\mbox{\Hypertarget{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ace1fb00351c54250591d99389176e1e2}\label{namespaceadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrismNoFood_ace1fb00351c54250591d99389176e1e2}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}!Y@{Y}}
+\index{Y@{Y}!adviceMCTS.Examples.pacman.pacmanPrismNoFood@{adviceMCTS.Examples.pacman.pacmanPrismNoFood}}
+\doxysubsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism\+No\+Food.\+Y}
+

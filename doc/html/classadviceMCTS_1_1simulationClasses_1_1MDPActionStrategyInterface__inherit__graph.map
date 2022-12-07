@@ -1,0 +1,14 @@
+<map id="adviceMCTS.simulationClasses.MDPActionStrategyInterface" name="adviceMCTS.simulationClasses.MDPActionStrategyInterface">
+<area shape="rect" id="node1" title="A memoryless strategy for choosing actions." alt="" coords="212,99,425,141"/>
+<area shape="rect" id="node7" href="$classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy.html" title="A probabilistic strategy that draws from a distribution over legal actions." alt="" coords="497,66,710,107"/>
+<area shape="rect" id="node8" href="$classadviceMCTS_1_1simulationClasses_1_1MDPProbabilisticActionStrategyInterface.html" title="A probabilistic strategy that draws from a distribution over legal actions." alt="" coords="473,131,733,173"/>
+<area shape="rect" id="node2" title=" " alt="" coords="51,5,118,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="27,56,142,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="39,107,130,133"/>
+<area shape="rect" id="node5" title=" " alt="" coords="37,157,132,184"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,208,164,235"/>
+<area shape="rect" id="node9" href="$classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPNNActionStrategy.html" title="A strategy that chooses a legal action uniformly at random from actions from Neural network." alt="" coords="783,33,1043,74"/>
+<area shape="rect" id="node10" href="$classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPNNActionStrategyProgress.html" title=" " alt="" coords="783,98,1043,139"/>
+<area shape="rect" id="node11" href="$classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPUniformAdviceActionStrategy.html" title="A strategy that chooses a legal action uniformly at random from legal actions." alt="" coords="781,163,1044,205"/>
+<area shape="rect" id="node12" href="$classadviceMCTS_1_1simulationClasses_1_1MDPUniformActionStrategy.html" title="A strategy that chooses a legal action uniformly at random." alt="" coords="806,229,1019,270"/>
+</map>

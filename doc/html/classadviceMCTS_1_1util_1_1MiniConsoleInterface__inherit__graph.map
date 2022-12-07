@@ -1,0 +1,8 @@
+<map id="adviceMCTS.util.MiniConsoleInterface" name="adviceMCTS.util.MiniConsoleInterface">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,200,80"/>
+<area shape="rect" id="node2" href="$classadviceMCTS_1_1mdpClasses_1_1MDPActionInterface.html" title="Abstract class, Immutable class action for controller in an MDP Pacman: pacman moves north,..." alt="" coords="261,5,505,47"/>
+<area shape="rect" id="node5" href="$classadviceMCTS_1_1mdpClasses_1_1MDPStochasticActionInterface.html" title="Abstract class, Immutable class action for the environment in an MDP pacman: ghost1 moves east and gh..." alt="" coords="248,71,519,112"/>
+<area shape="rect" id="node3" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPAction.html" title=" " alt="" coords="567,5,779,47"/>
+<area shape="rect" id="node4" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPOperations.html" title=" " alt="" coords="827,39,1039,80"/>
+<area shape="rect" id="node6" href="$classadviceMCTS_1_1stormMdpClasses_1_1MDPStochasticAction.html" title=" " alt="" coords="567,71,779,112"/>
+</map>

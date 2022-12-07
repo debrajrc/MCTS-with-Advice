@@ -1,0 +1,102 @@
+\hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN}{}\doxysection{advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Mcts\+NN Class Reference}
+\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN}\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}}
+
+
+State score using neural network @params \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1pacmanEngine}{pacman\+Engine}} needed to create array from an execution\+Engine @params model neural network model @params minY @params maxY.  
+
+
+
+
+Inheritance diagram for advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Mcts\+NN\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Mcts\+NN\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a51a07389e1be435f04a315960267c4a3}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1pacmanEngine}{pacman\+Engine}}, \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a7676c72a69a315c5fb4b01334671102d}{model}}, \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_aecb9d1a6089336e5788e83ecefd69ff3}{minY}}, \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a9c16e3a1b5ba70fe1052b3feff6d071d}{maxY}})
+\item 
+def \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_af59d43e08b5900c9bfccf7ebd7402941}{get\+Score}} (self, execution\+Engine)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_ac598e16ffd405c7122e6bb15cf76b6f3}{pacman\+Engine}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a7676c72a69a315c5fb4b01334671102d}{model}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_aecb9d1a6089336e5788e83ecefd69ff3}{minY}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a9c16e3a1b5ba70fe1052b3feff6d071d}{maxY}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+State score using neural network @params \mbox{\hyperlink{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1pacmanEngine}{pacman\+Engine}} needed to create array from an execution\+Engine @params model neural network model @params minY @params maxY. 
+
+\begin{DoxyReturn}{Returns}
+(value given by NN)$\ast$(max\+Y-\/minY)+minY 
+\end{DoxyReturn}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a51a07389e1be435f04a315960267c4a3}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a51a07389e1be435f04a315960267c4a3}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Mcts\+N\+N.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pacman\+Engine,  }\item[{}]{model,  }\item[{}]{minY,  }\item[{}]{maxY }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_af59d43e08b5900c9bfccf7ebd7402941}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_af59d43e08b5900c9bfccf7ebd7402941}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}!getScore@{getScore}}
+\index{getScore@{getScore}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}}
+\doxysubsubsection{\texorpdfstring{getScore()}{getScore()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Mcts\+N\+N.\+get\+Score (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{execution\+Engine }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a9c16e3a1b5ba70fe1052b3feff6d071d}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a9c16e3a1b5ba70fe1052b3feff6d071d}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}!maxY@{maxY}}
+\index{maxY@{maxY}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}}
+\doxysubsubsection{\texorpdfstring{maxY}{maxY}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Mcts\+N\+N.\+maxY}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_aecb9d1a6089336e5788e83ecefd69ff3}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_aecb9d1a6089336e5788e83ecefd69ff3}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}!minY@{minY}}
+\index{minY@{minY}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}}
+\doxysubsubsection{\texorpdfstring{minY}{minY}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Mcts\+N\+N.\+minY}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a7676c72a69a315c5fb4b01334671102d}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_a7676c72a69a315c5fb4b01334671102d}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}!model@{model}}
+\index{model@{model}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Mcts\+N\+N.\+model}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_ac598e16ffd405c7122e6bb15cf76b6f3}\label{classadviceMCTS_1_1Examples_1_1pacman_1_1pacmanPrism_1_1MDPStateScoreMctsNN_ac598e16ffd405c7122e6bb15cf76b6f3}} 
+\index{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}!pacmanEngine@{pacmanEngine}}
+\index{pacmanEngine@{pacmanEngine}!adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN@{adviceMCTS.Examples.pacman.pacmanPrism.MDPStateScoreMctsNN}}
+\doxysubsubsection{\texorpdfstring{pacmanEngine}{pacmanEngine}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+Examples.\+pacman.\+pacman\+Prism.\+M\+D\+P\+State\+Score\+Mcts\+N\+N.\+pacman\+Engine}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/debraj/\+Tools/studious-\/potato/src/advice\+M\+C\+T\+S/\+Examples/pacman/\mbox{\hyperlink{pacmanPrism_8py}{pacman\+Prism.\+py}}\end{DoxyCompactItemize}

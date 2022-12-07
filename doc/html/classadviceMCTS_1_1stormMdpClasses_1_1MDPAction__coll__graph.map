@@ -1,0 +1,5 @@
+<map id="adviceMCTS.stormMdpClasses.MDPAction" name="adviceMCTS.stormMdpClasses.MDPAction">
+<area shape="rect" id="node1" title=" " alt="" coords="21,184,233,225"/>
+<area shape="rect" id="node2" href="$classadviceMCTS_1_1mdpClasses_1_1MDPActionInterface.html" title="Abstract class, Immutable class action for controller in an MDP Pacman: pacman moves north,..." alt="" coords="5,95,249,136"/>
+<area shape="rect" id="node3" href="$classadviceMCTS_1_1util_1_1MiniConsoleInterface.html" title=" " alt="" coords="30,5,225,47"/>
+</map>

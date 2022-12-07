@@ -1,0 +1,143 @@
+\hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy}{}\doxysection{advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy Class Reference}
+\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy}\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+
+
+A probabilistic strategy that draws from a distribution over legal actions.  
+
+
+
+
+Inheritance diagram for advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a6ce2ef5452b2d279a6d426a4dbcc1f9d}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, int \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_acc79f4cbe67c3bc7fb13163f2d14d66f}{num\+M\+C\+T\+S\+Iters}}, int \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a3d12bae889939477145cc6b604986aad}{num\+Sims}}, \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1OptionsMCTSEngine}{Options\+M\+C\+T\+S\+Engine}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a538cdae1b926707eb780a17cb8318092}{options\+M\+C\+T\+S\+Engine}})
+\item 
+\char`\"{}M\+D\+P\+M\+C\+T\+S\+Action\+Strategy\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}\char`\"{} \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a94b5cd0ddf49cade3b492f623db29802}{deep\+Copy}} (self)
+\item 
+def \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a024d5e46e57079690336e4d2a1fb6212}{get\+M\+D\+P\+Values}} (self, mdp\+State, mdp\+Operations, quiet\+Info\+Str)
+\begin{DoxyCompactList}\small\item\em The strategy will receive an M\+D\+P\+Operations instance and must return dict of values. \end{DoxyCompactList}\item 
+T\+M\+D\+P\+Action \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a652a617842727ab6aa5ce2dba94eaf0f}{get\+M\+D\+P\+Action}} (self, T\+M\+D\+P\+State mdp\+State, \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_ac0d77921560cba5a3de8b485f8ca2884}{T\+M\+D\+P\+Operations}} mdp\+Operations, bool quiet\+Info\+Str)
+\begin{DoxyCompactList}\small\item\em The strategy will receive an M\+D\+P\+Operations instance and must return a legal M\+D\+P\+Action. \end{DoxyCompactList}\item 
+T\+M\+D\+P\+Action \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_aed0d4eed28d24cbfecd1732f1337db5e}{get\+M\+D\+P\+Action\+In\+Subset}} (self, List\mbox{[}T\+M\+D\+P\+Action\mbox{]} mdp\+Actions, T\+M\+D\+P\+State mdp\+State, \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_ac0d77921560cba5a3de8b485f8ca2884}{T\+M\+D\+P\+Operations}} mdp\+Operations, bool quiet\+Info\+Str)
+\begin{DoxyCompactList}\small\item\em The strategy will receive a set of actions and an M\+D\+P\+Operations instance and must return a legal M\+D\+P\+Action from the set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_acc79f4cbe67c3bc7fb13163f2d14d66f}{num\+M\+C\+T\+S\+Iters}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a3d12bae889939477145cc6b604986aad}{num\+Sims}}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a538cdae1b926707eb780a17cb8318092}{options\+M\+C\+T\+S\+Engine}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_ac0d77921560cba5a3de8b485f8ca2884}{T\+M\+D\+P\+Operations}} = Type\+Var(\char`\"{}T\+M\+D\+P\+Operations\char`\"{},bound=\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPOperationsInterface}{M\+D\+P\+Operations\+Interface}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A probabilistic strategy that draws from a distribution over legal actions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a6ce2ef5452b2d279a6d426a4dbcc1f9d}\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a6ce2ef5452b2d279a6d426a4dbcc1f9d}} 
+\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{num\+M\+C\+T\+S\+Iters,  }\item[{int}]{num\+Sims,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1OptionsMCTSEngine}{Options\+M\+C\+T\+S\+Engine}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}}]{options\+M\+C\+T\+S\+Engine }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a94b5cd0ddf49cade3b492f623db29802}\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a94b5cd0ddf49cade3b492f623db29802}} 
+\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}!deepCopy@{deepCopy}}
+\index{deepCopy@{deepCopy}!adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+\doxysubsubsection{\texorpdfstring{deepCopy()}{deepCopy()}}
+{\footnotesize\ttfamily  \char`\"{}M\+D\+P\+M\+C\+T\+S\+Action\+Strategy\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]}\char`\"{} advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy.\+deep\+Copy (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a652a617842727ab6aa5ce2dba94eaf0f}\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a652a617842727ab6aa5ce2dba94eaf0f}} 
+\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}!getMDPAction@{getMDPAction}}
+\index{getMDPAction@{getMDPAction}!adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+\doxysubsubsection{\texorpdfstring{getMDPAction()}{getMDPAction()}}
+{\footnotesize\ttfamily  T\+M\+D\+P\+Action advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy.\+get\+M\+D\+P\+Action (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{T\+M\+D\+P\+State}]{mdp\+State,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_ac0d77921560cba5a3de8b485f8ca2884}{T\+M\+D\+P\+Operations}}}]{mdp\+Operations,  }\item[{bool}]{quiet\+Info\+Str }\end{DoxyParamCaption})}
+
+
+
+The strategy will receive an M\+D\+P\+Operations instance and must return a legal M\+D\+P\+Action. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionStrategyInterface_a28568535bd8f4b0d636c2415a48d8103}{advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Strategy\+Interface}}.
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_aed0d4eed28d24cbfecd1732f1337db5e}\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_aed0d4eed28d24cbfecd1732f1337db5e}} 
+\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}!getMDPActionInSubset@{getMDPActionInSubset}}
+\index{getMDPActionInSubset@{getMDPActionInSubset}!adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+\doxysubsubsection{\texorpdfstring{getMDPActionInSubset()}{getMDPActionInSubset()}}
+{\footnotesize\ttfamily  T\+M\+D\+P\+Action advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy.\+get\+M\+D\+P\+Action\+In\+Subset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{List\mbox{[}T\+M\+D\+P\+Action\mbox{]}}]{mdp\+Actions,  }\item[{T\+M\+D\+P\+State}]{mdp\+State,  }\item[{\mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_ac0d77921560cba5a3de8b485f8ca2884}{T\+M\+D\+P\+Operations}}}]{mdp\+Operations,  }\item[{bool}]{quiet\+Info\+Str }\end{DoxyParamCaption})}
+
+
+
+The strategy will receive a set of actions and an M\+D\+P\+Operations instance and must return a legal M\+D\+P\+Action from the set. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classadviceMCTS_1_1simulationClasses_1_1MDPActionStrategyInterface_a2cb057a3b1e15b79719af1299be39ac8}{advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+Action\+Strategy\+Interface}}.
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a024d5e46e57079690336e4d2a1fb6212}\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a024d5e46e57079690336e4d2a1fb6212}} 
+\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}!getMDPValues@{getMDPValues}}
+\index{getMDPValues@{getMDPValues}!adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+\doxysubsubsection{\texorpdfstring{getMDPValues()}{getMDPValues()}}
+{\footnotesize\ttfamily def advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy.\+get\+M\+D\+P\+Values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mdp\+State,  }\item[{}]{mdp\+Operations,  }\item[{}]{quiet\+Info\+Str }\end{DoxyParamCaption})}
+
+
+
+The strategy will receive an M\+D\+P\+Operations instance and must return dict of values. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_acc79f4cbe67c3bc7fb13163f2d14d66f}\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_acc79f4cbe67c3bc7fb13163f2d14d66f}} 
+\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}!numMCTSIters@{numMCTSIters}}
+\index{numMCTSIters@{numMCTSIters}!adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+\doxysubsubsection{\texorpdfstring{numMCTSIters}{numMCTSIters}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy.\+num\+M\+C\+T\+S\+Iters}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a3d12bae889939477145cc6b604986aad}\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a3d12bae889939477145cc6b604986aad}} 
+\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}!numSims@{numSims}}
+\index{numSims@{numSims}!adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+\doxysubsubsection{\texorpdfstring{numSims}{numSims}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy.\+num\+Sims}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a538cdae1b926707eb780a17cb8318092}\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_a538cdae1b926707eb780a17cb8318092}} 
+\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}!optionsMCTSEngine@{optionsMCTSEngine}}
+\index{optionsMCTSEngine@{optionsMCTSEngine}!adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+\doxysubsubsection{\texorpdfstring{optionsMCTSEngine}{optionsMCTSEngine}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy.\+options\+M\+C\+T\+S\+Engine}
+
+\mbox{\Hypertarget{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_ac0d77921560cba5a3de8b485f8ca2884}\label{classadviceMCTS_1_1simulationClasses_1_1MDPMCTSActionStrategy_ac0d77921560cba5a3de8b485f8ca2884}} 
+\index{adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}!TMDPOperations@{TMDPOperations}}
+\index{TMDPOperations@{TMDPOperations}!adviceMCTS.simulationClasses.MDPMCTSActionStrategy@{adviceMCTS.simulationClasses.MDPMCTSActionStrategy}}
+\doxysubsubsection{\texorpdfstring{TMDPOperations}{TMDPOperations}}
+{\footnotesize\ttfamily advice\+M\+C\+T\+S.\+simulation\+Classes.\+M\+D\+P\+M\+C\+T\+S\+Action\+Strategy.\+T\+M\+D\+P\+Operations = Type\+Var(\char`\"{}T\+M\+D\+P\+Operations\char`\"{},bound=\mbox{\hyperlink{classadviceMCTS_1_1mdpClasses_1_1MDPOperationsInterface}{M\+D\+P\+Operations\+Interface}}\mbox{[}T\+M\+D\+P\+Predicate, T\+M\+D\+P\+State, T\+M\+D\+P\+Action, T\+M\+D\+P\+Stochastic\+Action\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/debraj/\+Tools/studious-\/potato/src/advice\+M\+C\+T\+S/\mbox{\hyperlink{simulationClasses_8py}{simulation\+Classes.\+py}}\end{DoxyCompactItemize}
