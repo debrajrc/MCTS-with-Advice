@@ -1,0 +1,195 @@
+mdp
+
+global timeOfTheDay : int init 0;
+const int x0_0 = 0;
+const int y0_0 = 0;
+const int w0_0 = 1;
+const int x0_1 = 0;
+const int y0_1 = 1;
+const int w0_1 = 1;
+const int x0_2 = 0;
+const int y0_2 = 2;
+const int w0_2 = 1;
+const int x0_3 = 0;
+const int y0_3 = 3;
+const int w0_3 = 1;
+const int x0_4 = 0;
+const int y0_4 = 4;
+const int w0_4 = 1;
+const int x1_0 = 1;
+const int y1_0 = 0;
+const int w1_0 = 1;
+const int x1_1 = 1;
+const int y1_1 = 1;
+const int w1_1 = 0;
+const int x1_2 = 1;
+const int y1_2 = 2;
+const int w1_2 = 0;
+const int x1_3 = 1;
+const int y1_3 = 3;
+const int w1_3 = 0;
+const int x1_4 = 1;
+const int y1_4 = 4;
+const int w1_4 = 1;
+const int x2_0 = 2;
+const int y2_0 = 0;
+const int w2_0 = 1;
+const int x2_1 = 2;
+const int y2_1 = 1;
+const int w2_1 = 0;
+const int x2_2 = 2;
+const int y2_2 = 2;
+const int w2_2 = 0;
+const int x2_3 = 2;
+const int y2_3 = 3;
+const int w2_3 = 1;
+const int x2_4 = 2;
+const int y2_4 = 4;
+const int w2_4 = 1;
+const int x3_0 = 3;
+const int y3_0 = 0;
+const int w3_0 = 1;
+const int x3_1 = 3;
+const int y3_1 = 1;
+const int w3_1 = 0;
+const int x3_2 = 3;
+const int y3_2 = 2;
+const int w3_2 = 0;
+const int x3_3 = 3;
+const int y3_3 = 3;
+const int w3_3 = 0;
+const int x3_4 = 3;
+const int y3_4 = 4;
+const int w3_4 = 1;
+const int x4_0 = 4;
+const int y4_0 = 0;
+const int w4_0 = 1;
+const int x4_1 = 4;
+const int y4_1 = 1;
+const int w4_1 = 1;
+const int x4_2 = 4;
+const int y4_2 = 2;
+const int w4_2 = 1;
+const int x4_3 = 4;
+const int y4_3 = 3;
+const int w4_3 = 1;
+const int x4_4 = 4;
+const int y4_4 = 4;
+const int w4_4 = 1;
+
+formula distanceX_c0 = max(xs_c0-xd_c0,xd_c0-xs_c0);
+formula distanceY_c0 = max(ys_c0-yd_c0,yd_c0-ys_c0);
+
+
+formula distanceX_c1 = max(xs_c1-xd_c1,xd_c1-xs_c1);
+formula distanceY_c1 = max(ys_c1-yd_c1,yd_c1-ys_c1);
+
+formula busy = c0_in + c1_in;
+
+global totalWaiting_c0 : int init 8;
+formula waiting_c0 = (totalWaiting_c0 > 0) & (c0_in = 0) & (((xt != xs_c0) | (yt != ys_c0)));
+formula picking_c0 = (xt = xs_c0) & (yt = ys_c0) & (busy = 0);
+formula reaching_c0 = (xt = xd_c0) & (yt = yd_c0) & (c0_in = 1);
+
+global totalWaiting_c1 : int init 8;
+formula waiting_c1 = (totalWaiting_c1 > 0) & (c1_in = 0) & (((xt != xs_c1) | (yt != ys_c1)));
+formula picking_c1 = (xt = xs_c1) & (yt = ys_c1) & (busy = 0);
+formula reaching_c1 = (xt = xd_c1) & (yt = yd_c1) & (c1_in = 1);
+
+formula north = (x1_0 = xt & y1_0 = yt & w0_0 = 0) | (x1_1 = xt & y1_1 = yt & w0_1 = 0) | (x1_2 = xt & y1_2 = yt & w0_2 = 0) | (x1_3 = xt & y1_3 = yt & w0_3 = 0) | (x1_4 = xt & y1_4 = yt & w0_4 = 0) | (x2_0 = xt & y2_0 = yt & w1_0 = 0) | (x2_1 = xt & y2_1 = yt & w1_1 = 0) | (x2_2 = xt & y2_2 = yt & w1_2 = 0) | (x2_3 = xt & y2_3 = yt & w1_3 = 0) | (x2_4 = xt & y2_4 = yt & w1_4 = 0) | (x3_0 = xt & y3_0 = yt & w2_0 = 0) | (x3_1 = xt & y3_1 = yt & w2_1 = 0) | (x3_2 = xt & y3_2 = yt & w2_2 = 0) | (x3_3 = xt & y3_3 = yt & w2_3 = 0) | (x3_4 = xt & y3_4 = yt & w2_4 = 0) | (x4_0 = xt & y4_0 = yt & w3_0 = 0) | (x4_1 = xt & y4_1 = yt & w3_1 = 0) | (x4_2 = xt & y4_2 = yt & w3_2 = 0) | (x4_3 = xt & y4_3 = yt & w3_3 = 0) | (x4_4 = xt & y4_4 = yt & w3_4 = 0);
+formula south = (x0_0 = xt & y0_0 = yt & w1_0 = 0) | (x0_1 = xt & y0_1 = yt & w1_1 = 0) | (x0_2 = xt & y0_2 = yt & w1_2 = 0) | (x0_3 = xt & y0_3 = yt & w1_3 = 0) | (x0_4 = xt & y0_4 = yt & w1_4 = 0) | (x1_0 = xt & y1_0 = yt & w2_0 = 0) | (x1_1 = xt & y1_1 = yt & w2_1 = 0) | (x1_2 = xt & y1_2 = yt & w2_2 = 0) | (x1_3 = xt & y1_3 = yt & w2_3 = 0) | (x1_4 = xt & y1_4 = yt & w2_4 = 0) | (x2_0 = xt & y2_0 = yt & w3_0 = 0) | (x2_1 = xt & y2_1 = yt & w3_1 = 0) | (x2_2 = xt & y2_2 = yt & w3_2 = 0) | (x2_3 = xt & y2_3 = yt & w3_3 = 0) | (x2_4 = xt & y2_4 = yt & w3_4 = 0) | (x3_0 = xt & y3_0 = yt & w4_0 = 0) | (x3_1 = xt & y3_1 = yt & w4_1 = 0) | (x3_2 = xt & y3_2 = yt & w4_2 = 0) | (x3_3 = xt & y3_3 = yt & w4_3 = 0) | (x3_4 = xt & y3_4 = yt & w4_4 = 0);
+formula east = (x0_0 = xt & y0_0 = yt & w0_1 = 0) | (x0_1 = xt & y0_1 = yt & w0_2 = 0) | (x0_2 = xt & y0_2 = yt & w0_3 = 0) | (x0_3 = xt & y0_3 = yt & w0_4 = 0) | (x1_0 = xt & y1_0 = yt & w1_1 = 0) | (x1_1 = xt & y1_1 = yt & w1_2 = 0) | (x1_2 = xt & y1_2 = yt & w1_3 = 0) | (x1_3 = xt & y1_3 = yt & w1_4 = 0) | (x2_0 = xt & y2_0 = yt & w2_1 = 0) | (x2_1 = xt & y2_1 = yt & w2_2 = 0) | (x2_2 = xt & y2_2 = yt & w2_3 = 0) | (x2_3 = xt & y2_3 = yt & w2_4 = 0) | (x3_0 = xt & y3_0 = yt & w3_1 = 0) | (x3_1 = xt & y3_1 = yt & w3_2 = 0) | (x3_2 = xt & y3_2 = yt & w3_3 = 0) | (x3_3 = xt & y3_3 = yt & w3_4 = 0) | (x4_0 = xt & y4_0 = yt & w4_1 = 0) | (x4_1 = xt & y4_1 = yt & w4_2 = 0) | (x4_2 = xt & y4_2 = yt & w4_3 = 0) | (x4_3 = xt & y4_3 = yt & w4_4 = 0);
+formula west = (x0_1 = xt & y0_1 = yt & w0_0 = 0) | (x0_2 = xt & y0_2 = yt & w0_1 = 0) | (x0_3 = xt & y0_3 = yt & w0_2 = 0) | (x0_4 = xt & y0_4 = yt & w0_3 = 0) | (x1_1 = xt & y1_1 = yt & w1_0 = 0) | (x1_2 = xt & y1_2 = yt & w1_1 = 0) | (x1_3 = xt & y1_3 = yt & w1_2 = 0) | (x1_4 = xt & y1_4 = yt & w1_3 = 0) | (x2_1 = xt & y2_1 = yt & w2_0 = 0) | (x2_2 = xt & y2_2 = yt & w2_1 = 0) | (x2_3 = xt & y2_3 = yt & w2_2 = 0) | (x2_4 = xt & y2_4 = yt & w2_3 = 0) | (x3_1 = xt & y3_1 = yt & w3_0 = 0) | (x3_2 = xt & y3_2 = yt & w3_1 = 0) | (x3_3 = xt & y3_3 = yt & w3_2 = 0) | (x3_4 = xt & y3_4 = yt & w3_3 = 0) | (x4_1 = xt & y4_1 = yt & w4_0 = 0) | (x4_2 = xt & y4_2 = yt & w4_1 = 0) | (x4_3 = xt & y4_3 = yt & w4_2 = 0) | (x4_4 = xt & y4_4 = yt & w4_3 = 0);
+
+module time
+
+[updateDay] true -> (timeOfTheDay' = (timeOfTheDay + 1) % 24);
+
+endmodule
+
+
+module arbiter
+
+token : [0 .. 5] init 0;
+
+[North] (token = 0) -> 1: (token' = 1);
+[South] (token = 0) -> 1: (token' = 1);
+[East] (token = 0) -> 1: (token' = 1);
+[West] (token = 0) -> 1: (token' = 1);
+
+[pick_0] (token = 1) -> 1: (token' = 2);
+[pick_1] (token = 2) -> 1: (token' = 3);
+
+[client_0] (token = 3) -> 1: (token' = 4);
+[client_1] (token = 4) -> 1: (token' = 5);
+
+[updateDay] (token = 5) -> 1: (token' = 0);
+
+endmodule
+
+
+module taxi
+
+xt : [1..4] init 1;
+yt : [1..4] init 1;
+
+[North] (north) -> 1: (xt' = xt - 1);
+[South] (south) -> 1: (xt'= xt + 1);
+[East] (east) -> 1: (yt' = yt + 1);
+[West] (west) -> 1: (yt' = yt - 1);
+
+endmodule
+
+
+module client0
+
+xs_c0 : [1..4] init 3;
+ys_c0 : [1..4] init 2;
+
+xc_c0 : [1..4] init 3;
+yc_c0 : [1..4] init 2;
+
+xd_c0 : [1..4] init 3;
+yd_c0 : [1..4] init 1;
+
+c0_in : [0..1] init 0;
+
+[pick_0] (c0_in = 1) -> (xc_c0' = xt) & (yc_c0' = yt);
+[pick_0] (c0_in = 0) -> (xc_c0' = xs_c0) & (yc_c0' = ys_c0);
+
+[client_0] (waiting_c0)  -> 1: (totalWaiting_c0' = totalWaiting_c0 - 1);
+[client_0] (picking_c0) -> 1: (c0_in' = 1);
+[client_0] (reaching_c0 | totalWaiting_c0 = 0) -> 0.532908959715392 : (xs_c0' = 3) & (ys_c0' = 2) & (xd_c0' = 3) & (yd_c0' = 1) & (c0_in' = 0) & (totalWaiting_c0' = 9) + 0.3308714688026515 : (xs_c0' = 3) & (ys_c0' = 3) & (xd_c0' = 3) & (yd_c0' = 1) & (c0_in' = 0) & (totalWaiting_c0' = 7) + 0.09174815812237631 : (xs_c0' = 2) & (ys_c0' = 2) & (xd_c0' = 3) & (yd_c0' = 3) & (c0_in' = 0) & (totalWaiting_c0' = 6) + 0.0444714133595802 : (xs_c0' = 3) & (ys_c0' = 1) & (xd_c0' = 3) & (yd_c0' = 3) & (c0_in' = 0) & (totalWaiting_c0' = 8);
+[client_0] !(waiting_c0) & !(picking_c0) & !(reaching_c0) & !(totalWaiting_c0 = 0)-> 1: (xs_c0' = xs_c0) & (ys_c0' = ys_c0) & (xd_c0' = xd_c0) & (yd_c0' = yd_c0) & (xc_c0' = xc_c0) & (yc_c0' = yc_c0);
+
+endmodule
+
+
+module client1
+
+xs_c1 : [1..4] init 3;
+ys_c1 : [1..4] init 3;
+
+xc_c1 : [1..4] init 3;
+yc_c1 : [1..4] init 3;
+
+xd_c1 : [1..4] init 3;
+yd_c1 : [1..4] init 1;
+
+c1_in : [0..1] init 0;
+
+[pick_1] (c1_in = 1) -> (xc_c1' = xt) & (yc_c1' = yt);
+[pick_1] (c1_in = 0) -> (xc_c1' = xs_c1) & (yc_c1' = ys_c1);
+
+[client_1] (waiting_c1)  -> 1: (totalWaiting_c1' = totalWaiting_c1 - 1);
+[client_1] (picking_c1) -> 1: (c1_in' = 1);
+[client_1] (reaching_c1 | totalWaiting_c1 = 0) -> 0.532908959715392 : (xs_c1' = 3) & (ys_c1' = 2) & (xd_c1' = 3) & (yd_c1' = 1) & (c1_in' = 0) & (totalWaiting_c1' = 5) + 0.3308714688026515 : (xs_c1' = 3) & (ys_c1' = 3) & (xd_c1' = 3) & (yd_c1' = 2) & (c1_in' = 0) & (totalWaiting_c1' = 6) + 0.09174815812237631 : (xs_c1' = 2) & (ys_c1' = 2) & (xd_c1' = 3) & (yd_c1' = 3) & (c1_in' = 0) & (totalWaiting_c1' = 7) + 0.0444714133595802 : (xs_c1' = 3) & (ys_c1' = 1) & (xd_c1' = 2) & (yd_c1' = 2) & (c1_in' = 0) & (totalWaiting_c1' = 8);
+[client_1] !(waiting_c1) & !(picking_c1) & !(reaching_c1) & !(totalWaiting_c1 = 0) -> 1: (xs_c1' = xs_c1) & (ys_c1' = ys_c1) & (xd_c1' = xd_c1) & (yd_c1' = yd_c1) & (xc_c1' = xc_c1) & (yc_c1' = yc_c1);
+
+endmodule
+
+rewards "r"
+(reaching_c0 & token = 2): distanceX_c0 + distanceY_c0;
+(reaching_c1 & token = 3): distanceX_c1 + distanceY_c1;
+endrewards
+

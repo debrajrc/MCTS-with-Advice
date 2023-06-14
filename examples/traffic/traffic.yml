@@ -1,0 +1,25 @@
+# basic parameters
+verbosity : 0
+prism file : examples/traffic/traffic.nm
+number of games : 1
+number of steps : 100
+discount factor : 1
+
+# mcts parameters
+mcts:
+  number of simulations : 10
+  number of iterations : 10
+  horizon : 10
+  mcts constant : 0.7071067811865475
+  alpha : 0.5
+
+# problem specific parameters
+other parameters:
+  python file : examples.traffic.traffic
+  state score : MDPStateScore
+  selection advice : MDPSafeActionAdvice
+  selection advice at root : MDPNonLossPathAdvice
+  simulation action advice : MDPSafeActionAdvice
+  simulation path advice : MDPNonLossPathAdvice
+  print function : niceStr
+
