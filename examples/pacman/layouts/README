@@ -1,0 +1,16 @@
+The layout file is written in the follwing way:
+
+Line 1 :  <height of the grid> <width of the grid> <number of ghosts>
+Next <<height of the grid>> lines : description of the grid
+    walls : %
+    food : .
+    otherwise : whitespace
+<x co-ordinate : line in which pacman is> <y co-ordinate :position in that line for pacman> 0
+Next <<number of ghosts>> lines : description of the ghosts
+<x co-ordinate : line in which ghost is> <y co-ordinate :position in that line for the ghost> <direction of the ghost>
+    Direction 0 : no direction
+    Direction 1 : East
+    Direction 2 : West
+    Direction 3 : North
+    Direction 4 : South
+

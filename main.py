@@ -133,7 +133,7 @@ def main():
 	results = runGamesWithMCTS(niceStr,prismFile,**args)
 	engineList = [r[0] for r in results]
 	prettyConsole=True
-	cursesDelay=0.5
+	cursesDelay=0.1
 	runResults(engineList,cursesDelay=cursesDelay,quiet=prettyConsole,prettyConsole=prettyConsole)
 
 if __name__ == "__main__":
