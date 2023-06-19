@@ -1,8 +1,8 @@
 # basic parameters
-verbosity : 0
+verbosity : 5
 prism file : examples/pacman/pacman.nm
 number of games : 1
-number of steps : 2107
+number of steps : 210
 discount factor : 1
 
 # mcts parameters
@@ -16,9 +16,9 @@ mcts:
 # problem specific parameters
 other parameters:
   python file : examples.pacman.pacmanAdvice
-  state score : MDPStateScore
-  selection advice : MDPSafeActionAdvice
-  selection advice at root : MDPNonLossPathAdvice
+  state score : MDPStateScoreDistanceOld
+  selection advice : MDPNNActionAdvice
+  selection advice at root : MDPStormActionAdvice
   simulation action advice : MDPSafeActionAdvice
   simulation path advice : MDPNonLossPathAdvice
   print function : niceStr

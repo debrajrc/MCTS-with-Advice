@@ -88,7 +88,7 @@ def readParameters(yamlFile):
 		mdpActionAdvice = getattr(module, mdpActionAdviceFunction)()
 	else:
 		mdpActionAdvice = MDPSafeActionAdvice()
-	if "selection advice root" in otherParameters:
+	if "selection advice at root" in otherParameters:
 		mdpActionAdviceRootFunction = otherParameters["selection advice at root"]
 		mdpActionAdviceRoot = getattr(module, mdpActionAdviceRootFunction)()
 	else:

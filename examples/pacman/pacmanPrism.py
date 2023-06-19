@@ -1,27 +1,5 @@
-"""! @brief Classes to create MDP for pacman."""
-
 import sys, json, os
 import numpy as np
-# import tensorflow as tf
-# from tensorflow import keras
-# from pacmanStormValueGen import getValue
-# from pacmanPrismNoFood import pacmanEngine as pacmanEngineNoFood
-
-# WORK_DIR = os.environ.get('GLOBALSCRATCH')
-# if WORK_DIR == None:
-# 	WORK_DIR = ""
-# else:
-# 	WORK_DIR = WORK_DIR + os.sep
-
-# # CURRENTPWD = os.path.dirname(os.path.abspath(__file__))
-# # SRC_DIR = os.path.join(CURRENTPWD, '../src')
-# # sys.path.append(SRC_DIR)
-
-# from adviceMCTS.simulationClasses import *
-# import adviceMCTS.util as util
-
-# TEMP_DIR = WORK_DIR+'tempFiles'+os.sep+'prism'
-# util.mkdir(TEMP_DIR)
 
 def readFromFile(fileName):
 	"""! Given a layout file, extracts information from it
@@ -104,6 +82,7 @@ class Layout:
 			self.ghostPositions.append(g[0])
 			self.ghostDirection.append(g[1])
 		self.numGhosts = len(self.ghostPositions)
+
 	def processLayoutText(self, layoutText):
 		# maxY = self.height - 1
 		for x in range(self.height):
@@ -148,10 +127,9 @@ class Layout:
 
 ##
 # class to create a prism file for pacman and do operations
-class pacmanEngine:
+class PacmanEngine:
 
-	def __init__(self,X,Y,numGhosts,layoutText,agentInfo, fname=None):  #drawDepth, timermax, scaredFactor,
-
+	def __init__(self,X,Y,numGhosts,layoutText,agentInfo,fname=None,drawDepth=None,pacmanFirstAction=0): 
 		self.layout = Layout(X,Y,numGhosts,layoutText,agentInfo) # in layout row and columns are counted from bottom left corner
 		self.fname = fname
 		self.width = self.layout.width
@@ -162,14 +140,16 @@ class pacmanEngine:
 		self.ghostPositions = self.layout.ghostPositions # of form [(xg,yg),...]
 		self.ghostDirection = self.layout.ghostDirection
 		self.numGhosts = self.layout.numGhosts
+		self.pacmanFirstAction = pacmanFirstAction
+		self.drawDepth = drawDepth
 
 	def __str__(self):
 		return (str(self.layout))
 
 	@classmethod
-	def fromFile(cls,fileName, fname=None): #drawDepth, timermax, scaredFactor,
+	def fromFile(cls,fileName, fname=None):
 		(X,Y,numGhosts,layoutText,agentInfo) = readFromFile(fileName)
-		return cls(X,Y,numGhosts,layoutText,agentInfo, fname) #drawDepth, timermax, scaredFactor,
+		return cls(X,Y,numGhosts,layoutText,agentInfo, fname)
 
 	def _openOutput(self):
 		if self.fname == None:
@@ -178,6 +158,10 @@ class pacmanEngine:
 			file = open(self.fname,'w+')
 			self.out = file
 
+	def newEngine(self, agentInfo, fname, drawDepth, pacmanFirstAction=0):
+		pacmanEngine = PacmanEngine(self.height,self.width,len(agentInfo) -1 , self.layout.layoutText, agentInfo, fname, drawDepth,pacmanFirstAction)
+		return pacmanEngine
+	
 	def _ghostDirections(self,g):
 		stringEast = 'formula ghostEast%s = '%g
 		stringWest = 'formula ghostWest%s = '%g
@@ -244,7 +228,7 @@ class pacmanEngine:
 		if not noFood:
 			print(f'formula isWin = (token = 0) & (totalFood = 0);',file=self.out)
 		else:
-			print(f'formula isDraw = (token = 0) &  steps = {self.drawDepth} & !isLoss;',file=self.out)
+			print(f'formula isDraw = (token = 0) &  (steps = {self.drawDepth}) & !isLoss;',file=self.out)
 	
 	def _moduleArbiter(self):
 		print('\nmodule arbiter\n',file=self.out)
@@ -304,13 +288,12 @@ class pacmanEngine:
 		'''
 		1 token for pacman
 		1 token for each ghosts
-		1 token to update food and check at the end
+		1 token to update the step counter
 		1 extra token for the win/loss state
 		'''
 
 		print('result : [0 .. 3] init 0;',file=self.out)
 		'''
-		1 = Win
 		2 = Loss
 		3 = Draw
 		'''
@@ -322,19 +305,20 @@ class pacmanEngine:
 		3  north
 		4  south
 		'''
+		# print(f'steps: [0 .. 1] init 0;\n',file=self.out)
 
 		# token = 0
 
 		# actions for pacman
 		print('',file=self.out)
-		print('[East] (!(isDraw | isLoss) & token = 0 & pacmanFirstAction = 1 & steps = 0) -> 1: (token\' = 1);',file=self.out)
-		print('[West] (!(isDraw | isLoss) & token = 0 & pacmanFirstAction = 2 & steps = 0) -> 1: (token\' = 1);',file=self.out)
-		print('[North] (!(isDraw | isLoss) & token = 0 & pacmanFirstAction = 3 & steps = 0) -> 1: (token\' = 1);',file=self.out)
-		print('[South] (!(isDraw | isLoss) & token = 0 & pacmanFirstAction = 4 & steps = 0) -> 1: (token\' = 1);',file=self.out)
-		print('[East] (!(isDraw | isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
-		print('[West] (!(isDraw | isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
-		print('[North] (!(isDraw | isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
-		print('[South] (!(isDraw | isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
+		print('[East] (!(isLoss) & token = 0 & pacmanFirstAction = 1 & steps = 0) -> 1: (token\' = 1);',file=self.out)
+		print('[West] (!(isLoss) & token = 0 & pacmanFirstAction = 2 & steps = 0) -> 1: (token\' = 1);',file=self.out)
+		print('[North] (!(isLoss) & token = 0 & pacmanFirstAction = 3 & steps = 0) -> 1: (token\' = 1);',file=self.out)
+		print('[South] (!(isLoss) & token = 0 & pacmanFirstAction = 4 & steps = 0) -> 1: (token\' = 1);',file=self.out)
+		print('[East] (!(isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
+		print('[West] (!(isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
+		print('[North] (!(isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
+		print('[South] (!(isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
 
 		# token = 1 ... numGhosts
 		# actions for ghosts
@@ -343,7 +327,7 @@ class pacmanEngine:
 			print(f'[g{i}] (token = {i+1}) -> 1: (token\' = {i+2});' ,file=self.out)
 
 		# token = numGhosts + 1
-		# update food
+		# update
 		print(f'\n[update] (token = {self.numGhosts+1}) -> 1: (token\' = 0);\n',file=self.out)
 
 		# print(f'[] (isWin & token = 0) -> 1: (token\' = {self.numGhosts+2}) & (result\' = 1);',file=self.out)
@@ -351,8 +335,6 @@ class pacmanEngine:
 		print(f'[] (isDraw) -> 1: (token\' = {self.numGhosts+2}) & (result\' = 3);',file=self.out)
 		print(f'[] (token = {self.numGhosts+2}) -> 1: (token\' = token);',file=self.out)
 
-#        print('',file=self.out)
-#        print('[] ((isDraw | isWin | isLoss) & token = 0) -> 1: (token\' = 0);',file=self.out)
 		print('endmodule\n',file=self.out)
 
 	def _pacmanMove(self,i,j):
@@ -415,7 +397,12 @@ class pacmanEngine:
 			for j in range(1,self.width-1): # assuming there are walls in the border
 				# eat food
 				print(f'[updateFood] (x{i}_{j}=xp & y{i}_{j}=yp) -> 1: (f{i}_{j}\'=0) & (foodEaten\'=f{i}_{j});',file=self.out)
-#                print('[update] true -> 1: (foodEaten\'=foodEaten);' ,file=self.out)
+		print('endmodule\n',file=self.out)
+
+	def _moduleUpdate(self): # this is for the case when there is no food
+		print('\nmodule check\n',file=self.out)
+		print(f'steps: [0 .. {self.drawDepth}] init 0;\n',file=self.out)
+		print('[update] true -> 1: (steps\'=steps+1);' ,file=self.out)
 		print('endmodule\n',file=self.out)
 
 	def _labels(self, noFood=False):
@@ -424,7 +411,6 @@ class pacmanEngine:
 		else:
 			print('label "Draw" = (result = 3);',file=self.out)
 		print('label "Loss" = (result = 2);',file=self.out)
-		# print('label "Draw" = (result = 1);',file=self.out)
 
 	def _rewards(self, noFood=False):
 		print('\nrewards',file=self.out)
@@ -459,6 +445,8 @@ class pacmanEngine:
 			self._moduleGhost(g)
 		if not noFood:
 			self._moduleUpdateFood()
+		else:
+			self._moduleUpdate()
 		self._labels(noFood)
 		self._rewards(noFood)
 		if self.out != sys.stdout:
@@ -654,330 +642,13 @@ def createEngine(fname):
 	"""
 	X,Y,numGhosts,layoutText,agentInfo = readFromFile(fname)
 	prismFile = fname.split(os.sep)[-1][:-4]+'_'+str(os.getpid())+'.nm' #TEMP_DIR+os.sep+
-	p = pacmanEngine(X,Y,numGhosts,layoutText,agentInfo,prismFile)
+	p = PacmanEngine(X,Y,numGhosts,layoutText,agentInfo,prismFile)
 	return(p)
-
-
-# class MDPStateScoreDistanceOld(MDPStateScoreInterface):
-# 	"""! Distance function that uses a linear combination of distance (exact distance in the graph) from ghosts and remaining foods
-# 	"""
-# 	def __init__(self,X,Y,numGhosts,walls):
-# 		self.X=X
-# 		self.Y=Y
-# 		self.numghosts=numGhosts
-# 		self.walls=walls
-
-# 	def gridDistance(self,posList):
-# 		infty=self.X*self.Y+1
-# 		r = [[ infty for j in range(self.Y)] for i in range(self.X)]
-# 		queue = []
-# 		maxd=infty
-# 		for ((x,y),direction) in posList:
-# 			r[x][y]=0
-# 			# queue.append((x,y,0))
-# 			maxd=0
-# 			(xr,yr)=(x,y)
-# 			if direction==0:
-# 				(xr,yr)=(-1,-1)
-# 			if direction==1:
-# 				yr-=1
-# 			elif direction==2:
-# 				yr+=1
-# 			if direction==3:
-# 				xr+=1
-# 			elif direction==4:
-# 				xr-=1
-# 			for xx,yy in [(x-1,y),(x,y-1),(x+1,y),(x,y+1)]:
-# 				if xx>=0 and xx<self.X and yy>=0 and yy<self.Y and (not self.walls[xx][yy]) and r[xx][yy]>1 and (xx,yy)!=(xr,yr):
-# 					r[xx][yy]=1
-# 					queue.append((xx,yy,1))
-# 					maxd=1
-# 		while len(queue)>0:
-# 			x,y,d = queue.pop(0)
-# 			for xx,yy in [(x-1,y),(x,y-1),(x+1,y),(x,y+1)]:
-# 				if xx>=0 and xx<self.X and yy>=0 and yy<self.Y and (not self.walls[xx][yy]) and r[xx][yy]>d+1:
-# 					r[xx][yy]=d+1
-# 					queue.append((xx,yy,d+1))
-# 					if d+1>maxd:
-# 						maxd=d+1
-# 		# print(f"Distance matrix from positions {posList}")
-# 		# for xx in range(self.X):
-# 		#     for yy in range(self.Y):
-# 		#         if r[xx][yy] == infty:
-# 		#             print(' %  ',end="")
-# 		#         else:
-# 		#             print(str(r[xx][yy]).zfill(3)+" ",end="")
-# 		#     print("")
-# 		# print("maxd",maxd)
-# 		return (r,maxd)
-# 	def getScore(self, executionEngine):
-# 		endState = executionEngine.mdpEndState()
-# 		stateDescription = executionEngine.mdpOperations.stateDescription(endState)
-
-# 		coef = 0.5 # we had coefs alpha and beta in the old implem. the coef should be beta/(1-alpha).
-# 		ghostValuation = 0
-# 		numfoods=0#number of food left to eat
-# 		pacmanPos=stateDescription['xp'], stateDescription['yp']#position of Pacman
-# 		ghostList=[]
-# 		for ghost in range(self.numghosts):
-# 			ghostPos = stateDescription['xg'+str(ghost)], stateDescription['yg'+str(ghost)]
-# 			ghostDirection = stateDescription['d'+str(ghost)]
-# 			ghostList.append((ghostPos,ghostDirection))
-# 		pacmanDistance,maxPacmanDist=self.gridDistance([(pacmanPos,0)])
-# 		ghostsDistanceList=[self.gridDistance([ghostList[ghost]]) for ghost in range(self.numghosts)]
-# 		for ghost in range(self.numghosts):
-# 			d=ghostsDistanceList[ghost][0][pacmanPos[0]][pacmanPos[1]]# distance between ghost number ghost and pacman
-# 			ghostValuation += -100/(1+d)
-# 		if self.numghosts>0:
-# 			ghostValuation /= self.numghosts
-# 		foodValuation = 0
-# 		for i in range(self.X):
-# 			for j in range(self.Y):
-# 				if 'f'+str(i)+'_'+str(j) in stateDescription:
-# 					if stateDescription['f'+str(i)+'_'+str(j)]==1: # is there food in (i, j)?
-# 						numfoods+=1
-# 						d=pacmanDistance[i][j]# distance between pacman and (i,j)
-# 						foodValuation += -100/(1+d)
-# 		if numfoods!=0:
-# 			foodValuation /= numfoods
-# 		return coef*ghostValuation-(1-coef)*(foodValuation)
-
-# class MDPStateScoreMctsNN(MDPStateScoreInterface):
-# 	"""! State score using neural network
-# 	@params pacmanEngine needed to create array from an executionEngine
-# 	@params model neural network model
-# 	@params minY
-# 	@params maxY
-# 	@return (value given by NN)*(maxY-minY)+minY
-# 	"""
-# 	def __init__(self,pacmanEngine,model,minY,maxY):
-# 		self.pacmanEngine = pacmanEngine
-# 		self.model=model
-# 		self.minY=minY
-# 		self.maxY=maxY
-
-# 	def getScore(self, executionEngine):
-# 		endState = executionEngine.mdpEndState()
-# 		stateDescription = executionEngine.mdpOperations.stateDescription(endState)
-# 		# result = [p.name for p in executionEngine.result()]
-# 		# if "Win" in result:
-# 		# 	return 500
-# 		# elif "Loss" in result:
-# 		# 	return -500
-# 		X,Y,numGhosts,walls = self.pacmanEngine.getLayoutDescription()
-# 		pacmanPos=stateDescription['xp'], stateDescription['yp']#position of Pacman
-# 		lastPacmanPos=stateDescription['lastxp'], stateDescription['lastyp']
-# 		for ghost in range(numGhosts):
-# 			ghostPos = stateDescription['xg'+str(ghost)], stateDescription['yg'+str(ghost)]
-# 			lastGhostPos = stateDescription['lastxg'+str(ghost)], stateDescription['lastyg'+str(ghost)]
-# 			# print(pacmanPos,ghostPos,lastPacmanPos,lastGhostPos)
-# 			if pacmanPos == ghostPos or (lastPacmanPos == ghostPos and pacmanPos == lastGhostPos):
-# 				return -500
-# 		x = np.expand_dims(self.pacmanEngine.getArrayWithFood(stateDescription),axis=0)
-# 		x = tf.transpose(x, [0, 2, 3, 1])
-# 		value = keras.backend.get_value(self.model(x))[0][0]
-# 		return value*(self.maxY-self.minY)+self.minY
-
-# class MDPStateScoreSafetyNN(MDPStateScoreInterface):
-# 	def __init__(self,pacmanEngine,model):
-# 		self.pacmanEngine = pacmanEngine
-# 		self.model=model
-
-# 	def getScore(self, executionEngine):
-# 		endState = executionEngine.mdpEndState()
-# 		stateDescription = executionEngine.mdpOperations.stateDescription(endState)
-# 		x = np.expand_dims(self.pacmanEngine.getArray(stateDescription),axis=0)
-# 		x = tf.transpose(x, [0, 2, 3, 1]) # assuming neural network takes input of the form NHWC
-# 		value = keras.backend.get_value(self.model(x))[0][0]
-# 		return 500*(value-1)
-
-# class MDPNNActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-# 	"""! action advice that returns action over a given threshold
-# 	@params model NN model
-# 	@params transformer a sklearn.preprocessing.QuantileTransformer object
-# 	@params pacmanEngine
-# 	@params threshold
-
-# 	@returns choices set of actions
-# 	"""
-
-# 	def __init__(self,model,transformer,pacmanEngine,threshold):
-# 		self.model = model
-# 		self.transformer = transformer
-# 		self.pacmanEngine = pacmanEngine
-# 		self.threshold = threshold
-
-# 	def deepCopy(self):
-# 		return MDPNNActionAdvice(model=self.model, transformer = self.transformer, pacmanEngine=self.pacmanEngine, threshold=self.threshold)
-
-# 	def _getMDPActionAdviceInSubset(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations) -> List[TMDPAction]:
-# 		"""!
-# 		The Agent will receive an MDPOperations and
-# 		must return a subset of a set of legal mdpActions
-# 		"""
-# 		if self.model == None:
-# 			return mdpActions
-# 		if len(mdpActions)==1:
-# 			return mdpActions
-# 		choices = []
-# 		stateDescription = mdpOperations.stateDescription(mdpState)
-# 		# print(self.pacmanEngine.printLayout(stateDescription)) # # debuging
-# 		input_shape = self.model.layers[0].input_shape
-# 		# Note I am using models supporting NHWC
-# 		if input_shape[3] == 7: # input also contains food description
-# 			x = np.expand_dims(self.pacmanEngine.getArrayWithFood(stateDescription),axis=0)
-# 		elif input_shape[3] == 6: # input does not contain food description
-# 			x = np.expand_dims(self.pacmanEngine.getArray(stateDescription),axis=0)
-# 		else:
-# 			raise Exception("Wrong input shape of model: "+str(input_shape))
-# 		x = tf.transpose(x, [0, 2, 3, 1])
-# 		actionValues = keras.backend.get_value(self.model(x))
-# 		if self.transformer == None:
-# 			actionValues = actionValues[0]
-# 		else:
-# 			actionValues = self.transformer.inverse_transform(actionValues)[0]
-# 		# print(actionValues) # # debuging
-# 		actionValues = actionValues - min(actionValues) # TODO: shift with a global value, not a local value
-# 		maxValue = max(actionValues)
-# 		# print(maxValue) # # debuging
-# 		for action in mdpActions:
-# 			# print(action.action)
-# 			try:
-# 				actionId = ['East','West','North','South'].index(action.action)
-# 				# print(actionId)
-# 			except:
-# 				 raise Exception("multiple actions"+str([str(mdpAction) for mdpAction in mdpActions]))
-
-# 			# print(actionValues[actionId],self.threshold*maxValue)
-# 			if actionValues[actionId] >= self.threshold*maxValue:
-# 				choices.append(action)
-# 		if len(choices)==0:
-# 			return mdpActions
-# 		# print("here2",[action.action for action in choices])
-# 		return choices
-
-
-# class MDPStormActionAdvice( MDPActionAdviceInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ): ## TODO:
-# 	"""! action advice that returns action over a given threshold according to Storm
-# 	@params depth Unfording of the MDP with  horizon depth is created and Storm is used to find the probability of staying safe
-# 	@params pacmanEngine
-# 	@params threshold
-
-# 	@returns choices set of actions
-# 	"""
-
-# 	def __init__(self,depth,pacmanEngine,threshold):
-# 		self.depth = depth
-# 		self.pacmanEngine = pacmanEngine
-# 		self.threshold = threshold
-
-# 	def _getMDPActionAdviceInSubset(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations) -> List[TMDPAction]:
-# 		"""
-# 		The Agent will receive an MDPOperations and
-# 		must return a subset of a set of legal mdpActions
-# 		"""
-# 		if len(mdpActions)==1:
-# 			return mdpActions
-# 		choices = []
-# 		stateDescription = mdpOperations.stateDescription(mdpState)
-# 		# print(self.pacmanEngine.printLayout(stateDescription)) # # debuging
-# 		prismFile = TEMP_DIR+os.sep+str(os.getpid())+'_advice.nm'
-# 		height,width,numGhosts,layoutText,agentInfo = self.pacmanEngine.getInfo(stateDescription)
-# 		actionValues = []
-# 		for pacmanFirstAction in range(1,5):
-# 			p = pacmanEngineNoFood(height,width,numGhosts,layoutText,agentInfo,pacmanFirstAction=pacmanFirstAction,drawDepth =self.depth, fname=prismFile)
-# 			p.createPrismFile()
-# 			value = getValue(prismFile,quiet=True)
-# 			actionValues.append(value)
-# 		os.remove(prismFile)
-# 		maxValue = max(actionValues)
-# 		# if maxValue == 1: # if there are always safe actions choose always safe actions
-# 		# 	threshold = 1
-# 		# else:
-# 		# 	threshold = self.threshold
-# 		for action in mdpActions:
-# 			try:
-# 				actionId = ['East','West','North','South'].index(action.action)
-# 			except:
-# 				 raise Exception("multiple actions"+str([str(mdpAction) for mdpAction in mdpActions]))
-
-# 			if actionValues[actionId] >= self.threshold*maxValue:
-# 				# print(actionName)
-# 				choices.append(action)
-# 		if len(choices)==0:
-# 			return mdpActions
-# 		return choices
-
-# class MDPNNActionStrategy( MDPProbabilisticActionStrategyInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-# 	"""!
-# 	A strategy that chooses a legal action uniformly at random from actions from Neural network.
-# 	"""
-# 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
-
-# 	def __init__(self, model, transformer, pacmanEngine, threshold) -> None:
-# 		self.model = model
-# 		self.transformer = transformer
-# 		self.pacmanEngine = pacmanEngine
-# 		self.threshold = threshold
-# 		self.advice = MDPNNActionAdvice(model,transformer,pacmanEngine,threshold)
-
-# 	def deepCopy(self) -> "MDPNNActionStrategy[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]":
-# 		return MDPNNActionStrategy(model=self.model, transformer = self.transformer, pacmanEngine=self.pacmanEngine, threshold=self.threshold)
-
-# 	def _getDistribution(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations) -> util.ConsoleStrFloatCounter[TMDPAction]:
-
-# 		mdpActions,mdpActionsFull = self.advice.getMDPActionAdviceInSubset(mdpActions, mdpState, mdpOperations, True)
-# 		dist: util.ConsoleStrFloatCounter[TMDPAction] = util.ConsoleStrFloatCounter()
-# 		for a in mdpActions: dist[a] = 1.0
-# 		dist.normalize()
-# 		return dist
-
-# class MDPUniformAdviceActionStrategy( MDPProbabilisticActionStrategyInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-# 	"""!
-# 	A strategy that chooses a legal action uniformly at random from legal actions.
-# 	"""
-# 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
-
-# 	def __init__(self, advice) -> None:
-# 		self.advice = advice
-
-# 	def deepCopy(self) -> "MDPNNActionStrategy[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]":
-# 		return MDPNNActionStrategy(advice=self.advice)
-
-# 	def _getDistribution(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations) -> util.ConsoleStrFloatCounter[TMDPAction]:
-
-# 		mdpActions,mdpActionsFull = self.advice.getMDPActionAdviceInSubset(mdpActions, mdpState, mdpOperations, True)
-# 		dist: util.ConsoleStrFloatCounter[TMDPAction] = util.ConsoleStrFloatCounter()
-# 		for a in mdpActions: dist[a] = 1.0
-# 		dist.normalize()
-# 		return dist
-
-# # class MDPStormActionStrategy( MDPProbabilisticActionStrategyInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction] ):
-# # 	"""
-# # 	A strategy that chooses a legal action uniformly at random from actions from Neural network.
-# # 	"""
-# # 	TMDPOperations = TypeVar("TMDPOperations",bound=MDPOperationsInterface[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction])
-# #
-# # 	def __init__(self, depth, pacmanEngine,threshold) -> None:
-# # 		self.depth = depth
-# # 		self.pacmanEngine = pacmanEngine
-# # 		self.threshold = threshold
-# # 		self.advice = MDPStormActionAdvice(depth,pacmanEngine,threshold)
-# #
-# # 	def deepCopy(self) -> "MDPStormActionStrategy[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]":
-# # 		return MDPStormActionStrategy(depth=self.depth, pacmanEngine=self.pacmanEngine, threshold=self.threshold)
-# #
-# # 	def _getDistribution(self, mdpActions: List[TMDPAction], mdpState: TMDPState, mdpOperations: TMDPOperations) -> util.ConsoleStrFloatCounter[TMDPAction]:
-# #
-# # 		mdpActions,mdpActionsFull = self.advice.getMDPActionAdviceInSubset(mdpActions, mdpState, mdpOperations, True)
-# # 		dist: util.ConsoleStrFloatCounter[TMDPAction] = util.ConsoleStrFloatCounter()
-# # 		for a in mdpActions: dist[a] = 1.0
-# # 		dist.normalize()
-# # 		return dist
 
 if __name__ == '__main__':
 	X,Y,numGhosts,layoutText,agentInfo = readFromFile(sys.argv[1])#'layouts/pacman/halfClassic.lay'
-	prismFile = 'pacman.nm'
-	p = pacmanEngine(X,Y,numGhosts,layoutText,agentInfo,prismFile)
-	p.createPrismFile()
+	# prismFile = 'pacman.nm'
+	prismFile = "pacman_noFood.nm"
+	p = PacmanEngine(X,Y,numGhosts,layoutText,agentInfo,prismFile,4)
+	p.createPrismFile(True)
 	# p.savePickle()
