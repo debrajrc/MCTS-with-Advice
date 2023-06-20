@@ -311,14 +311,14 @@ class PacmanEngine:
 
 		# actions for pacman
 		print('',file=self.out)
-		print('[East] (!(isLoss) & token = 0 & pacmanFirstAction = 1 & steps = 0) -> 1: (token\' = 1);',file=self.out)
-		print('[West] (!(isLoss) & token = 0 & pacmanFirstAction = 2 & steps = 0) -> 1: (token\' = 1);',file=self.out)
-		print('[North] (!(isLoss) & token = 0 & pacmanFirstAction = 3 & steps = 0) -> 1: (token\' = 1);',file=self.out)
-		print('[South] (!(isLoss) & token = 0 & pacmanFirstAction = 4 & steps = 0) -> 1: (token\' = 1);',file=self.out)
-		print('[East] (!(isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
-		print('[West] (!(isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
-		print('[North] (!(isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
-		print('[South] (!(isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
+		print('[East] (!(isDraw | isLoss) & token = 0 & pacmanFirstAction = 1 & steps = 0) -> 1: (token\' = 1);',file=self.out)
+		print('[West] (!(isDraw | isLoss) & token = 0 & pacmanFirstAction = 2 & steps = 0) -> 1: (token\' = 1);',file=self.out)
+		print('[North] (!(isDraw | isLoss) & token = 0 & pacmanFirstAction = 3 & steps = 0) -> 1: (token\' = 1);',file=self.out)
+		print('[South] (!(isDraw | isLoss) & token = 0 & pacmanFirstAction = 4 & steps = 0) -> 1: (token\' = 1);',file=self.out)
+		print('[East] (!(isDraw | isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
+		print('[West] (!(isDraw | isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
+		print('[North] (!(isDraw | isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
+		print('[South] (!(isDraw | isLoss) & token = 0 & (!(steps = 0) | pacmanFirstAction = 0)) -> 1: (token\' = 1);',file=self.out)
 
 		# token = 1 ... numGhosts
 		# actions for ghosts
