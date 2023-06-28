@@ -58,9 +58,10 @@ class MDPExecutionEngine(Generic[TMDPPredicate, TMDPState, TMDPAction, TMDPStoch
 		self.mdpExecution.isTerminal = isTerminal
 		if isTerminal:
 			self.mdpExecution.mdpPathReward += self.mdpOperations.getTerminalReward(self.mdpExecution)
-
+	#  returns all predicates in the MDP
 	def getAllPredicates(self) -> List[TMDPPredicate]:
 		return self.mdpOperations.getAllPredicates()
+	# returns a list of lists of predicates where ith list contains all predicates in the ith state of the path
 	def getPredicatesSequence(self) -> List[List[TMDPPredicate]]:
 		return self.mdpExecution.mdpPath.mdpPredicatesSequence
 	def appendPath(self, mdpPath: MDPPath[TMDPPredicate, TMDPState, TMDPAction, TMDPStochasticAction]) -> None:
