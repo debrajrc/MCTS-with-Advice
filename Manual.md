@@ -114,3 +114,6 @@ To run the example, use the following command:
 ```bash
 python3 main.py examples/pacman/pacman.yml
 ```
+
+## 🍒 Example (Traffic)
+TODO

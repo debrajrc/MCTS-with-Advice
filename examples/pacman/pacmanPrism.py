@@ -646,9 +646,9 @@ def createEngine(fname):
 	return(p)
 
 if __name__ == '__main__':
-	X,Y,numGhosts,layoutText,agentInfo = readFromFile(sys.argv[1])#'layouts/pacman/halfClassic.lay'
-	# prismFile = 'pacman.nm'
-	prismFile = "pacman_noFood.nm"
-	p = PacmanEngine(X,Y,numGhosts,layoutText,agentInfo,prismFile,4)
-	p.createPrismFile(True)
+	input = sys.argv
+	X,Y,numGhosts,layoutText,agentInfo = readFromFile(sys.argv[1])#'layouts/halfClassic.lay'
+	prismFile = 'pacman.nm'
+	p = PacmanEngine(X,Y,numGhosts,layoutText,agentInfo,prismFile,None,0)
+	p.createPrismFile(noFood = False)
 	# p.savePickle()

@@ -18,7 +18,7 @@ other parameters:
   python file : examples.traffic.traffic
   state score : MDPStateScore
   selection advice : MDPSafeActionAdvice
-  selection advice at root : MDPNonLossPathAdvice
+  selection advice at root : MDPSafeActionAdvice
   simulation action advice : MDPSafeActionAdvice
   simulation path advice : MDPNonLossPathAdvice
   print function : niceStr

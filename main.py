@@ -55,8 +55,8 @@ def readParameters(yamlFile):
 	args["quietInfoStr"] = quietMCTS
 	args["printEachStepTrace"] = printEachStepTrace
 
-	# prism file location where we write additional methods
-	prismFile = params["prism file"].replace(".py","")
+	# prism file location
+	prismFile = params["prism file"]#.replace(".py","")
 
 	# basic parameters
 	args["numTraces"] = int(params["number of games"])
@@ -79,31 +79,41 @@ def readParameters(yamlFile):
 	if "state score" in otherParameters:
 		mdpStateScoreFunction = otherParameters["state score"]
 		mdpStateScore = getattr(module, mdpStateScoreFunction)()
+		print("Using state score: " + mdpStateScoreFunction)
 	else:
+		print("No state score function specified, using default")
 		mdpStateScore = MDPStateScore()
 
 	# selection advice
 	if "selection advice" in otherParameters:
 		mdpActionAdviceFunction = otherParameters["selection advice"]
 		mdpActionAdvice = getattr(module, mdpActionAdviceFunction)()
+		print("Using selection advice: " + mdpActionAdviceFunction)
 	else:
+		print("No selection advice specified, using default")
 		mdpActionAdvice = MDPSafeActionAdvice()
 	if "selection advice at root" in otherParameters:
 		mdpActionAdviceRootFunction = otherParameters["selection advice at root"]
 		mdpActionAdviceRoot = getattr(module, mdpActionAdviceRootFunction)()
+		print("Using selection advice at root: " + mdpActionAdviceRootFunction)
 	else:
+		print("No selection advice at root specified, using default")
 		mdpActionAdviceRoot = MDPSafeActionAdvice()
 
 	# simulation advice
 	if "simulation action advice" in otherParameters:
 		mdpActionAdviceSimFunction = otherParameters["simulation action advice"]
 		mdpActionAdviceSim = getattr(module, mdpActionAdviceSimFunction)()
+		print("Using simulation action advice: " + mdpActionAdviceSimFunction)
 	else:
+		print("No simulation action advice specified, using default")
 		mdpActionAdviceSim = MDPSafeActionAdvice()
 	if "simulation path advice" in otherParameters:
 		mdpPathAdviceSimFunction = otherParameters["simulation path advice"]
 		mdpPathAdviceSim = getattr(module, mdpPathAdviceSimFunction)()
+		print("Using simulation path advice: " + mdpPathAdviceSimFunction)
 	else:
+		print("No simulation path advice specified, using default")
 		mdpPathAdviceSim = MDPNonLossPathAdvice()
 
 	# some other parameters
