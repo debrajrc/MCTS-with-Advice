@@ -7,10 +7,3 @@ MCTS with advice
 ## Example
 ``python3 main.py examples/traffic/traffic.yml``
 
-
-## TODO
-- Traffic example (generation of prism files from layouts)
-- Two prism files: one for the whole MDP ([example](examples/traffic/traffic.nm)) and one for the advice (TODO)
-- MCTS options in a config file ([example](examples/traffic/traffic.yml))
-- Advice methods defined in a separate python file ([example](examples/traffic/traffic.py))
-- Configuration file for advice
