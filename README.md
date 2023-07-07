@@ -1,4 +1,4 @@
-# MCTSAdvice2
+# MCTS with Advice
 MCTS with advice
 
 ## Requirements
