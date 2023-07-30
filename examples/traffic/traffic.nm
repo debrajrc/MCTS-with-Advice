@@ -1,6 +1,9 @@
 mdp
 
+global totalFuel : int init 1000;
 global timeOfTheDay : int init 0;
+global jamCounter : int init -1;
+
 const int x0_0 = 0;
 const int y0_0 = 0;
 const int w0_0 = 1;
@@ -16,6 +19,21 @@ const int w0_3 = 1;
 const int x0_4 = 0;
 const int y0_4 = 4;
 const int w0_4 = 1;
+const int x0_5 = 0;
+const int y0_5 = 5;
+const int w0_5 = 1;
+const int x0_6 = 0;
+const int y0_6 = 6;
+const int w0_6 = 1;
+const int x0_7 = 0;
+const int y0_7 = 7;
+const int w0_7 = 1;
+const int x0_8 = 0;
+const int y0_8 = 8;
+const int w0_8 = 1;
+const int x0_9 = 0;
+const int y0_9 = 9;
+const int w0_9 = 1;
 const int x1_0 = 1;
 const int y1_0 = 0;
 const int w1_0 = 1;
@@ -30,7 +48,22 @@ const int y1_3 = 3;
 const int w1_3 = 0;
 const int x1_4 = 1;
 const int y1_4 = 4;
-const int w1_4 = 1;
+const int w1_4 = 0;
+const int x1_5 = 1;
+const int y1_5 = 5;
+const int w1_5 = 0;
+const int x1_6 = 1;
+const int y1_6 = 6;
+const int w1_6 = 0;
+const int x1_7 = 1;
+const int y1_7 = 7;
+const int w1_7 = 1;
+const int x1_8 = 1;
+const int y1_8 = 8;
+const int w1_8 = 0;
+const int x1_9 = 1;
+const int y1_9 = 9;
+const int w1_9 = 1;
 const int x2_0 = 2;
 const int y2_0 = 0;
 const int w2_0 = 1;
@@ -42,10 +75,25 @@ const int y2_2 = 2;
 const int w2_2 = 0;
 const int x2_3 = 2;
 const int y2_3 = 3;
-const int w2_3 = 1;
+const int w2_3 = 0;
 const int x2_4 = 2;
 const int y2_4 = 4;
-const int w2_4 = 1;
+const int w2_4 = 0;
+const int x2_5 = 2;
+const int y2_5 = 5;
+const int w2_5 = 0;
+const int x2_6 = 2;
+const int y2_6 = 6;
+const int w2_6 = 0;
+const int x2_7 = 2;
+const int y2_7 = 7;
+const int w2_7 = 0;
+const int x2_8 = 2;
+const int y2_8 = 8;
+const int w2_8 = 1;
+const int x2_9 = 2;
+const int y2_9 = 9;
+const int w2_9 = 1;
 const int x3_0 = 3;
 const int y3_0 = 0;
 const int w3_0 = 1;
@@ -60,46 +108,246 @@ const int y3_3 = 3;
 const int w3_3 = 0;
 const int x3_4 = 3;
 const int y3_4 = 4;
-const int w3_4 = 1;
+const int w3_4 = 0;
+const int x3_5 = 3;
+const int y3_5 = 5;
+const int w3_5 = 0;
+const int x3_6 = 3;
+const int y3_6 = 6;
+const int w3_6 = 0;
+const int x3_7 = 3;
+const int y3_7 = 7;
+const int w3_7 = 0;
+const int x3_8 = 3;
+const int y3_8 = 8;
+const int w3_8 = 0;
+const int x3_9 = 3;
+const int y3_9 = 9;
+const int w3_9 = 1;
 const int x4_0 = 4;
 const int y4_0 = 0;
 const int w4_0 = 1;
 const int x4_1 = 4;
 const int y4_1 = 1;
-const int w4_1 = 1;
+const int w4_1 = 0;
 const int x4_2 = 4;
 const int y4_2 = 2;
 const int w4_2 = 1;
 const int x4_3 = 4;
 const int y4_3 = 3;
-const int w4_3 = 1;
+const int w4_3 = 0;
 const int x4_4 = 4;
 const int y4_4 = 4;
-const int w4_4 = 1;
+const int w4_4 = 0;
+const int x4_5 = 4;
+const int y4_5 = 5;
+const int w4_5 = 0;
+const int x4_6 = 4;
+const int y4_6 = 6;
+const int w4_6 = 1;
+const int x4_7 = 4;
+const int y4_7 = 7;
+const int w4_7 = 0;
+const int x4_8 = 4;
+const int y4_8 = 8;
+const int w4_8 = 0;
+const int x4_9 = 4;
+const int y4_9 = 9;
+const int w4_9 = 1;
+const int x5_0 = 5;
+const int y5_0 = 0;
+const int w5_0 = 1;
+const int x5_1 = 5;
+const int y5_1 = 1;
+const int w5_1 = 0;
+const int x5_2 = 5;
+const int y5_2 = 2;
+const int w5_2 = 0;
+const int x5_3 = 5;
+const int y5_3 = 3;
+const int w5_3 = 0;
+const int x5_4 = 5;
+const int y5_4 = 4;
+const int w5_4 = 0;
+const int x5_5 = 5;
+const int y5_5 = 5;
+const int w5_5 = 0;
+const int x5_6 = 5;
+const int y5_6 = 6;
+const int w5_6 = 0;
+const int x5_7 = 5;
+const int y5_7 = 7;
+const int w5_7 = 0;
+const int x5_8 = 5;
+const int y5_8 = 8;
+const int w5_8 = 0;
+const int x5_9 = 5;
+const int y5_9 = 9;
+const int w5_9 = 1;
+const int x6_0 = 6;
+const int y6_0 = 0;
+const int w6_0 = 1;
+const int x6_1 = 6;
+const int y6_1 = 1;
+const int w6_1 = 0;
+const int x6_2 = 6;
+const int y6_2 = 2;
+const int w6_2 = 0;
+const int x6_3 = 6;
+const int y6_3 = 3;
+const int w6_3 = 0;
+const int x6_4 = 6;
+const int y6_4 = 4;
+const int w6_4 = 0;
+const int x6_5 = 6;
+const int y6_5 = 5;
+const int w6_5 = 0;
+const int x6_6 = 6;
+const int y6_6 = 6;
+const int w6_6 = 0;
+const int x6_7 = 6;
+const int y6_7 = 7;
+const int w6_7 = 0;
+const int x6_8 = 6;
+const int y6_8 = 8;
+const int w6_8 = 0;
+const int x6_9 = 6;
+const int y6_9 = 9;
+const int w6_9 = 1;
+const int x7_0 = 7;
+const int y7_0 = 0;
+const int w7_0 = 1;
+const int x7_1 = 7;
+const int y7_1 = 1;
+const int w7_1 = 0;
+const int x7_2 = 7;
+const int y7_2 = 2;
+const int w7_2 = 0;
+const int x7_3 = 7;
+const int y7_3 = 3;
+const int w7_3 = 0;
+const int x7_4 = 7;
+const int y7_4 = 4;
+const int w7_4 = 0;
+const int x7_5 = 7;
+const int y7_5 = 5;
+const int w7_5 = 0;
+const int x7_6 = 7;
+const int y7_6 = 6;
+const int w7_6 = 0;
+const int x7_7 = 7;
+const int y7_7 = 7;
+const int w7_7 = 0;
+const int x7_8 = 7;
+const int y7_8 = 8;
+const int w7_8 = 0;
+const int x7_9 = 7;
+const int y7_9 = 9;
+const int w7_9 = 1;
+const int x8_0 = 8;
+const int y8_0 = 0;
+const int w8_0 = 1;
+const int x8_1 = 8;
+const int y8_1 = 1;
+const int w8_1 = 0;
+const int x8_2 = 8;
+const int y8_2 = 2;
+const int w8_2 = 0;
+const int x8_3 = 8;
+const int y8_3 = 3;
+const int w8_3 = 0;
+const int x8_4 = 8;
+const int y8_4 = 4;
+const int w8_4 = 0;
+const int x8_5 = 8;
+const int y8_5 = 5;
+const int w8_5 = 0;
+const int x8_6 = 8;
+const int y8_6 = 6;
+const int w8_6 = 0;
+const int x8_7 = 8;
+const int y8_7 = 7;
+const int w8_7 = 0;
+const int x8_8 = 8;
+const int y8_8 = 8;
+const int w8_8 = 0;
+const int x8_9 = 8;
+const int y8_9 = 9;
+const int w8_9 = 1;
+const int x9_0 = 9;
+const int y9_0 = 0;
+const int w9_0 = 1;
+const int x9_1 = 9;
+const int y9_1 = 1;
+const int w9_1 = 1;
+const int x9_2 = 9;
+const int y9_2 = 2;
+const int w9_2 = 1;
+const int x9_3 = 9;
+const int y9_3 = 3;
+const int w9_3 = 1;
+const int x9_4 = 9;
+const int y9_4 = 4;
+const int w9_4 = 1;
+const int x9_5 = 9;
+const int y9_5 = 5;
+const int w9_5 = 1;
+const int x9_6 = 9;
+const int y9_6 = 6;
+const int w9_6 = 1;
+const int x9_7 = 9;
+const int y9_7 = 7;
+const int w9_7 = 1;
+const int x9_8 = 9;
+const int y9_8 = 8;
+const int w9_8 = 1;
+const int x9_9 = 9;
+const int y9_9 = 9;
+const int w9_9 = 1;
+const int xf = 2;
+const int yf = 6;
 
-formula distanceX_c0 = max(xs_c0-xd_c0,xd_c0-xs_c0);
-formula distanceY_c0 = max(ys_c0-yd_c0,yd_c0-ys_c0);
+global totalWaiting_c0 : int init 9;
 
+formula waiting_c0 = (totalWaiting_c0 > 0) & (c0_in = 0) & (((xt != xs_c0) | (yt != ys_c0)) | ((xt = xs_c0) & (yt = ys_c0) & ((c1_in = 1))));
+formula picking_c0 = (xt = xs_c0) & (yt = ys_c0) & (busy = 0);
+formula reaching_c0 = (xt = xd_c0) & (yt = yd_c0) & (c0_in = 1);
+formula riding_c0 =  !(waiting_c0) & !(picking_c0) & !(reaching_c0) & !(totalWaiting_c0 = 0);
 
-formula distanceX_c1 = max(xs_c1-xd_c1,xd_c1-xs_c1);
-formula distanceY_c1 = max(ys_c1-yd_c1,yd_c1-ys_c1);
+formula distance_start_dest_c0 = (max(xs_c0-xd_c0,xd_c0-xs_c0) + max(ys_c0-yd_c0,yd_c0-ys_c0));
+formula distance_dest_c0_fuel = (max(xf-xd_c0,xd_c0-xf) + max(yf-yd_c0,yd_c0-yf));
+formula enough_fuel_c0 = totalFuel >= ((distance_dest_c0_fuel) + (distance_start_dest_c0));
+
+global totalWaiting_c1 : int init 4;
+
+formula waiting_c1 = (totalWaiting_c1 > 0) & (c1_in = 0) & (((xt != xs_c1) | (yt != ys_c1)) | ((xt = xs_c1) & (yt = ys_c1) & ((c0_in = 1))));
+formula picking_c1 = (xt = xs_c1) & (yt = ys_c1) & (busy = 0);
+formula reaching_c1 = (xt = xd_c1) & (yt = yd_c1) & (c1_in = 1);
+formula riding_c1 =  !(waiting_c1) & !(picking_c1) & !(reaching_c1) & !(totalWaiting_c1 = 0);
+
+formula distance_start_dest_c1 = (max(xs_c1-xd_c1,xd_c1-xs_c1) + max(ys_c1-yd_c1,yd_c1-ys_c1));
+formula distance_dest_c1_fuel = (max(xf-xd_c1,xd_c1-xf) + max(yf-yd_c1,yd_c1-yf));
+formula enough_fuel_c1 = totalFuel >= ((distance_dest_c1_fuel) + (distance_start_dest_c1));
 
 formula busy = c0_in + c1_in;
 
-global totalWaiting_c0 : int init 8;
-formula waiting_c0 = (totalWaiting_c0 > 0) & (c0_in = 0) & (((xt != xs_c0) | (yt != ys_c0)));
-formula picking_c0 = (xt = xs_c0) & (yt = ys_c0) & (busy = 0);
-formula reaching_c0 = (xt = xd_c0) & (yt = yd_c0) & (c0_in = 1);
+const int jamDay = 2;
+const int jamPick = 3;
+const int jamNight = 1;
+formula jam = (jamCounter >= 0);
+formula jam_int = (jamCounter != 0)?1:0;
 
-global totalWaiting_c1 : int init 8;
-formula waiting_c1 = (totalWaiting_c1 > 0) & (c1_in = 0) & (((xt != xs_c1) | (yt != ys_c1)));
-formula picking_c1 = (xt = xs_c1) & (yt = ys_c1) & (busy = 0);
-formula reaching_c1 = (xt = xd_c1) & (yt = yd_c1) & (c1_in = 1);
+formula day_hours = (timeOfTheDay <= 8);
+formula pick_hours = (timeOfTheDay > 8) & (timeOfTheDay <= 14);
+formula night_hours = (timeOfTheDay > 14) & (timeOfTheDay <= 24);
 
-formula north = (x1_0 = xt & y1_0 = yt & w0_0 = 0) | (x1_1 = xt & y1_1 = yt & w0_1 = 0) | (x1_2 = xt & y1_2 = yt & w0_2 = 0) | (x1_3 = xt & y1_3 = yt & w0_3 = 0) | (x1_4 = xt & y1_4 = yt & w0_4 = 0) | (x2_0 = xt & y2_0 = yt & w1_0 = 0) | (x2_1 = xt & y2_1 = yt & w1_1 = 0) | (x2_2 = xt & y2_2 = yt & w1_2 = 0) | (x2_3 = xt & y2_3 = yt & w1_3 = 0) | (x2_4 = xt & y2_4 = yt & w1_4 = 0) | (x3_0 = xt & y3_0 = yt & w2_0 = 0) | (x3_1 = xt & y3_1 = yt & w2_1 = 0) | (x3_2 = xt & y3_2 = yt & w2_2 = 0) | (x3_3 = xt & y3_3 = yt & w2_3 = 0) | (x3_4 = xt & y3_4 = yt & w2_4 = 0) | (x4_0 = xt & y4_0 = yt & w3_0 = 0) | (x4_1 = xt & y4_1 = yt & w3_1 = 0) | (x4_2 = xt & y4_2 = yt & w3_2 = 0) | (x4_3 = xt & y4_3 = yt & w3_3 = 0) | (x4_4 = xt & y4_4 = yt & w3_4 = 0);
-formula south = (x0_0 = xt & y0_0 = yt & w1_0 = 0) | (x0_1 = xt & y0_1 = yt & w1_1 = 0) | (x0_2 = xt & y0_2 = yt & w1_2 = 0) | (x0_3 = xt & y0_3 = yt & w1_3 = 0) | (x0_4 = xt & y0_4 = yt & w1_4 = 0) | (x1_0 = xt & y1_0 = yt & w2_0 = 0) | (x1_1 = xt & y1_1 = yt & w2_1 = 0) | (x1_2 = xt & y1_2 = yt & w2_2 = 0) | (x1_3 = xt & y1_3 = yt & w2_3 = 0) | (x1_4 = xt & y1_4 = yt & w2_4 = 0) | (x2_0 = xt & y2_0 = yt & w3_0 = 0) | (x2_1 = xt & y2_1 = yt & w3_1 = 0) | (x2_2 = xt & y2_2 = yt & w3_2 = 0) | (x2_3 = xt & y2_3 = yt & w3_3 = 0) | (x2_4 = xt & y2_4 = yt & w3_4 = 0) | (x3_0 = xt & y3_0 = yt & w4_0 = 0) | (x3_1 = xt & y3_1 = yt & w4_1 = 0) | (x3_2 = xt & y3_2 = yt & w4_2 = 0) | (x3_3 = xt & y3_3 = yt & w4_3 = 0) | (x3_4 = xt & y3_4 = yt & w4_4 = 0);
-formula east = (x0_0 = xt & y0_0 = yt & w0_1 = 0) | (x0_1 = xt & y0_1 = yt & w0_2 = 0) | (x0_2 = xt & y0_2 = yt & w0_3 = 0) | (x0_3 = xt & y0_3 = yt & w0_4 = 0) | (x1_0 = xt & y1_0 = yt & w1_1 = 0) | (x1_1 = xt & y1_1 = yt & w1_2 = 0) | (x1_2 = xt & y1_2 = yt & w1_3 = 0) | (x1_3 = xt & y1_3 = yt & w1_4 = 0) | (x2_0 = xt & y2_0 = yt & w2_1 = 0) | (x2_1 = xt & y2_1 = yt & w2_2 = 0) | (x2_2 = xt & y2_2 = yt & w2_3 = 0) | (x2_3 = xt & y2_3 = yt & w2_4 = 0) | (x3_0 = xt & y3_0 = yt & w3_1 = 0) | (x3_1 = xt & y3_1 = yt & w3_2 = 0) | (x3_2 = xt & y3_2 = yt & w3_3 = 0) | (x3_3 = xt & y3_3 = yt & w3_4 = 0) | (x4_0 = xt & y4_0 = yt & w4_1 = 0) | (x4_1 = xt & y4_1 = yt & w4_2 = 0) | (x4_2 = xt & y4_2 = yt & w4_3 = 0) | (x4_3 = xt & y4_3 = yt & w4_4 = 0);
-formula west = (x0_1 = xt & y0_1 = yt & w0_0 = 0) | (x0_2 = xt & y0_2 = yt & w0_1 = 0) | (x0_3 = xt & y0_3 = yt & w0_2 = 0) | (x0_4 = xt & y0_4 = yt & w0_3 = 0) | (x1_1 = xt & y1_1 = yt & w1_0 = 0) | (x1_2 = xt & y1_2 = yt & w1_1 = 0) | (x1_3 = xt & y1_3 = yt & w1_2 = 0) | (x1_4 = xt & y1_4 = yt & w1_3 = 0) | (x2_1 = xt & y2_1 = yt & w2_0 = 0) | (x2_2 = xt & y2_2 = yt & w2_1 = 0) | (x2_3 = xt & y2_3 = yt & w2_2 = 0) | (x2_4 = xt & y2_4 = yt & w2_3 = 0) | (x3_1 = xt & y3_1 = yt & w3_0 = 0) | (x3_2 = xt & y3_2 = yt & w3_1 = 0) | (x3_3 = xt & y3_3 = yt & w3_2 = 0) | (x3_4 = xt & y3_4 = yt & w3_3 = 0) | (x4_1 = xt & y4_1 = yt & w4_0 = 0) | (x4_2 = xt & y4_2 = yt & w4_1 = 0) | (x4_3 = xt & y4_3 = yt & w4_2 = 0) | (x4_4 = xt & y4_4 = yt & w4_3 = 0);
+formula north = (x1_0 = xt & y1_0 = yt & w0_0 = 0) | (x1_1 = xt & y1_1 = yt & w0_1 = 0) | (x1_2 = xt & y1_2 = yt & w0_2 = 0) | (x1_3 = xt & y1_3 = yt & w0_3 = 0) | (x1_4 = xt & y1_4 = yt & w0_4 = 0) | (x1_5 = xt & y1_5 = yt & w0_5 = 0) | (x1_6 = xt & y1_6 = yt & w0_6 = 0) | (x1_7 = xt & y1_7 = yt & w0_7 = 0) | (x1_8 = xt & y1_8 = yt & w0_8 = 0) | (x1_9 = xt & y1_9 = yt & w0_9 = 0) | (x2_0 = xt & y2_0 = yt & w1_0 = 0) | (x2_1 = xt & y2_1 = yt & w1_1 = 0) | (x2_2 = xt & y2_2 = yt & w1_2 = 0) | (x2_3 = xt & y2_3 = yt & w1_3 = 0) | (x2_4 = xt & y2_4 = yt & w1_4 = 0) | (x2_5 = xt & y2_5 = yt & w1_5 = 0) | (x2_6 = xt & y2_6 = yt & w1_6 = 0) | (x2_7 = xt & y2_7 = yt & w1_7 = 0) | (x2_8 = xt & y2_8 = yt & w1_8 = 0) | (x2_9 = xt & y2_9 = yt & w1_9 = 0) | (x3_0 = xt & y3_0 = yt & w2_0 = 0) | (x3_1 = xt & y3_1 = yt & w2_1 = 0) | (x3_2 = xt & y3_2 = yt & w2_2 = 0) | (x3_3 = xt & y3_3 = yt & w2_3 = 0) | (x3_4 = xt & y3_4 = yt & w2_4 = 0) | (x3_5 = xt & y3_5 = yt & w2_5 = 0) | (x3_6 = xt & y3_6 = yt & w2_6 = 0) | (x3_7 = xt & y3_7 = yt & w2_7 = 0) | (x3_8 = xt & y3_8 = yt & w2_8 = 0) | (x3_9 = xt & y3_9 = yt & w2_9 = 0) | (x4_0 = xt & y4_0 = yt & w3_0 = 0) | (x4_1 = xt & y4_1 = yt & w3_1 = 0) | (x4_2 = xt & y4_2 = yt & w3_2 = 0) | (x4_3 = xt & y4_3 = yt & w3_3 = 0) | (x4_4 = xt & y4_4 = yt & w3_4 = 0) | (x4_5 = xt & y4_5 = yt & w3_5 = 0) | (x4_6 = xt & y4_6 = yt & w3_6 = 0) | (x4_7 = xt & y4_7 = yt & w3_7 = 0) | (x4_8 = xt & y4_8 = yt & w3_8 = 0) | (x4_9 = xt & y4_9 = yt & w3_9 = 0) | (x5_0 = xt & y5_0 = yt & w4_0 = 0) | (x5_1 = xt & y5_1 = yt & w4_1 = 0) | (x5_2 = xt & y5_2 = yt & w4_2 = 0) | (x5_3 = xt & y5_3 = yt & w4_3 = 0) | (x5_4 = xt & y5_4 = yt & w4_4 = 0) | (x5_5 = xt & y5_5 = yt & w4_5 = 0) | (x5_6 = xt & y5_6 = yt & w4_6 = 0) | (x5_7 = xt & y5_7 = yt & w4_7 = 0) | (x5_8 = xt & y5_8 = yt & w4_8 = 0) | (x5_9 = xt & y5_9 = yt & w4_9 = 0) | (x6_0 = xt & y6_0 = yt & w5_0 = 0) | (x6_1 = xt & y6_1 = yt & w5_1 = 0) | (x6_2 = xt & y6_2 = yt & w5_2 = 0) | (x6_3 = xt & y6_3 = yt & w5_3 = 0) | (x6_4 = xt & y6_4 = yt & w5_4 = 0) | (x6_5 = xt & y6_5 = yt & w5_5 = 0) | (x6_6 = xt & y6_6 = yt & w5_6 = 0) | (x6_7 = xt & y6_7 = yt & w5_7 = 0) | (x6_8 = xt & y6_8 = yt & w5_8 = 0) | (x6_9 = xt & y6_9 = yt & w5_9 = 0) | (x7_0 = xt & y7_0 = yt & w6_0 = 0) | (x7_1 = xt & y7_1 = yt & w6_1 = 0) | (x7_2 = xt & y7_2 = yt & w6_2 = 0) | (x7_3 = xt & y7_3 = yt & w6_3 = 0) | (x7_4 = xt & y7_4 = yt & w6_4 = 0) | (x7_5 = xt & y7_5 = yt & w6_5 = 0) | (x7_6 = xt & y7_6 = yt & w6_6 = 0) | (x7_7 = xt & y7_7 = yt & w6_7 = 0) | (x7_8 = xt & y7_8 = yt & w6_8 = 0) | (x7_9 = xt & y7_9 = yt & w6_9 = 0) | (x8_0 = xt & y8_0 = yt & w7_0 = 0) | (x8_1 = xt & y8_1 = yt & w7_1 = 0) | (x8_2 = xt & y8_2 = yt & w7_2 = 0) | (x8_3 = xt & y8_3 = yt & w7_3 = 0) | (x8_4 = xt & y8_4 = yt & w7_4 = 0) | (x8_5 = xt & y8_5 = yt & w7_5 = 0) | (x8_6 = xt & y8_6 = yt & w7_6 = 0) | (x8_7 = xt & y8_7 = yt & w7_7 = 0) | (x8_8 = xt & y8_8 = yt & w7_8 = 0) | (x8_9 = xt & y8_9 = yt & w7_9 = 0) | (x9_0 = xt & y9_0 = yt & w8_0 = 0) | (x9_1 = xt & y9_1 = yt & w8_1 = 0) | (x9_2 = xt & y9_2 = yt & w8_2 = 0) | (x9_3 = xt & y9_3 = yt & w8_3 = 0) | (x9_4 = xt & y9_4 = yt & w8_4 = 0) | (x9_5 = xt & y9_5 = yt & w8_5 = 0) | (x9_6 = xt & y9_6 = yt & w8_6 = 0) | (x9_7 = xt & y9_7 = yt & w8_7 = 0) | (x9_8 = xt & y9_8 = yt & w8_8 = 0) | (x9_9 = xt & y9_9 = yt & w8_9 = 0);
+formula south = (x0_0 = xt & y0_0 = yt & w1_0 = 0) | (x0_1 = xt & y0_1 = yt & w1_1 = 0) | (x0_2 = xt & y0_2 = yt & w1_2 = 0) | (x0_3 = xt & y0_3 = yt & w1_3 = 0) | (x0_4 = xt & y0_4 = yt & w1_4 = 0) | (x0_5 = xt & y0_5 = yt & w1_5 = 0) | (x0_6 = xt & y0_6 = yt & w1_6 = 0) | (x0_7 = xt & y0_7 = yt & w1_7 = 0) | (x0_8 = xt & y0_8 = yt & w1_8 = 0) | (x0_9 = xt & y0_9 = yt & w1_9 = 0) | (x1_0 = xt & y1_0 = yt & w2_0 = 0) | (x1_1 = xt & y1_1 = yt & w2_1 = 0) | (x1_2 = xt & y1_2 = yt & w2_2 = 0) | (x1_3 = xt & y1_3 = yt & w2_3 = 0) | (x1_4 = xt & y1_4 = yt & w2_4 = 0) | (x1_5 = xt & y1_5 = yt & w2_5 = 0) | (x1_6 = xt & y1_6 = yt & w2_6 = 0) | (x1_7 = xt & y1_7 = yt & w2_7 = 0) | (x1_8 = xt & y1_8 = yt & w2_8 = 0) | (x1_9 = xt & y1_9 = yt & w2_9 = 0) | (x2_0 = xt & y2_0 = yt & w3_0 = 0) | (x2_1 = xt & y2_1 = yt & w3_1 = 0) | (x2_2 = xt & y2_2 = yt & w3_2 = 0) | (x2_3 = xt & y2_3 = yt & w3_3 = 0) | (x2_4 = xt & y2_4 = yt & w3_4 = 0) | (x2_5 = xt & y2_5 = yt & w3_5 = 0) | (x2_6 = xt & y2_6 = yt & w3_6 = 0) | (x2_7 = xt & y2_7 = yt & w3_7 = 0) | (x2_8 = xt & y2_8 = yt & w3_8 = 0) | (x2_9 = xt & y2_9 = yt & w3_9 = 0) | (x3_0 = xt & y3_0 = yt & w4_0 = 0) | (x3_1 = xt & y3_1 = yt & w4_1 = 0) | (x3_2 = xt & y3_2 = yt & w4_2 = 0) | (x3_3 = xt & y3_3 = yt & w4_3 = 0) | (x3_4 = xt & y3_4 = yt & w4_4 = 0) | (x3_5 = xt & y3_5 = yt & w4_5 = 0) | (x3_6 = xt & y3_6 = yt & w4_6 = 0) | (x3_7 = xt & y3_7 = yt & w4_7 = 0) | (x3_8 = xt & y3_8 = yt & w4_8 = 0) | (x3_9 = xt & y3_9 = yt & w4_9 = 0) | (x4_0 = xt & y4_0 = yt & w5_0 = 0) | (x4_1 = xt & y4_1 = yt & w5_1 = 0) | (x4_2 = xt & y4_2 = yt & w5_2 = 0) | (x4_3 = xt & y4_3 = yt & w5_3 = 0) | (x4_4 = xt & y4_4 = yt & w5_4 = 0) | (x4_5 = xt & y4_5 = yt & w5_5 = 0) | (x4_6 = xt & y4_6 = yt & w5_6 = 0) | (x4_7 = xt & y4_7 = yt & w5_7 = 0) | (x4_8 = xt & y4_8 = yt & w5_8 = 0) | (x4_9 = xt & y4_9 = yt & w5_9 = 0) | (x5_0 = xt & y5_0 = yt & w6_0 = 0) | (x5_1 = xt & y5_1 = yt & w6_1 = 0) | (x5_2 = xt & y5_2 = yt & w6_2 = 0) | (x5_3 = xt & y5_3 = yt & w6_3 = 0) | (x5_4 = xt & y5_4 = yt & w6_4 = 0) | (x5_5 = xt & y5_5 = yt & w6_5 = 0) | (x5_6 = xt & y5_6 = yt & w6_6 = 0) | (x5_7 = xt & y5_7 = yt & w6_7 = 0) | (x5_8 = xt & y5_8 = yt & w6_8 = 0) | (x5_9 = xt & y5_9 = yt & w6_9 = 0) | (x6_0 = xt & y6_0 = yt & w7_0 = 0) | (x6_1 = xt & y6_1 = yt & w7_1 = 0) | (x6_2 = xt & y6_2 = yt & w7_2 = 0) | (x6_3 = xt & y6_3 = yt & w7_3 = 0) | (x6_4 = xt & y6_4 = yt & w7_4 = 0) | (x6_5 = xt & y6_5 = yt & w7_5 = 0) | (x6_6 = xt & y6_6 = yt & w7_6 = 0) | (x6_7 = xt & y6_7 = yt & w7_7 = 0) | (x6_8 = xt & y6_8 = yt & w7_8 = 0) | (x6_9 = xt & y6_9 = yt & w7_9 = 0) | (x7_0 = xt & y7_0 = yt & w8_0 = 0) | (x7_1 = xt & y7_1 = yt & w8_1 = 0) | (x7_2 = xt & y7_2 = yt & w8_2 = 0) | (x7_3 = xt & y7_3 = yt & w8_3 = 0) | (x7_4 = xt & y7_4 = yt & w8_4 = 0) | (x7_5 = xt & y7_5 = yt & w8_5 = 0) | (x7_6 = xt & y7_6 = yt & w8_6 = 0) | (x7_7 = xt & y7_7 = yt & w8_7 = 0) | (x7_8 = xt & y7_8 = yt & w8_8 = 0) | (x7_9 = xt & y7_9 = yt & w8_9 = 0) | (x8_0 = xt & y8_0 = yt & w9_0 = 0) | (x8_1 = xt & y8_1 = yt & w9_1 = 0) | (x8_2 = xt & y8_2 = yt & w9_2 = 0) | (x8_3 = xt & y8_3 = yt & w9_3 = 0) | (x8_4 = xt & y8_4 = yt & w9_4 = 0) | (x8_5 = xt & y8_5 = yt & w9_5 = 0) | (x8_6 = xt & y8_6 = yt & w9_6 = 0) | (x8_7 = xt & y8_7 = yt & w9_7 = 0) | (x8_8 = xt & y8_8 = yt & w9_8 = 0) | (x8_9 = xt & y8_9 = yt & w9_9 = 0);
+formula east = (x0_0 = xt & y0_0 = yt & w0_1 = 0) | (x0_1 = xt & y0_1 = yt & w0_2 = 0) | (x0_2 = xt & y0_2 = yt & w0_3 = 0) | (x0_3 = xt & y0_3 = yt & w0_4 = 0) | (x0_4 = xt & y0_4 = yt & w0_5 = 0) | (x0_5 = xt & y0_5 = yt & w0_6 = 0) | (x0_6 = xt & y0_6 = yt & w0_7 = 0) | (x0_7 = xt & y0_7 = yt & w0_8 = 0) | (x0_8 = xt & y0_8 = yt & w0_9 = 0) | (x1_0 = xt & y1_0 = yt & w1_1 = 0) | (x1_1 = xt & y1_1 = yt & w1_2 = 0) | (x1_2 = xt & y1_2 = yt & w1_3 = 0) | (x1_3 = xt & y1_3 = yt & w1_4 = 0) | (x1_4 = xt & y1_4 = yt & w1_5 = 0) | (x1_5 = xt & y1_5 = yt & w1_6 = 0) | (x1_6 = xt & y1_6 = yt & w1_7 = 0) | (x1_7 = xt & y1_7 = yt & w1_8 = 0) | (x1_8 = xt & y1_8 = yt & w1_9 = 0) | (x2_0 = xt & y2_0 = yt & w2_1 = 0) | (x2_1 = xt & y2_1 = yt & w2_2 = 0) | (x2_2 = xt & y2_2 = yt & w2_3 = 0) | (x2_3 = xt & y2_3 = yt & w2_4 = 0) | (x2_4 = xt & y2_4 = yt & w2_5 = 0) | (x2_5 = xt & y2_5 = yt & w2_6 = 0) | (x2_6 = xt & y2_6 = yt & w2_7 = 0) | (x2_7 = xt & y2_7 = yt & w2_8 = 0) | (x2_8 = xt & y2_8 = yt & w2_9 = 0) | (x3_0 = xt & y3_0 = yt & w3_1 = 0) | (x3_1 = xt & y3_1 = yt & w3_2 = 0) | (x3_2 = xt & y3_2 = yt & w3_3 = 0) | (x3_3 = xt & y3_3 = yt & w3_4 = 0) | (x3_4 = xt & y3_4 = yt & w3_5 = 0) | (x3_5 = xt & y3_5 = yt & w3_6 = 0) | (x3_6 = xt & y3_6 = yt & w3_7 = 0) | (x3_7 = xt & y3_7 = yt & w3_8 = 0) | (x3_8 = xt & y3_8 = yt & w3_9 = 0) | (x4_0 = xt & y4_0 = yt & w4_1 = 0) | (x4_1 = xt & y4_1 = yt & w4_2 = 0) | (x4_2 = xt & y4_2 = yt & w4_3 = 0) | (x4_3 = xt & y4_3 = yt & w4_4 = 0) | (x4_4 = xt & y4_4 = yt & w4_5 = 0) | (x4_5 = xt & y4_5 = yt & w4_6 = 0) | (x4_6 = xt & y4_6 = yt & w4_7 = 0) | (x4_7 = xt & y4_7 = yt & w4_8 = 0) | (x4_8 = xt & y4_8 = yt & w4_9 = 0) | (x5_0 = xt & y5_0 = yt & w5_1 = 0) | (x5_1 = xt & y5_1 = yt & w5_2 = 0) | (x5_2 = xt & y5_2 = yt & w5_3 = 0) | (x5_3 = xt & y5_3 = yt & w5_4 = 0) | (x5_4 = xt & y5_4 = yt & w5_5 = 0) | (x5_5 = xt & y5_5 = yt & w5_6 = 0) | (x5_6 = xt & y5_6 = yt & w5_7 = 0) | (x5_7 = xt & y5_7 = yt & w5_8 = 0) | (x5_8 = xt & y5_8 = yt & w5_9 = 0) | (x6_0 = xt & y6_0 = yt & w6_1 = 0) | (x6_1 = xt & y6_1 = yt & w6_2 = 0) | (x6_2 = xt & y6_2 = yt & w6_3 = 0) | (x6_3 = xt & y6_3 = yt & w6_4 = 0) | (x6_4 = xt & y6_4 = yt & w6_5 = 0) | (x6_5 = xt & y6_5 = yt & w6_6 = 0) | (x6_6 = xt & y6_6 = yt & w6_7 = 0) | (x6_7 = xt & y6_7 = yt & w6_8 = 0) | (x6_8 = xt & y6_8 = yt & w6_9 = 0) | (x7_0 = xt & y7_0 = yt & w7_1 = 0) | (x7_1 = xt & y7_1 = yt & w7_2 = 0) | (x7_2 = xt & y7_2 = yt & w7_3 = 0) | (x7_3 = xt & y7_3 = yt & w7_4 = 0) | (x7_4 = xt & y7_4 = yt & w7_5 = 0) | (x7_5 = xt & y7_5 = yt & w7_6 = 0) | (x7_6 = xt & y7_6 = yt & w7_7 = 0) | (x7_7 = xt & y7_7 = yt & w7_8 = 0) | (x7_8 = xt & y7_8 = yt & w7_9 = 0) | (x8_0 = xt & y8_0 = yt & w8_1 = 0) | (x8_1 = xt & y8_1 = yt & w8_2 = 0) | (x8_2 = xt & y8_2 = yt & w8_3 = 0) | (x8_3 = xt & y8_3 = yt & w8_4 = 0) | (x8_4 = xt & y8_4 = yt & w8_5 = 0) | (x8_5 = xt & y8_5 = yt & w8_6 = 0) | (x8_6 = xt & y8_6 = yt & w8_7 = 0) | (x8_7 = xt & y8_7 = yt & w8_8 = 0) | (x8_8 = xt & y8_8 = yt & w8_9 = 0) | (x9_0 = xt & y9_0 = yt & w9_1 = 0) | (x9_1 = xt & y9_1 = yt & w9_2 = 0) | (x9_2 = xt & y9_2 = yt & w9_3 = 0) | (x9_3 = xt & y9_3 = yt & w9_4 = 0) | (x9_4 = xt & y9_4 = yt & w9_5 = 0) | (x9_5 = xt & y9_5 = yt & w9_6 = 0) | (x9_6 = xt & y9_6 = yt & w9_7 = 0) | (x9_7 = xt & y9_7 = yt & w9_8 = 0) | (x9_8 = xt & y9_8 = yt & w9_9 = 0);
+formula west = (x0_1 = xt & y0_1 = yt & w0_0 = 0) | (x0_2 = xt & y0_2 = yt & w0_1 = 0) | (x0_3 = xt & y0_3 = yt & w0_2 = 0) | (x0_4 = xt & y0_4 = yt & w0_3 = 0) | (x0_5 = xt & y0_5 = yt & w0_4 = 0) | (x0_6 = xt & y0_6 = yt & w0_5 = 0) | (x0_7 = xt & y0_7 = yt & w0_6 = 0) | (x0_8 = xt & y0_8 = yt & w0_7 = 0) | (x0_9 = xt & y0_9 = yt & w0_8 = 0) | (x1_1 = xt & y1_1 = yt & w1_0 = 0) | (x1_2 = xt & y1_2 = yt & w1_1 = 0) | (x1_3 = xt & y1_3 = yt & w1_2 = 0) | (x1_4 = xt & y1_4 = yt & w1_3 = 0) | (x1_5 = xt & y1_5 = yt & w1_4 = 0) | (x1_6 = xt & y1_6 = yt & w1_5 = 0) | (x1_7 = xt & y1_7 = yt & w1_6 = 0) | (x1_8 = xt & y1_8 = yt & w1_7 = 0) | (x1_9 = xt & y1_9 = yt & w1_8 = 0) | (x2_1 = xt & y2_1 = yt & w2_0 = 0) | (x2_2 = xt & y2_2 = yt & w2_1 = 0) | (x2_3 = xt & y2_3 = yt & w2_2 = 0) | (x2_4 = xt & y2_4 = yt & w2_3 = 0) | (x2_5 = xt & y2_5 = yt & w2_4 = 0) | (x2_6 = xt & y2_6 = yt & w2_5 = 0) | (x2_7 = xt & y2_7 = yt & w2_6 = 0) | (x2_8 = xt & y2_8 = yt & w2_7 = 0) | (x2_9 = xt & y2_9 = yt & w2_8 = 0) | (x3_1 = xt & y3_1 = yt & w3_0 = 0) | (x3_2 = xt & y3_2 = yt & w3_1 = 0) | (x3_3 = xt & y3_3 = yt & w3_2 = 0) | (x3_4 = xt & y3_4 = yt & w3_3 = 0) | (x3_5 = xt & y3_5 = yt & w3_4 = 0) | (x3_6 = xt & y3_6 = yt & w3_5 = 0) | (x3_7 = xt & y3_7 = yt & w3_6 = 0) | (x3_8 = xt & y3_8 = yt & w3_7 = 0) | (x3_9 = xt & y3_9 = yt & w3_8 = 0) | (x4_1 = xt & y4_1 = yt & w4_0 = 0) | (x4_2 = xt & y4_2 = yt & w4_1 = 0) | (x4_3 = xt & y4_3 = yt & w4_2 = 0) | (x4_4 = xt & y4_4 = yt & w4_3 = 0) | (x4_5 = xt & y4_5 = yt & w4_4 = 0) | (x4_6 = xt & y4_6 = yt & w4_5 = 0) | (x4_7 = xt & y4_7 = yt & w4_6 = 0) | (x4_8 = xt & y4_8 = yt & w4_7 = 0) | (x4_9 = xt & y4_9 = yt & w4_8 = 0) | (x5_1 = xt & y5_1 = yt & w5_0 = 0) | (x5_2 = xt & y5_2 = yt & w5_1 = 0) | (x5_3 = xt & y5_3 = yt & w5_2 = 0) | (x5_4 = xt & y5_4 = yt & w5_3 = 0) | (x5_5 = xt & y5_5 = yt & w5_4 = 0) | (x5_6 = xt & y5_6 = yt & w5_5 = 0) | (x5_7 = xt & y5_7 = yt & w5_6 = 0) | (x5_8 = xt & y5_8 = yt & w5_7 = 0) | (x5_9 = xt & y5_9 = yt & w5_8 = 0) | (x6_1 = xt & y6_1 = yt & w6_0 = 0) | (x6_2 = xt & y6_2 = yt & w6_1 = 0) | (x6_3 = xt & y6_3 = yt & w6_2 = 0) | (x6_4 = xt & y6_4 = yt & w6_3 = 0) | (x6_5 = xt & y6_5 = yt & w6_4 = 0) | (x6_6 = xt & y6_6 = yt & w6_5 = 0) | (x6_7 = xt & y6_7 = yt & w6_6 = 0) | (x6_8 = xt & y6_8 = yt & w6_7 = 0) | (x6_9 = xt & y6_9 = yt & w6_8 = 0) | (x7_1 = xt & y7_1 = yt & w7_0 = 0) | (x7_2 = xt & y7_2 = yt & w7_1 = 0) | (x7_3 = xt & y7_3 = yt & w7_2 = 0) | (x7_4 = xt & y7_4 = yt & w7_3 = 0) | (x7_5 = xt & y7_5 = yt & w7_4 = 0) | (x7_6 = xt & y7_6 = yt & w7_5 = 0) | (x7_7 = xt & y7_7 = yt & w7_6 = 0) | (x7_8 = xt & y7_8 = yt & w7_7 = 0) | (x7_9 = xt & y7_9 = yt & w7_8 = 0) | (x8_1 = xt & y8_1 = yt & w8_0 = 0) | (x8_2 = xt & y8_2 = yt & w8_1 = 0) | (x8_3 = xt & y8_3 = yt & w8_2 = 0) | (x8_4 = xt & y8_4 = yt & w8_3 = 0) | (x8_5 = xt & y8_5 = yt & w8_4 = 0) | (x8_6 = xt & y8_6 = yt & w8_5 = 0) | (x8_7 = xt & y8_7 = yt & w8_6 = 0) | (x8_8 = xt & y8_8 = yt & w8_7 = 0) | (x8_9 = xt & y8_9 = yt & w8_8 = 0) | (x9_1 = xt & y9_1 = yt & w9_0 = 0) | (x9_2 = xt & y9_2 = yt & w9_1 = 0) | (x9_3 = xt & y9_3 = yt & w9_2 = 0) | (x9_4 = xt & y9_4 = yt & w9_3 = 0) | (x9_5 = xt & y9_5 = yt & w9_4 = 0) | (x9_6 = xt & y9_6 = yt & w9_5 = 0) | (x9_7 = xt & y9_7 = yt & w9_6 = 0) | (x9_8 = xt & y9_8 = yt & w9_7 = 0) | (x9_9 = xt & y9_9 = yt & w9_8 = 0);
+formula fuelOK = (totalFuel >= 1)?1:0;
+formula unsafe = (totalFuel < 1);
+
 
 module time
 
@@ -108,88 +356,113 @@ module time
 endmodule
 
 
-module arbiter
+module fuel
 
-token : [0 .. 5] init 0;
-
-[North] (token = 0) -> 1: (token' = 1);
-[South] (token = 0) -> 1: (token' = 1);
-[East] (token = 0) -> 1: (token' = 1);
-[West] (token = 0) -> 1: (token' = 1);
-
-[pick_0] (token = 1) -> 1: (token' = 2);
-[pick_1] (token = 2) -> 1: (token' = 3);
-
-[client_0] (token = 3) -> 1: (token' = 4);
-[client_1] (token = 4) -> 1: (token' = 5);
-
-[updateDay] (token = 5) -> 1: (token' = 0);
+[updateFuel] (busy = 0 & (xt = xf & yt = yf)) -> 1: (totalFuel' = 1000);
+[updateFuel] !(busy = 0 & (xt = xf & yt = yf)) -> 1: (totalFuel' = totalFuel);
 
 endmodule
 
 
 module taxi
 
-xt : [1..4] init 1;
-yt : [1..4] init 1;
+xt : [1..9] init 8;
+yt : [1..9] init 3;
 
-[North] (north) -> 1: (xt' = xt - 1);
-[South] (south) -> 1: (xt'= xt + 1);
-[East] (east) -> 1: (yt' = yt + 1);
-[West] (west) -> 1: (yt' = yt - 1);
+[North] (north) -> (jam_int * fuelOK): (jamCounter' = jamCounter - 1) & (totalFuel' = totalFuel-1) +  ((1 - jam_int) *fuelOK) : (xt' = xt - 1) & (jamCounter' = - 1) & (totalFuel' = totalFuel-1) + (1 - fuelOK) : (xt' = xt);
+[South] (south) -> (jam_int * fuelOK): (jamCounter' = jamCounter - 1) & (totalFuel' = totalFuel-1) +  ((1 - jam_int) *fuelOK) : (xt'= xt + 1) & (jamCounter' = - 1) & (totalFuel' = totalFuel-1) + (1 - fuelOK) : (xt' = xt);
+[East] (east) -> (jam_int * fuelOK): (jamCounter' = jamCounter - 1) & (totalFuel' = totalFuel-1) +  ((1 - jam_int) *fuelOK) : (yt' = yt + 1) & (jamCounter' = - 1) & (totalFuel' = totalFuel-1) + (1 - fuelOK) : (yt' = yt);
+[West] (west) -> (jam_int * fuelOK): (jamCounter' = jamCounter - 1) & (totalFuel' = totalFuel-1) +  ((1 - jam_int) *fuelOK) : (yt' = yt - 1) & (jamCounter' = - 1) & (totalFuel' = totalFuel-1) + (1 - fuelOK) : (yt' = yt);
+
+endmodule
+
+
+module arbiter
+
+token : [0 .. 7] init 0;
+
+[updateJam] (token = 0) -> 1: (token' = 1);
+
+[North] (token = 1) -> 1: (token' = 2);
+[South] (token = 1) -> 1: (token' = 2);
+[East] (token = 1) -> 1: (token' = 2);
+[West] (token = 1) -> 1: (token' = 2);
+
+[pick_c0] (token = 2) -> 1: (token' = 3);
+[pick_c1] (token = 3) -> 1: (token' = 4);
+
+[client_0] (token = 4) -> 1: (token' = 5);
+[client_1] (token = 5) -> 1: (token' = 6);
+
+[updateFuel] (token = 6) -> 1: (token' = 7);
+
+[updateDay] (token = 7) -> 1: (token' = 0);
+
+endmodule
+
+
+module jam
+
+[updateJam] (day_hours & jamCounter = -1) -> 1: (jamCounter' = jamDay);
+[updateJam] (pick_hours & jamCounter = -1) -> 1: (jamCounter' = jamPick);
+[updateJam] (night_hours & jamCounter = -1) -> 1: (jamCounter' = jamNight);
+[updateJam] (jam) -> 1: (jamCounter' = jamCounter);
 
 endmodule
 
 
 module client0
 
-xs_c0 : [1..4] init 3;
-ys_c0 : [1..4] init 2;
+xs_c0 : [1..9] init 8;
+ys_c0 : [1..9] init 7;
 
-xc_c0 : [1..4] init 3;
-yc_c0 : [1..4] init 2;
+xc_c0 : [1..9] init 8;
+yc_c0 : [1..9] init 7;
 
-xd_c0 : [1..4] init 3;
-yd_c0 : [1..4] init 1;
+xd_c0 : [1..9] init 3;
+yd_c0 : [1..9] init 3;
 
 c0_in : [0..1] init 0;
 
-[pick_0] (c0_in = 1) -> (xc_c0' = xt) & (yc_c0' = yt);
-[pick_0] (c0_in = 0) -> (xc_c0' = xs_c0) & (yc_c0' = ys_c0);
+[pick_c0] (c0_in = 1) -> (xc_c0' = xt) & (yc_c0' = yt);
+[pick_c0] (c0_in = 0) -> (xc_c0' = xs_c0) & (yc_c0' = ys_c0);
 
 [client_0] (waiting_c0)  -> 1: (totalWaiting_c0' = totalWaiting_c0 - 1);
-[client_0] (picking_c0) -> 1: (c0_in' = 1);
-[client_0] (reaching_c0 | totalWaiting_c0 = 0) -> 0.532908959715392 : (xs_c0' = 3) & (ys_c0' = 2) & (xd_c0' = 3) & (yd_c0' = 1) & (c0_in' = 0) & (totalWaiting_c0' = 9) + 0.3308714688026515 : (xs_c0' = 3) & (ys_c0' = 3) & (xd_c0' = 3) & (yd_c0' = 1) & (c0_in' = 0) & (totalWaiting_c0' = 7) + 0.09174815812237631 : (xs_c0' = 2) & (ys_c0' = 2) & (xd_c0' = 3) & (yd_c0' = 3) & (c0_in' = 0) & (totalWaiting_c0' = 6) + 0.0444714133595802 : (xs_c0' = 3) & (ys_c0' = 1) & (xd_c0' = 3) & (yd_c0' = 3) & (c0_in' = 0) & (totalWaiting_c0' = 8);
-[client_0] !(waiting_c0) & !(picking_c0) & !(reaching_c0) & !(totalWaiting_c0 = 0)-> 1: (xs_c0' = xs_c0) & (ys_c0' = ys_c0) & (xd_c0' = xd_c0) & (yd_c0' = yd_c0) & (xc_c0' = xc_c0) & (yc_c0' = yc_c0);
+[client_0] (picking_c0 & enough_fuel_c0) -> 1: (c0_in' = 1);
+[client_0] (picking_c0 & !enough_fuel_c0) -> 1: (c0_in' = 0);
+[client_0] (reaching_c0 | totalWaiting_c0 = 0) -> 0.6298353222326311 : (xs_c0' = 8) & (ys_c0' = 7) & (xd_c0' = 4) & (yd_c0' = 4) & (c0_in' = 0) & (totalWaiting_c0' = 7) + 0.00022861028784605352 : (xs_c0' = 8) & (ys_c0' = 5) & (xd_c0' = 6) & (yd_c0' = 4) & (c0_in' = 0) & (totalWaiting_c0' = 4) + 0.03208823031338145 : (xs_c0' = 5) & (ys_c0' = 7) & (xd_c0' = 8) & (yd_c0' = 1) & (c0_in' = 0) & (totalWaiting_c0' = 4) + 0.00418946494517564 : (xs_c0' = 8) & (ys_c0' = 4) & (xd_c0' = 2) & (yd_c0' = 4) & (c0_in' = 0) & (totalWaiting_c0' = 9) + 5.114146168337491e-06 : (xs_c0' = 1) & (ys_c0' = 4) & (xd_c0' = 5) & (yd_c0' = 7) & (c0_in' = 0) & (totalWaiting_c0' = 4) + 0.000511112832792126 : (xs_c0' = 8) & (ys_c0' = 1) & (xd_c0' = 1) & (yd_c0' = 3) & (c0_in' = 0) & (totalWaiting_c0' = 6) + 0.039380257194271656 : (xs_c0' = 1) & (ys_c0' = 8) & (xd_c0' = 8) & (yd_c0' = 8) & (c0_in' = 0) & (totalWaiting_c0' = 5) + 0.0017573654263864991 : (xs_c0' = 2) & (ys_c0' = 4) & (xd_c0' = 8) & (yd_c0' = 4) & (c0_in' = 0) & (totalWaiting_c0' = 8) + 1.9048788348783563e-05 : (xs_c0' = 2) & (ys_c0' = 3) & (xd_c0' = 1) & (yd_c0' = 3) & (c0_in' = 0) & (totalWaiting_c0' = 9) + 0.0022210688943195512 : (xs_c0' = 4) & (ys_c0' = 4) & (xd_c0' = 5) & (yd_c0' = 7) & (c0_in' = 0) & (totalWaiting_c0' = 7) + 1.1779401551174314e-05 : (xs_c0' = 8) & (ys_c0' = 8) & (xd_c0' = 2) & (yd_c0' = 4) & (c0_in' = 0) & (totalWaiting_c0' = 7) + 0.0007562257430582664 : (xs_c0' = 3) & (ys_c0' = 3) & (xd_c0' = 2) & (yd_c0' = 3) & (c0_in' = 0) & (totalWaiting_c0' = 7) + 0.0007636390556903374 : (xs_c0' = 7) & (ys_c0' = 1) & (xd_c0' = 4) & (yd_c0' = 4) & (c0_in' = 0) & (totalWaiting_c0' = 7) + 0.004531744053516162 : (xs_c0' = 5) & (ys_c0' = 2) & (xd_c0' = 1) & (yd_c0' = 4) & (c0_in' = 0) & (totalWaiting_c0' = 8) + 0.28367637545197094 : (xs_c0' = 6) & (ys_c0' = 4) & (xd_c0' = 3) & (yd_c0' = 3) & (c0_in' = 0) & (totalWaiting_c0' = 4) + 2.4641232891965387e-05 : (xs_c0' = 1) & (ys_c0' = 3) & (xd_c0' = 3) & (yd_c0' = 3) & (c0_in' = 0) & (totalWaiting_c0' = 8);
+[client_0] (riding_c0) -> 1: (xs_c0' = xs_c0) & (ys_c0' = ys_c0) & (xd_c0' = xd_c0) & (yd_c0' = yd_c0) & (xc_c0' = xc_c0) & (yc_c0' = yc_c0);
 
 endmodule
 
 
 module client1
 
-xs_c1 : [1..4] init 3;
-ys_c1 : [1..4] init 3;
+xs_c1 : [1..9] init 8;
+ys_c1 : [1..9] init 7;
 
-xc_c1 : [1..4] init 3;
-yc_c1 : [1..4] init 3;
+xc_c1 : [1..9] init 8;
+yc_c1 : [1..9] init 7;
 
-xd_c1 : [1..4] init 3;
-yd_c1 : [1..4] init 1;
+xd_c1 : [1..9] init 6;
+yd_c1 : [1..9] init 4;
 
 c1_in : [0..1] init 0;
 
-[pick_1] (c1_in = 1) -> (xc_c1' = xt) & (yc_c1' = yt);
-[pick_1] (c1_in = 0) -> (xc_c1' = xs_c1) & (yc_c1' = ys_c1);
+[pick_c1] (c1_in = 1) -> (xc_c1' = xt) & (yc_c1' = yt);
+[pick_c1] (c1_in = 0) -> (xc_c1' = xs_c1) & (yc_c1' = ys_c1);
 
 [client_1] (waiting_c1)  -> 1: (totalWaiting_c1' = totalWaiting_c1 - 1);
-[client_1] (picking_c1) -> 1: (c1_in' = 1);
-[client_1] (reaching_c1 | totalWaiting_c1 = 0) -> 0.532908959715392 : (xs_c1' = 3) & (ys_c1' = 2) & (xd_c1' = 3) & (yd_c1' = 1) & (c1_in' = 0) & (totalWaiting_c1' = 5) + 0.3308714688026515 : (xs_c1' = 3) & (ys_c1' = 3) & (xd_c1' = 3) & (yd_c1' = 2) & (c1_in' = 0) & (totalWaiting_c1' = 6) + 0.09174815812237631 : (xs_c1' = 2) & (ys_c1' = 2) & (xd_c1' = 3) & (yd_c1' = 3) & (c1_in' = 0) & (totalWaiting_c1' = 7) + 0.0444714133595802 : (xs_c1' = 3) & (ys_c1' = 1) & (xd_c1' = 2) & (yd_c1' = 2) & (c1_in' = 0) & (totalWaiting_c1' = 8);
-[client_1] !(waiting_c1) & !(picking_c1) & !(reaching_c1) & !(totalWaiting_c1 = 0) -> 1: (xs_c1' = xs_c1) & (ys_c1' = ys_c1) & (xd_c1' = xd_c1) & (yd_c1' = yd_c1) & (xc_c1' = xc_c1) & (yc_c1' = yc_c1);
+[client_1] (picking_c1 & enough_fuel_c1) -> 1: (c1_in' = 1);
+[client_1] (picking_c1 & !enough_fuel_c1) -> 1: (c1_in' = 0);
+[client_1] (reaching_c1 | totalWaiting_c1 = 0) -> 0.6298353222326311 : (xs_c1' = 8) & (ys_c1' = 7) & (xd_c1' = 1) & (yd_c1' = 3) & (c1_in' = 0) & (totalWaiting_c1' = 5) + 0.00022861028784605352 : (xs_c1' = 8) & (ys_c1' = 5) & (xd_c1' = 8) & (yd_c1' = 7) & (c1_in' = 0) & (totalWaiting_c1' = 8) + 0.03208823031338145 : (xs_c1' = 5) & (ys_c1' = 7) & (xd_c1' = 8) & (yd_c1' = 5) & (c1_in' = 0) & (totalWaiting_c1' = 9) + 0.00418946494517564 : (xs_c1' = 8) & (ys_c1' = 4) & (xd_c1' = 6) & (yd_c1' = 4) & (c1_in' = 0) & (totalWaiting_c1' = 8) + 5.114146168337491e-06 : (xs_c1' = 1) & (ys_c1' = 4) & (xd_c1' = 8) & (yd_c1' = 8) & (c1_in' = 0) & (totalWaiting_c1' = 7) + 0.000511112832792126 : (xs_c1' = 8) & (ys_c1' = 1) & (xd_c1' = 8) & (yd_c1' = 4) & (c1_in' = 0) & (totalWaiting_c1' = 9) + 0.039380257194271656 : (xs_c1' = 1) & (ys_c1' = 8) & (xd_c1' = 1) & (yd_c1' = 4) & (c1_in' = 0) & (totalWaiting_c1' = 9) + 0.0017573654263864991 : (xs_c1' = 2) & (ys_c1' = 4) & (xd_c1' = 8) & (yd_c1' = 7) & (c1_in' = 0) & (totalWaiting_c1' = 8) + 1.9048788348783563e-05 : (xs_c1' = 2) & (ys_c1' = 3) & (xd_c1' = 8) & (yd_c1' = 4) & (c1_in' = 0) & (totalWaiting_c1' = 9) + 0.0022210688943195512 : (xs_c1' = 4) & (ys_c1' = 4) & (xd_c1' = 8) & (yd_c1' = 4) & (c1_in' = 0) & (totalWaiting_c1' = 6) + 1.1779401551174314e-05 : (xs_c1' = 8) & (ys_c1' = 8) & (xd_c1' = 5) & (yd_c1' = 7) & (c1_in' = 0) & (totalWaiting_c1' = 3) + 0.0007562257430582664 : (xs_c1' = 3) & (ys_c1' = 3) & (xd_c1' = 1) & (yd_c1' = 8) & (c1_in' = 0) & (totalWaiting_c1' = 6) + 0.0007636390556903374 : (xs_c1' = 7) & (ys_c1' = 1) & (xd_c1' = 1) & (yd_c1' = 4) & (c1_in' = 0) & (totalWaiting_c1' = 9) + 0.004531744053516162 : (xs_c1' = 5) & (ys_c1' = 2) & (xd_c1' = 7) & (yd_c1' = 1) & (c1_in' = 0) & (totalWaiting_c1' = 8) + 0.28367637545197094 : (xs_c1' = 6) & (ys_c1' = 4) & (xd_c1' = 8) & (yd_c1' = 4) & (c1_in' = 0) & (totalWaiting_c1' = 8) + 2.4641232891965387e-05 : (xs_c1' = 1) & (ys_c1' = 3) & (xd_c1' = 8) & (yd_c1' = 4) & (c1_in' = 0) & (totalWaiting_c1' = 8);
+[client_1] (riding_c1) -> 1: (xs_c1' = xs_c1) & (ys_c1' = ys_c1) & (xd_c1' = xd_c1) & (yd_c1' = yd_c1) & (xc_c1' = xc_c1) & (yc_c1' = yc_c1);
 
 endmodule
 
 rewards "r"
-(reaching_c0 & token = 2): distanceX_c0 + distanceY_c0;
-(reaching_c1 & token = 3): distanceX_c1 + distanceY_c1;
+(reaching_c0 & token = 4): distance_start_dest_c0;
+(reaching_c1 & token = 5): distance_start_dest_c1;
 endrewards
 
+label "Unsafe" = (unsafe);

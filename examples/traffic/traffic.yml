@@ -16,10 +16,10 @@ mcts:
 # problem specific parameters
 other parameters:
   python file : examples.traffic.traffic
-  state score : MDPStateScore
+  state score : MDPStateScoreDistance
   selection advice : MDPSafeActionAdvice
   selection advice at root : MDPSafeActionAdvice
   simulation action advice : MDPSafeActionAdvice
-  simulation path advice : MDPNonLossPathAdvice
-  print function : niceStr
+  simulation path advice : MDPFullPathAdvice
+  print function : niceStrGrid
 
