@@ -505,6 +505,9 @@ class TaxiEngine:
                     currentLayout[i][j] = ' '
         for k in range(self.number_of_clients):
             clientX, clientY = d['xc_c'+str(k)], d['yc_c'+str(k)]
+            if d[f'c{k}_in'] == 1:
+                destX, destY = d['xd_c'+str(k)], d['yd_c'+str(k)]
+                currentLayout[destX][destY] = 'D'
             # print("c ",clientX, clientY)
             currentLayout[clientX][clientY] = 'c'
         taxiX, taxiY = d['xt'], d['yt']

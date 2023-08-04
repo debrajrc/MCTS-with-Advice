@@ -1,4 +1,3 @@
-from trafficPrism import TaxiEngine
 from simulationClasses import MDPPathAdviceInterface, MDPActionAdviceInterface, MDPStateScoreInterface, MDPExecutionEngine
 from stormMdpClasses import MDPState, MDPOperations, MDPAction
 import math
@@ -17,6 +16,7 @@ from mdpClasses import *
 dirname = os.path.dirname(__file__)
 
 sys.path.append(dirname)
+from trafficPrism import TaxiEngine
 
 # terminal reward
 
@@ -47,8 +47,8 @@ class MDPStateScoreDistance(MDPStateScoreInterface):
             # queue.append((x,y,0))
             maxd = 0
             (xr, yr) = (x, y)
-            if direction == 0:
-                (xr, yr) = (-1, -1)
+            # if direction == 0:
+            #     (xr, yr) = (-1, -1)
             # if direction == 1:
             #     yr -= 1
             # elif direction == 2:
@@ -84,17 +84,27 @@ class MDPStateScoreDistance(MDPStateScoreInterface):
         taxiPos = stateDescription['xt'], stateDescription['yt']
 
         taxiDistance, maxTaxiDist = self.gridDistance([(taxiPos, 0)])
+        isOccupied = False
         for k in range(self.number_of_clients):
             if stateDescription[f'c{k}_in'] == 1:
-                destPos = (
-                    stateDescription[f'xd_c{k}'], stateDescription[f'yd_c{k}'])
+                destPos = (stateDescription[f'xd_c{k}'], stateDescription[f'yd_c{k}'])
                 d = taxiDistance[destPos[0]][destPos[1]]
-                inValuation += -100/(1+d)
-        inValuation /= self.number_of_clients
-        d = taxiDistance[self.fuel_position[0]][self.fuel_position[1]]
-        fuelValuation += -100/(1+d)
+                inValuation += 1/(1+d)
+                isOccupied = True
+        if not isOccupied:
+            for k in range(self.number_of_clients):
+                clientPos = (stateDescription[f'xs_c{k}'], stateDescription[f'ys_c{k}'])
+                d = taxiDistance[clientPos[0]][clientPos[1]]
+                inValuation += 1/(10*(1+d))
+        # else:
+        #     inValuation += 100/(1+maxTaxiDist)
+        # inValuation /= self.number_of_clients
+        if stateDescription['totalFuel'] <= 10:
+            if not isOccupied:
+                d = taxiDistance[self.fuel_position[0]][self.fuel_position[1]]
+                fuelValuation += 100/(1+d)
 
-        return 100
+        return coef*inValuation + (1-coef)*fuelValuation
 
 
 # selection advice
@@ -158,8 +168,8 @@ class MDPStormActionAdvice(MDPActionAdviceInterface):
     """
 
     def __init__(self):
-        depth = 3
-        self.depth = depth
+        # depth = 3
+        # self.depth = depth
         taxiEngine = TaxiEngine.fromFile(dirname+"/layouts/_10x10_0_spawn.lay")
         self.taxiEngine = taxiEngine
         self.threshold = 0.9  # TODO ????
@@ -172,10 +182,12 @@ class MDPStormActionAdvice(MDPActionAdviceInterface):
         if len(mdpActions) == 1:
             return mdpActions
         choices = []
-        print("\nAvailable actions:", [
-              action.action for action in mdpActions])  # debuging
+        # print("\nAvailable actions:", [
+        #       action.action for action in mdpActions])  # debuging
         stateDescription = mdpOperations.stateDescription(mdpState)
+        # print(niceStr(stateDescription)) # debuging
         agentInfo = self.taxiEngine.getInfo(stateDescription)
+        # print("Agent info:", agentInfo)  # debuging
         actionValues = []
         d = {1: "North", 2: "South", 3: "East", 4: "West"}
         # TODO why "1" for the start ? The "0" is considered at root ?
