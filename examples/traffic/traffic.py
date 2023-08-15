@@ -1,3 +1,4 @@
+from trafficPrism import TaxiEngine
 from simulationClasses import MDPPathAdviceInterface, MDPActionAdviceInterface, MDPStateScoreInterface, MDPExecutionEngine
 from stormMdpClasses import MDPState, MDPOperations, MDPAction
 import math
@@ -16,11 +17,9 @@ from mdpClasses import *
 dirname = os.path.dirname(__file__)
 
 sys.path.append(dirname)
-from trafficPrism import TaxiEngine
+
 
 # terminal reward
-
-
 class MDPStateScore(MDPStateScoreInterface):
     def getScore(self, executionEngine: MDPExecutionEngine) -> float:
         return 0
@@ -47,16 +46,7 @@ class MDPStateScoreDistance(MDPStateScoreInterface):
             # queue.append((x,y,0))
             maxd = 0
             (xr, yr) = (x, y)
-            # if direction == 0:
-            #     (xr, yr) = (-1, -1)
-            # if direction == 1:
-            #     yr -= 1
-            # elif direction == 2:
-            #     yr += 1
-            # if direction == 3:
-            #     xr += 1
-            # elif direction == 4:
-            #     xr -= 1
+
             for xx, yy in [(x-1, y), (x, y-1), (x+1, y), (x, y+1)]:
                 if xx >= 0 and xx < self.X and yy >= 0 and yy < self.Y and (not self.walls[xx][yy]) and r[xx][yy] > 1 and (xx, yy) != (xr, yr):
                     r[xx][yy] = 1
@@ -74,37 +64,52 @@ class MDPStateScoreDistance(MDPStateScoreInterface):
         return (r, maxd)
 
     def getScore(self, executionEngine):
+        # Get the end state and state description from the execution engine
         endState = executionEngine.mdpEndState()
         stateDescription = executionEngine.mdpOperations.stateDescription(
             endState)
+
+        # Coefficient for balancing between passenger valuation and fuel valuation
         coef = 0.5
-        inValuation = 0
+
+        # Initialize valuation variables
+        clientValuation = 0
         fuelValuation = 0
 
+        # Get the current position of the taxi
         taxiPos = stateDescription['xt'], stateDescription['yt']
 
+        # Calculate distances using grid distance method
         taxiDistance, maxTaxiDist = self.gridDistance([(taxiPos, 0)])
+
+        # Check if any client is currently onboard the taxi
         isOccupied = False
+
+        # Calculate valuation based on passengers
         for k in range(self.number_of_clients):
             if stateDescription[f'c{k}_in'] == 1:
-                destPos = (stateDescription[f'xd_c{k}'], stateDescription[f'yd_c{k}'])
+                destPos = (
+                    stateDescription[f'xd_c{k}'], stateDescription[f'yd_c{k}'])
                 d = taxiDistance[destPos[0]][destPos[1]]
-                inValuation += 1/(1+d)
+                clientValuation += 1 / (1 + d)
                 isOccupied = True
+
+        # If taxi is not occupied, consider valuation based on potential clients
         if not isOccupied:
             for k in range(self.number_of_clients):
-                clientPos = (stateDescription[f'xs_c{k}'], stateDescription[f'ys_c{k}'])
+                clientPos = (
+                    stateDescription[f'xs_c{k}'], stateDescription[f'ys_c{k}'])
                 d = taxiDistance[clientPos[0]][clientPos[1]]
-                inValuation += 1/(10*(1+d))
-        # else:
-        #     inValuation += 100/(1+maxTaxiDist)
-        # inValuation /= self.number_of_clients
+                clientValuation += 1 / (10 * (1 + d))
+
+        # Consider fuel valuation if fuel is low
         if stateDescription['totalFuel'] <= 10:
             if not isOccupied:
                 d = taxiDistance[self.fuel_position[0]][self.fuel_position[1]]
-                fuelValuation += 100/(1+d)
+                fuelValuation += 100 / (1 + d)
 
-        return coef*inValuation + (1-coef)*fuelValuation
+        # Calculate and return the final score
+        return coef * clientValuation + (1 - coef) * fuelValuation
 
 
 # selection advice
@@ -185,7 +190,7 @@ class MDPStormActionAdvice(MDPActionAdviceInterface):
         # print("\nAvailable actions:", [
         #       action.action for action in mdpActions])  # debuging
         stateDescription = mdpOperations.stateDescription(mdpState)
-        # print(niceStr(stateDescription)) # debuging
+        # print("===>", niceStrGrid(stateDescription)) # debuging
         agentInfo = self.taxiEngine.getInfo(stateDescription)
         # print("Agent info:", agentInfo)  # debuging
         actionValues = []
@@ -210,8 +215,6 @@ class MDPStormActionAdvice(MDPActionAdviceInterface):
             model = stormpy.build_model(prism_program, properties)
             initial_state = model.states[0]
             if 'deadlock' in list(model.labels_state(initial_state)):
-                print(
-                    f"{d[taxi_first_action] } {initial_state}==>{list(model.labels_state(initial_state))}")
                 value = 0  # (float('nan'))
             else:
                 result = stormpy.model_checking(
@@ -219,7 +222,7 @@ class MDPStormActionAdvice(MDPActionAdviceInterface):
                 value = result.at(initial_state)
             actionValues.append(value)
             os.remove(prismFile)
-        # print(actionValues) # # debuging
+
         maxValue = max(actionValues)
         if maxValue == 1:  # if there are always safe actions choose always safe actions
             threshold = 1
